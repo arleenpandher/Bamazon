@@ -1,2 +1,14 @@
 <link href="//db.onlinewebfonts.com/c/157c6cc36dd65b1b2adc9e7f3329c761?family=Amazon+Ember" rel="stylesheet" type="text/css"/>
+<% if logged_in? %>
+    <script type="text/javascript">
+        
+        window.currentUser = {
+            "id": <%= current_user.id %>,
+            "username": "<%= current_user.username %>",
+            "name": "<%= current_user.name%>"
+        }
+    </script>
+<%end%>
+
+
 <main id="root">React is broken</main>

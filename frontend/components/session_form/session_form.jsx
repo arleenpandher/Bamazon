@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import Logo from "../../../app/assets/images/logo.png"
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -28,6 +29,10 @@ class SessionForm extends React.Component {
             </label>
         }
         return(
+        <div>
+            <div id="formlogo">
+                    <img src={Logo}></img>
+            </div>
             <div id={this.props.formType === "Create account" ? "formdivsignup" : "formdivlogin"}>
                 <h3 id="formheader">{this.props.formType}</h3>
                 <form id="innerform" onSubmit={this.handleSubmit}>
@@ -55,6 +60,7 @@ class SessionForm extends React.Component {
                     )}
                 </div>
             </div>
+        </div>
         )
     }
 }
