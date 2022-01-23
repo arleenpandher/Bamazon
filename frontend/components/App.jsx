@@ -1,11 +1,19 @@
 import React from "react";
-import GreetingContainer from "./Greeting/greeting_container"
+import LoginContainer from "../components/session_form/login_form_container"
+import SignupContainer from "../components/session_form/signup_form_container"
+import { Route, Routes, Switch } from "react-router-dom"
+import NavBar from "../components/nav_bar/nav_bar_container";
 
 const App = () => (
   <div>
     <h1>Herozon</h1>
-    <GreetingContainer />
+    <Switch>
+        <Route exact path="/" component={NavBar}/>
+        <Route path="/login" component={LoginContainer}/>
+        <Route path="/signup" component={SignupContainer}/>
+    </Switch>
   </div>
+ 
 );
 
 export default App;

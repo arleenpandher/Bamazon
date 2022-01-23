@@ -18,14 +18,27 @@ const receiveErrors = errors => ({
     errors
 })
 
-export const logIn = user => dispatch => (
-    login(user).then(user => dispatch((receiveCurrentUser(user))))
-)
 
-export const logOut = () => dispatch => (
-    logout().then(() => dispatch((logoutCurrentUser())))
-)
 
 export const signUp = user => dispatch => (
-    signup(user).then(user => dispatch((receiveCurrentUser(user))))
-)
+    signup(user).then(user => (
+      dispatch(receiveCurrentUser(user))
+    ), err => (
+      dispatch(receiveErrors(err.responseJSON))
+    ))
+  );
+  
+  export const logIn = user => dispatch => (
+    login(user).then(user => (
+      dispatch(receiveCurrentUser(user))
+    ), err => (
+      dispatch(receiveErrors(err.responseJSON))
+    ))
+  );
+  
+  export const logOut = () => dispatch => (
+    logout().then(() => (
+      dispatch(logoutCurrentUser())
+    ))
+  );
+  
