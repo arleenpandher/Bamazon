@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+
+ #formdiv {
+     background-color: aqua;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     align-items: center;
+     height: 250px;
+     margin: auto;
+     width: 45%;
+     text-align: center;
+ }

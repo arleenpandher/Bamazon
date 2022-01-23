@@ -28,18 +28,23 @@ class SessionForm extends React.Component {
             </label>
         }
         return(
-            <div>
+            <div id="formdiv">
                 <h3>{this.props.formType}</h3>
                 <form onSubmit={this.handleSubmit}>
                 <div>
                     {additionalinformation}
                 </div>
+                <div>
                 <label>Username 
                     <input type="text" value={this.state.username} onChange={this.update("username")}/>
                 </label>
+                </div>
+                <div>
                 <label>Password 
                     <input type="password" value={this.state.password} onChange={this.update("password")}/>
-                </label>
+                </label> 
+                </div>
+               
                 <input type="submit" value={this.props.submitType}/>
                 </form>
                 <div>
