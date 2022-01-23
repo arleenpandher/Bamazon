@@ -21,37 +21,37 @@ class SessionForm extends React.Component {
 
     render() {
         let additionalinformation 
-        if (this.props.formType === "Create Account") {
+        if (this.props.formType === "Create account") {
             additionalinformation = 
-            <label>Name
-                <input type="text" value={this.state.name} onChange={this.update("name")}/>
+            <label id="formlabel">Your Name
+                <input id="forminput" type="text" value={this.state.name} onChange={this.update("name")}/>
             </label>
         }
         return(
-            <div id="formdiv">
-                <h3>{this.props.formType}</h3>
-                <form onSubmit={this.handleSubmit}>
+            <div id={this.props.formType === "Create account" ? "formdivsignup" : "formdivlogin"}>
+                <h3 id="formheader">{this.props.formType}</h3>
+                <form id="innerform" onSubmit={this.handleSubmit}>
                 <div>
                     {additionalinformation}
                 </div>
                 <div>
-                <label>Username 
-                    <input type="text" value={this.state.username} onChange={this.update("username")}/>
+                <label id="formlabel">Username 
+                    <input id="forminput" type="text" value={this.state.username} onChange={this.update("username")}/>
                 </label>
                 </div>
                 <div>
-                <label>Password 
-                    <input type="password" value={this.state.password} onChange={this.update("password")}/>
+                <label id="formlabel">Password 
+                    <input id="forminput" type="password" value={this.state.password} onChange={this.update("password")}/>
                 </label> 
                 </div>
                
-                <input type="submit" value={this.props.submitType}/>
+                <input id="submitform" type="submit" value={this.props.submitType}/>
                 </form>
-                <div>
+                <div id="linkform">
                     {this.props.formType === "Sign-In" ? (
-                        <Link to={`/signup`}>Create your Herozon Account</Link>
+                        <Link to={`/signup`}>Create your Herozon account</Link>
                     ) : (
-                        <Link to={`/login`}>Sign-In to your Herozon Account</Link>
+                        <p>Already have an account? <Link to={`/login`}>Sign-In</Link></p>
                     )}
                 </div>
             </div>

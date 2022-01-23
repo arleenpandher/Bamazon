@@ -15,14 +15,72 @@
  */
 
 
- #formdiv {
-     background-color: aqua;
+ 
+
+ #formdivsignup {
+     /* background-color: aqua; */
+     border: 1px solid rgb(224, 223, 223);
+     border-radius: 4px;
      display: flex;
      flex-direction: column;
-     justify-content: space-between;
-     align-items: center;
-     height: 250px;
+     justify-content: space-evenly;
+     /* align-items: center; */
+     height: 537.8px;
      margin: auto;
-     width: 45%;
-     text-align: center;
+     width: 350px;
+     text-align: left;
+     box-sizing: border-box;
+     font-family: "Amazon Ember",Arial,sans-serif;
+ }
+
+ #formdivlogin {
+       /* background-color: aqua; */
+       border: 1px solid rgb(224, 223, 223);
+       border-radius: 4px;
+       display: flex;
+       flex-direction: column;
+       justify-content: space-evenly;
+       /* align-items: center; */
+       height: 325px;
+       margin: auto;
+       width: 350px;
+       text-align: left;
+       box-sizing: border-box;
+       font-family: "Amazon Ember",Arial,sans-serif;
+ }
+ 
+ #formlabel {
+     display: flex;
+     flex-direction: column;
+     line-height: 19px;
+ } 
+
+ #formheader, #linkform {
+     text-align: left;
+     margin-left: 25px;
+ }
+
+ #formheader {
+     font-size: 28px;
+ }
+
+ #innerform {
+     /* background-color: brown; */
+     height: 435px;
+     width: 300px;
+     margin: auto;
+     display: flex;
+     flex-direction: column;
+     /* line-height: 19px; */
+     justify-content: space-around;
+ }
+
+ #forminput, #submitform {
+    line-height: 32px;
+    border-radius: 4px;
+    border: 1px solid rgb(124, 123, 123);
+ }
+
+ #submitform {
+    background-color: rgb(223, 177, 79);
  }

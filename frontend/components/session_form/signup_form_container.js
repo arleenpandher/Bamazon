@@ -4,13 +4,13 @@ import SessionForm from "./session_form"
 
 const mapStateToProps = state => ({
     errors: state.errors.session,
-    formType: "Create Account",
+    formType: "Create account",
     information: {
         name: "",
         username: "",
         password: ""
     },
-    submitType: "Create your Herozon Account"
+    submitType: "Create your Herozon account"
 })
 
 const mapDispatchToProps = dispatch => ({
