@@ -84,3 +84,11 @@
  #submitform {
     background-color: rgb(223, 177, 79);
  }
+
+ #formlogo {
+     display: flex;
+     margin: auto;
+     
+     /* align-content: center; */
+     width: 288px;
+ }
