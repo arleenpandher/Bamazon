@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import Logo from "../../../app/assets/images/logo2.png"
 import Pindrop from "../../../app/assets/images/pindrop.png"
+import Cart from "../../../app/assets/images/amazon-cart.png"
 
 const NavBar = ({currentUser, logout}) => {
 
@@ -14,7 +15,7 @@ const NavBar = ({currentUser, logout}) => {
         </div>
     ) : (
         <div id="navdropdown">
-            <button id="navdropdownbtn">Welcome</button>
+            <button id="navdropdownbtn">Hello, Sign in</button>
             <div id="navdropdowncontent">
                 <Link to={`/login`}>Login</Link>
                 <Link to={`/signup`}>Sign Up</Link>
@@ -38,16 +39,17 @@ const NavBar = ({currentUser, logout}) => {
                     </div>
                 </div>
                 <div id="two">
-                    <select id="navallbar">
-                        <option selected="selected" value="one">All</option>
-                        <option value="two">Choice 2</option>
-                        <option value="three">Choice 3</option>
+                    <select defaultValue="All" id="navallbar">
+                        <option >All</option>
+                        <option >Choice 2</option>
+                        <option >Choice 3</option>
                     </select>
                     <input id="navsearchtext"type="text" value="unknown"/>
                     <input id="navsearchbutton" type="submit" value="search"/>
                 </div>
                 <div id="three">
                     {display}
+                    <img id="cartnavbar" src={Cart}></img>
                 </div>
             </nav>
         </div>
