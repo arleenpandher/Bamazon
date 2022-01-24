@@ -190,7 +190,10 @@
  #three {
      border: 1px solid seagreen;
      flex-grow: 1;
-     color: white
+     color: white;
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
  }
 
  #navdropdown {
@@ -219,6 +222,19 @@
     
  }
 
-#navdropdownconten:hover {background-color: #ddd;}
-#navdropdown:hover #navdropdowncontent {display: block;}
+#navdropdowncontent:hover {
+    background-color: #ddd;
+    display: flex;
+    flex-direction: column;
+
+}
+#navdropdown:hover #navdropdowncontent {
+    background-color: #ddd;
+    display: flex;
+    flex-direction: column;
+}
 #navdropdown:hover #navdropdownbtn {background-color: #3e8e41;}
+
+#cartnavbar {
+    height: 50px;
+}
