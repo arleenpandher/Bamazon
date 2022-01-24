@@ -92,3 +92,102 @@
      /* align-content: center; */
      width: 288px;
  }
+
+ #header {
+    background-color: #131921;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    height: 62px;
+    margin: auto;
+    width: 100%;
+ }
+
+ #one {
+     display: flex;
+     flex-direction: row;
+     height: 60px;
+     width: 220px;
+     justify-content: space-between;
+     align-items: center;
+    border: 1px solid white;
+    
+ }
+
+ #navimage{
+     /* background-color: transparent; */
+     width: 113px;
+     height: 60px;
+ }
+
+ #pindropimage {
+    width: 15px;
+    height: 20px;
+    margin-top: 20px;
+    align-content: flex-end;
+    margin-left:10px;
+    /* background-color: tomato; */
+ }
+
+ #deliverybar {
+     display: flex;
+     width: 90.64px;
+     height: 50px;
+     /* border: 1px solid white; */
+     color: white;
+ }
+
+ #deliverytext {
+     display: flex;
+     flex-direction: column;
+     
+     align-content: center;
+     width: 90.64px;
+     height: 50px;
+     margin-top: 10px;
+     margin-left:5px;
+     text-align: left;
+     /* background-color: violet; */
+ }
+ 
+ #toptext{
+    color: rgb(196, 189, 189);
+    font-size: 12.5px;
+ }
+ #bottomtext {
+     color: white;
+     font-weight: bold;
+     font-size: 14.5px;
+ }
+
+ #two {
+    
+     color: white;
+     border: 1px solid tomato;
+     flex-grow: 4;
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     
+ }
+
+ #navallbar {
+     width: 52px;
+     height: 40px;
+ }
+
+ #navsearchbutton {
+     width: 45px;
+     height: 40px;
+ }
+
+ #navsearchtext {
+     height: 35px;
+     flex-grow:3.5;
+ }
+
+ #three {
+     border: 1px solid seagreen;
+     flex-grow: 1;
+ }
