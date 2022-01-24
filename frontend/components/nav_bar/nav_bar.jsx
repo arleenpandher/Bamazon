@@ -5,22 +5,26 @@ import Pindrop from "../../../app/assets/images/pindrop.png"
 
 const NavBar = ({currentUser, logout}) => {
 
-    // const display = currentUser ? (
-    //     <div>
-    //         <h3>Welcome {currentUser.name}</h3>
-    //         <button onClick={logout}>Logout</button>
-    //     </div>
-    // ) : (
-    //     <div>
-    //         {console.log(currentUser)}
-    //         <Link to={`/signup`}>Create Account</Link>
-    //         <Link to={`/login`}>Sign-In</Link>
-    //     </div>
-    // )
+    const display = currentUser ? (
+        <div id="navdropdown">
+            <button id="navdropdownbtn">Welcome {currentUser.name}</button>
+            <div id="navdropdowncontent">
+                <Link onClick={logout} to={`/login`}>Sign Out</Link>
+            </div>
+        </div>
+    ) : (
+        <div id="navdropdown">
+            <button id="navdropdownbtn">Welcome</button>
+            <div id="navdropdowncontent">
+                <Link to={`/login`}>Login</Link>
+                <Link to={`/signup`}>Sign Up</Link>
+            </div>
+        </div>
+    )
 
     return (
         <div>
-            <header id="header">
+            <nav id="header">
                 <div id="one">
                     <div>
                         <img id="navimage" src={Logo}></img>
@@ -43,9 +47,9 @@ const NavBar = ({currentUser, logout}) => {
                     <input id="navsearchbutton" type="submit" value="search"/>
                 </div>
                 <div id="three">
-                    Bye
+                    {display}
                 </div>
-            </header>
+            </nav>
         </div>
     )
 }
