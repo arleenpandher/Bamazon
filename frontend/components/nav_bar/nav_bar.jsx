@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import Logo from "../../../app/assets/images/logo2.png"
 import Pindrop from "../../../app/assets/images/pindrop.png"
 import Cart from "../../../app/assets/images/amazon-cart.png"
+import MagnifyingGlass from "../../../app/assets/images/magnifying-glass.png"
 
 const NavBar = ({currentUser, logout}) => {
 
@@ -46,8 +47,10 @@ const NavBar = ({currentUser, logout}) => {
                         <option >Choice 2</option>
                         <option >Choice 3</option>
                     </select>
-                    <input id="navsearchtext"type="text" value="unknown"/>
-                    <input id="navsearchbutton" type="submit" value="search"/>
+                    <input id="navsearchtext"type="text"/>
+                    <button id="navsearchbutton" type="submit">
+                        <img id="searchimg" src={MagnifyingGlass}></img>
+                    </button>    
                 </div>
                 <div id="three">
                     {display}

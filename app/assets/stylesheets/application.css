@@ -102,7 +102,8 @@
     height: 62px;
     margin: auto;
     width: 100%;
-    margin-top:0px;
+    margin: 0 !important;
+    padding: 0 !important;
  }
 
  #one {
@@ -175,15 +176,35 @@
  #navallbar {
      width: 52px;
      height: 40px;
+     border-bottom-left-radius: 5px;
+     border-top-left-radius: 5px;
+ }
+
+ #navallbar:hover {
+     background-color: rgb(204, 197, 197);
  }
 
  #navsearchbutton {
      width: 45px;
      height: 40px;
+     background-color: rgb(254,189,105);
+     display:flex;
+     margin: auto;
+     border-bottom-right-radius: 5px;
+     border-top-right-radius: 5px;
+ }
+
+ #navsearchbutton:hover {
+    background-color: rgb(238,168,71)
+ }
+
+ #searchimg{
+    width: 45px;
+    height: 40px;
  }
 
  #navsearchtext {
-     height: 35px;
+     height: 33px;
      flex-grow:3.5;
  }
 
@@ -197,12 +218,12 @@
  }
 
  #navdropdown {
-     position: relative;
-     display: inline-block;
+     /* position: relative;
+     display: inline-block; */
  }
 
  #navdropdownbtn {
-    background-color: #04AA6D;
+  background-color: #131921;
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -212,9 +233,9 @@
  #navdropdowncontent{
     display: none;
     position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: #fff;
+    min-width: 95px;
+    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
     z-index: 1;
     color: black;
     padding: 12px 16px;
@@ -223,18 +244,25 @@
  }
 
 #navdropdowncontent:hover {
-    background-color: #ddd;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
 
 }
 #navdropdown:hover #navdropdowncontent {
-    background-color: #ddd;
+    background-color: whitesmoke;
     display: flex;
     flex-direction: column;
 }
-#navdropdown:hover #navdropdownbtn {background-color: #3e8e41;}
+#navdropdown:hover #navdropdownbtn {
+    border: 1px solid white;
+}
 
 #cartnavbar {
     height: 50px;
+}
+
+* {    
+    margin: 0;
+    padding: 0;
 }
