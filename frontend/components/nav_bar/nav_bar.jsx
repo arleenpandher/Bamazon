@@ -28,7 +28,9 @@ const NavBar = ({currentUser, logout}) => {
             <nav id="header">
                 <div id="one">
                     <div>
+                    <Link to="/">
                         <img id="navimage" src={Logo}></img>
+                    </Link>
                     </div>
                     <div id="deliverybar">
                         <img id="pindropimage" src={Pindrop}></img>

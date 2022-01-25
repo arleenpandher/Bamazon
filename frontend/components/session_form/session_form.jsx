@@ -46,7 +46,9 @@ class SessionForm extends React.Component {
         return(
         <div>
             <div id="formlogo">
+                <Link to="/">
                     <img src={Logo}></img>
+                </Link>
             </div>
             <div>
                 {this.renderErrors()}
