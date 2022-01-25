@@ -6,7 +6,7 @@ class Api::UsersController < ApplicationController
             login!(@user)
             render :show
         else 
-            flash.now[:errors] = @user.errors.full_messages 
+            render json: ['Password must be longer than 6 characters!'], status: 401 
             
         end
     end

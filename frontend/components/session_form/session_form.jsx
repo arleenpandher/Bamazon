@@ -15,10 +15,25 @@ class SessionForm extends React.Component {
         }
     }
 
-    handleSubmit() {
+    handleSubmit(e) {
+        e.preventDefault()
         this.props.processForm(this.state)
         .then(() => this.props.history.push('/'))
     }
+
+    renderErrors() {
+        return(
+          <ul>
+            {this.props.errors.map((error, i) => (
+              <li key={`error-${i}`}>
+                {error}
+              </li>
+            ))}
+          </ul>
+        );
+      }
+
+
 
     render() {
         let additionalinformation 
@@ -32,6 +47,9 @@ class SessionForm extends React.Component {
         <div>
             <div id="formlogo">
                     <img src={Logo}></img>
+            </div>
+            <div>
+                {this.renderErrors()}
             </div>
             <div id={this.props.formType === "Create account" ? "formdivsignup" : "formdivlogin"}>
                 <h3 id="formheader">{this.props.formType}</h3>
