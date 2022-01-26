@@ -4,7 +4,7 @@ import SignupContainer from "../components/session_form/signup_form_container"
 import { Route, Routes, Switch, Redirect } from "react-router-dom"
 import NavBar from "../components/nav_bar/nav_bar_container";
 import {AuthRoute} from "../utils/route_util"
-import SplashContainer from "../components/splash/splash"
+import SplashContainer from "../components/splash/splash_container"
 
 
 
