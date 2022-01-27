@@ -10,6 +10,7 @@ class ProductIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchproducts(this.props.serviceId)
+        this.props.fetchservices()
     }
 
     render() {
@@ -22,17 +23,24 @@ class ProductIndex extends React.Component {
                 <div id="BasicHeadImg">
                     <img id="BasicHeadImage" src={HerozonBasicImage}></img>
                 </div>
-                <div>
-                    <div>
-                        {this.props.products.map(product => (
-                            <Link key={product.id} to={`/products/${product.id}`}>
-                                <div id="productindexdiv">
-                                <img id="productindeximage" src={product.photoUrl}/>
-                                <span>{product.title}</span>
-                            </div>
-                            </Link>)
-                         )}
+                <div id="entirelowernavbar">
+                    <div id="lowernavbartext">
+                        {this.props.services.map(service => (
+                            <Link key={service.id} to={`/services/${service.id}/products`}>{service.title}</Link>
+                        ))}
                     </div>
+                    <div id="hnavline">
+                    </div>
+                </div>
+                <div id="productindexbox">
+                    {this.props.products.map(product => (
+                        <Link key={product.id} to={`/products/${product.id}`}>
+                            <div id="productindexdiv">
+                                <img id="productindeximage" src={product.photoUrl}/>
+                                <span id="productindextitle">{product.title}</span>
+                            </div>
+                        </Link>)
+                    )}
                 </div>
             </div>
 
