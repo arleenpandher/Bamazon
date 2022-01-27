@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do 
     resources :users, only:[:create]
     resource :session, only:[:create, :destroy]
-    resources :services, only:[:index]
+    resources :services, only:[:index] do 
+      resources :products, only:[:index]
+    end
+    resources :products, only:[:show]
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

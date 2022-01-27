@@ -1,6 +1,7 @@
 import React from "react"
 import HerozonBasicImage from "../../../app/assets/images/Herozon_Basic.png"
 import NavBarContainer from "../nav_bar/nav_bar_container"
+import {Link} from "react-router-dom"
 
 class Splash extends React.Component {
     constructor(props) {
@@ -30,24 +31,32 @@ class Splash extends React.Component {
                     </div>
                     <div id="minielements">
                     <div id="toprow">
-                        <div id="first">
-                            <span id="text">{this.props.services[3].title}</span>
-                            <img id="bbpicture" src={this.props.services[3].photoUrl}></img>
-                        </div>
-                        <div id="second">
-                            <span id="text">{this.props.services[2].title}</span>
-                            <img id="picture" src={this.props.services[2].photoUrl}></img>
-                        </div>
+                        <Link id="link" to={`/services/4/products`}>
+                            <div id="first">
+                                <span id="text">{this.props.services[3].title}</span>
+                                <img id="bbpicture" src={this.props.services[3].photoUrl}></img>
+                            </div>
+                        </Link>
+                        <Link id="link" to={`/services/3/products`}>
+                            <div id="second">
+                                <span id="text">{this.props.services[2].title}</span>
+                                <img id="picture" src={this.props.services[2].photoUrl}></img>
+                            </div>
+                        </Link>
                     </div>
                     <div id="bottomrow">
+                    <Link id="link" to={`/services/2/products`}>
                         <div id="third">
                             <span id="text">{this.props.services[1].title}</span>
                             <img id="picture" src={this.props.services[1].photoUrl}></img>
                         </div>
+                    </Link>
+                    <Link id="link" to={`/services/1/products`}>
                         <div id="fourth">
                             <span id="text">{this.props.services[0].title}</span>
                             <img id="picture" src={this.props.services[0].photoUrl}></img>
                         </div>
+                    </Link>
                     </div>
                     </div>
                 </div>

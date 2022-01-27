@@ -21,3 +21,20 @@ service3.photo.attach(io: open("https://herozon-dev.s3.ca-central-1.amazonaws.co
 
 service4 = Service.create(title: "flying lessons")
 service4.photo.attach(io: open("https://herozon-dev.s3.ca-central-1.amazonaws.com/buckbeek.png"), filename:"buckbeek.png")
+
+product1 = Product.create(title: "Harry Potter", description: "Flying lessons with the OG", service_id: 4)
+product1.photo.attach(io: open("https://herozon-dev.s3.ca-central-1.amazonaws.com/harry_potter.png"), filename:"harry_potter.png")
+
+product2 = Product.create(title: "Bellatrix Lestrange", description: "Powerful and smart might kill you though", service_id: 4)
+product2.photo.attach(io: open("https://herozon-dev.s3.ca-central-1.amazonaws.com/Bellatrix_Lestrange.png"), filename:"Bellatrix_Lestrange.png")
+
+product3 = Product.create(title: "Draco Malfoy", description: "Known enemy of Buckbeak, you might get killed", service_id: 4)
+product3.photo.attach(io: open("https://herozon-dev.s3.ca-central-1.amazonaws.com/draco_malfoy.png"), filename:"draco_malfoy.png")
+
+product4 = Product.create(title: "Molly Weasley", description: "Might be able to help you fly, but will definitely feed you", service_id: 4)
+product4.photo.attach(io: open("https://herozon-dev.s3.ca-central-1.amazonaws.com/molly_weasley.png"), filename:"molly_weasley.png")
+
+product5 = Product.create(title: "Severus Snape", description: "He will teach you but be prepared for his remarks", service_id: 4)
+product5.photo.attach(io: open("https://herozon-dev.s3.ca-central-1.amazonaws.com/severus_snape.png"), filename:"severus_snape.png")
+
+
