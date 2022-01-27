@@ -22,6 +22,15 @@ class Splash extends React.Component {
                 <div id="BasicHeadImg">
                     <img id="BasicHeadImage" src={HerozonBasicImage}></img>
                 </div>
+                <div id="entirelowernavbar">
+                    <div id="lowernavbartext">
+                        {this.props.services.map(service => (
+                            <Link key={service.id} to={`/services/${service.id}/products`}>{service.title}</Link>
+                        ))}
+                    </div>
+                    <div id="hnavline">
+                     </div>
+                </div>
                 <div id="borderdiv">
                     <div id="basicideadiv">
                         <span id="basicideatextone">The basic idea:</span>

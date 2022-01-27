@@ -1,6 +1,7 @@
 import React from "react"
 import NavBarContainer from "../nav_bar/nav_bar_container"
 import {Link} from "react-router-dom"
+import HerozonBasicImage from "../../../app/assets/images/Herozon_Basic.png"
 
 class ProductIndex extends React.Component {
     constructor(props) {
@@ -18,6 +19,9 @@ class ProductIndex extends React.Component {
                 <header>
                     <NavBarContainer/>
                 </header>
+                <div id="BasicHeadImg">
+                    <img id="BasicHeadImage" src={HerozonBasicImage}></img>
+                </div>
                 <div>
                     <div>
                         {this.props.products.map(product => (

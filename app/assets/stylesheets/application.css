@@ -269,9 +269,8 @@
 
 #BasicHeadImg {
     display: fixed;
-    height:400px;
     margin: auto;
-
+    background-color: green;
 }
 
 #BasicHeadImage {
@@ -419,4 +418,26 @@
 
 #productshowpagediv {
     display:flex;
+}
+
+#entirelowernavbar {
+    display: flex;
+    flex-direction: column;
+    height:60px;
+    width:90%;
+    justify-content: center;
+    margin: auto;
+    margin-top: 0px;
+    /* border: 1px solid black */
+}
+
+#lowernavbartext {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#hnavline { 
+    height:4px; 
+    background: #dbdcdc
 }
