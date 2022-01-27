@@ -37,4 +37,11 @@ product4.photo.attach(io: open("https://herozon-dev.s3.ca-central-1.amazonaws.co
 product5 = Product.create(title: "Severus Snape", description: "He will teach you but be prepared for his remarks", service_id: 4)
 product5.photo.attach(io: open("https://herozon-dev.s3.ca-central-1.amazonaws.com/severus_snape.png"), filename:"severus_snape.png")
 
+product6 = Product.create(title: "Luna Lovegood", description: "She is very good with magical creatures but may get distracted", service_id: 4)
+product6.photo.attach(io: open("https://herozon-dev.s3.ca-central-1.amazonaws.com/luna_lovegood.png"), filename:"luna_lovegood.png")
 
+product7 = Product.create(title: "Hermonie Granger", description: "She is an excellent teacher but be prepared she is strict", service_id: 4)
+product7.photo.attach(io: open("https://herozon-dev.s3.ca-central-1.amazonaws.com/hermonie_granger.png"), filename:"hermonie_granger.png")
+
+product8 = Product.create(title: "Wormtail", description: "150% chance of betrayal is forecasted, good luck!", service_id: 4)
+product8.photo.attach(io: open("https://herozon-dev.s3.ca-central-1.amazonaws.com/wormtail.PNG"), filename:"wormtail.PNG")
