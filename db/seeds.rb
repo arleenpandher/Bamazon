@@ -45,3 +45,4 @@ product7.photo.attach(io: open("https://herozon-dev.s3.ca-central-1.amazonaws.co
 
 product8 = Product.create(title: "Wormtail", description: "150% chance of betrayal is forecasted, good luck!", service_id: 4)
 product8.photo.attach(io: open("https://herozon-dev.s3.ca-central-1.amazonaws.com/wormtail.PNG"), filename:"wormtail.PNG")
+

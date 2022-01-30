@@ -8,6 +8,15 @@ class User < ApplicationRecord
     attr_reader :password
     after_initialize :ensure_session_token 
 
+    has_many :cart_items,
+        foreign_key: :user_id,
+        class_name: :Cart 
+
+    has_many :cart_products,
+        through: :cart_items,
+        source: :product  
+
+
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)
         return nil if user.nil?

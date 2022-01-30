@@ -16,6 +16,7 @@ const App = () => (
         <Route exact path="/" component={SplashContainer}/>
         <Route exact path="/services/:serviceId/products" component={ProductContainer}/>
         <Route exact path="/products/:productId" component={ProductShowContainer}/>
+        <Route exact path="//:productId" component={ProductShowContainer}/>
         <AuthRoute path="/login" component={LoginContainer}/>
         <AuthRoute path="/signup" component={SignupContainer}/>
         <Redirect to="/"/>

@@ -5,5 +5,9 @@ class Product < ApplicationRecord
     belongs_to :service,
         foreign_key: :service_id, 
         class_name: :Service 
+
+    has_many :presence_in_cart,
+        foreign_key: :product_id,
+        class_name: :Cart 
         
 end

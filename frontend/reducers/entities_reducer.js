@@ -5,10 +5,11 @@ import ServicesReducer from "./services_reducer";
 import ProductsReducer from "./products_reducer";
 
 
+
 const entitiesReducer = combineReducers({
     users: usersReducer,
     services: ServicesReducer,
-    products: ProductsReducer
+    products: ProductsReducer,
   });
 
 export default entitiesReducer;

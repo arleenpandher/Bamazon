@@ -4,7 +4,7 @@ const ServicesReducer = (state={}, action) => {
     Object.freeze(state)
     switch(action.type) {
         case RECEIVE_SERVICES:
-            return Object.assign({}, action.services)
+            return Object.assign({}, state, action.services)
         default:
             return state 
     }

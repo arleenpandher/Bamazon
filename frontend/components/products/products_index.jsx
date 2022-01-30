@@ -6,12 +6,24 @@ import HerozonBasicImage from "../../../app/assets/images/Herozon_Basic.png"
 class ProductIndex extends React.Component {
     constructor(props) {
         super(props)
+        // this.state = this.props.productinfo
+        this.addToCart = this.addToCart.bind(this)
     }
 
     componentDidMount() {
         this.props.fetchproducts(this.props.serviceId)
         this.props.fetchservices()
     }
+
+    addToCart(e) {
+        e.preventDefault()
+        // console.log(this.props.productinfo)
+        // console.log(e.currentTarget.value)
+        // this.setState({ ["productId"]: e.currentTarget.value })
+        // console.log(this.state)
+        this.props.addtocart({product_id: e.currentTarget.value, quantity: 1})
+    }
+
 
     render() {
         if (!this.props.products.length) return null
@@ -38,6 +50,7 @@ class ProductIndex extends React.Component {
                             <div id="productindexdiv">
                                 <img id="productindeximage" src={product.photoUrl}/>
                                 <span id="productindextitle">{product.title}</span>
+                                <button value={product.id} onClick={this.addToCart}>Add to Cart!</button>
                             </div>
                         </Link>)
                     )}
