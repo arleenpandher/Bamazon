@@ -23,7 +23,7 @@ class ProductShow extends React.Component {
 
     addToCart(e) {
         e.preventDefault()
-        this.props.addtocart({product_id: productId, quantity: })
+        this.props.addtocart({product_id: productId, quantity: 1})
     }
 
     render() {
