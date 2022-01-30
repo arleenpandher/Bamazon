@@ -29,9 +29,12 @@ class NavBar extends React.Component {
                             <Link onClick={logout} to={`/login`}>Sign Out</Link>
                         </div>
                     </div>
-                    
+
                         <span id="cartitemcount">{this.props.totalitemsincart}</span>
-                        <img id="cartnavbar" src={Cart}></img>
+                        {/* <img id="cartnavbar" src={Cart}></img> */}
+                        <Link to={`/users/${currentUser.id}/carts`}>
+                            <img id="cartnavbar" src={Cart}></img>
+                        </Link>
                   
                 </div>
                 ) : (

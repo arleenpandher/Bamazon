@@ -7,7 +7,7 @@ import {AuthRoute} from "../utils/route_util"
 import SplashContainer from "../components/splash/splash_container"
 import ProductContainer from "../components/products/products_container"
 import ProductShowContainer from "../components/products/product_show_container"
-
+import CartIndexContainer from "../components/cart/cart_index_container"
 
 
 const App = () => (
@@ -16,6 +16,7 @@ const App = () => (
         <Route exact path="/" component={SplashContainer}/>
         <Route exact path="/services/:serviceId/products" component={ProductContainer}/>
         <Route exact path="/products/:productId" component={ProductShowContainer}/>
+        <Route exact path="/users/:userId/carts" component={CartIndexContainer}/>
         <Route exact path="//:productId" component={ProductShowContainer}/>
         <AuthRoute path="/login" component={LoginContainer}/>
         <AuthRoute path="/signup" component={SignupContainer}/>

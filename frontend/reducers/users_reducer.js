@@ -9,7 +9,9 @@ const UsersReducer = (state={}, action) => {
         case RECEIVE_CURRENT_USER:
             return Object.assign({}, state, { [action.user.id]: action.user});
         case RECEIVE_CART_ITEM:
-            nextState[action.cartItem.userId].itemsincart.push(action.cartItem.id)
+            for (let i = 0; i < action.cartItem.quantity; i++) {
+                nextState[action.cartItem.userId].itemsincart.push(action.cartItem.id)
+            }
             return nextState 
         case RECEIVE_ALL_CART_ITEMS:
             let newarr = []

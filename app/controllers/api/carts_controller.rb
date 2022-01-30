@@ -6,9 +6,7 @@ class Api::CartsController < ApplicationController
         if @cart_item.save
             @product = @cart_item.product 
             render :show
-        else 
-            render json: @product.errors.full_messages, status: 422
-        end 
+        end
     end
 
     def index

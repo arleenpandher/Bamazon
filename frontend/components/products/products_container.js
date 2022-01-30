@@ -8,9 +8,6 @@ const mapStateToProps = (state, ownProps) => ({
     products: Object.values(state.entities.products),
     serviceId: ownProps.match.params.serviceId,
     services: Object.values(state.entities.services),
-    productinfo: {
-        productId: 0
-    }
 })
 
 const mapDispatchToProps = (dispatch) => ({
