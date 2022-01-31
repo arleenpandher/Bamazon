@@ -30,9 +30,6 @@ class CartIndex extends React.Component {
                 <header>
                     <NavBarContainer/>
                 </header>
-                <div id="BasicHeadImg">
-                    <img id="BasicHeadImage" src={HerozonBasicImage}></img>
-                </div>
                 <div id="cartindexoutterdiv">
                 <div id="cartindexborder">
                     <h1>Shopping Cart</h1>
@@ -42,14 +39,13 @@ class CartIndex extends React.Component {
                         
                             <div id="minicartindexdiv" key={idx}>
                                  <img id="cartindeximage" src={this.props.cartproducts[subarray[0]].photoUrl}/>
-                                 <span>Quantity: {subarray[1]}</span>
                                  <div id="innercartindexdiv">
                                     <span>{this.props.cartproducts[subarray[0]].title}</span>
                                     <span id="cartindexprice">$78.99</span>
                                     <span id="cartindexinstock">In Stock</span>
                                     <span>Department: Flying Lessons</span>
                                     <div>
-                                        <span>Qty: 10</span>
+                                        <span>Quantity: {subarray[1]}</span>
                                         <button>Delete</button>
                                     </div>
                                 </div>

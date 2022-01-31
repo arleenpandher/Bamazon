@@ -15,6 +15,7 @@ const UsersReducer = (state={}, action) => {
             return nextState 
         case RECEIVE_ALL_CART_ITEMS:
             let newarr = []
+            console.log(action.cartItems)
             let user = action.cartItems[0].userId
             action.cartItems.forEach(ele => {
                 newarr.push(ele.id)

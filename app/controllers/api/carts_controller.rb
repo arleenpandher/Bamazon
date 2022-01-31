@@ -11,9 +11,12 @@ class Api::CartsController < ApplicationController
 
     def index
         @session_user = current_user
+        @cart_items = current_user.cart_items
         @products = current_user.cart_products 
         render :index
     end
+
+    
 
 
     private 

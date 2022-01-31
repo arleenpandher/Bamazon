@@ -1,5 +1,6 @@
 import React from "react"
 import NavBarContainer from "../nav_bar/nav_bar_container"
+import {Link} from "react-router-dom"
 
 class ProductShow extends React.Component {
 
@@ -8,11 +9,12 @@ class ProductShow extends React.Component {
         this.state = this.props.cartitem
         // this.update = this.update.bind(this)
         this.addToCart = this.addToCart.bind(this)
+        this.removereview = this.removereview.bind(this)
     }
 
     componentDidMount() {
-        console.log(this.props.match)
         this.props.fetchproduct(this.props.match.params.productId)
+        this.props.fetchreviews(this.props.match.params.productId)
     }
 
     // update(field) {
@@ -26,8 +28,15 @@ class ProductShow extends React.Component {
         this.props.addtocart({product_id: this.props.productId, quantity: 1})
     }
 
+    removereview(e) {
+        e.preventDefault()
+        {console.log(e.currentTarget.value)}
+        this.props.deletereview(e.currentTarget.value)
+    }
+
     render() {
         if (!this.props.product) return null 
+        
         return (
             <div>
                 <header>
@@ -67,6 +76,36 @@ class ProductShow extends React.Component {
                         <span>Sold by <span>Herozon.com</span></span>
                         <span>Return policy: <span>Eligible for Return, Refund or Replacement</span></span>
                         <span>Support: <span>Free Herozon tech support included</span></span>
+                    </div>
+                </div>
+                <div>
+                    <div id="productshowreviewdiv">
+                        <div id="productshowreview">
+                            <span>Review this product</span>
+                            <span>Share your thoughts with other customers</span>
+                            <Link to={`/products/${this.props.productId}/reviews`}>Create Review</Link>
+                        </div>
+                        <div id="productshowreview3">
+                            {this.props.reviews.map(review => (
+                                <div id="productshowreview2" key={review.id}>
+                                    <span>{review.user}</span>
+                                    <span>{review.title}</span>
+                                    <span>{review.body}</span>
+                                    <span>{review.ratings}</span>
+                                    <div>
+                                        {this.props.currentUser.id === review.userId ? (
+                                            <div>
+                                                <button>Edit</button>
+                                                {console.log(review.id)}
+                                                <button value={review.id} onClick={this.removereview}>Delete</button>
+                                            </div>
+                                        ) : (
+                                        <div></div>
+                                        )}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
