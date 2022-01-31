@@ -14,26 +14,53 @@ class CartIndex extends React.Component {
 
 
     render() {
-        if (!Object.values(this.props.cartproducts).length) return null 
+        if (!Object.values(this.props.cartproducts).length) return null
+        let obj = {} 
+        this.props.cartIds.forEach(cartId => {
+            if (!obj[cartId]) obj[cartId] = 0 
+            obj[cartId] += 1
+        })
+        obj = Object.entries(obj)
+        obj.forEach(subarray => {
+            subarray[0] = Number(subarray[0])
+        })
+        console.log(obj)
         return(
-            <div>
+            <div id="outtermostcartindexdiv">
                 <header>
                     <NavBarContainer/>
                 </header>
                 <div id="BasicHeadImg">
                     <img id="BasicHeadImage" src={HerozonBasicImage}></img>
                 </div>
-                <div>
-                    {this.props.cartIds.map((cartId) => {
-                            {console.log(this.props.cartproducts[cartId].photoUrl)}
-                            {console.log(this.props.cartproducts[cartId].title)}
-                            return(
-                                <div id="CHECK400">
-                                <img id="productindeximage" src={this.props.cartproducts[cartId].photoUrl}/>
-                                <span id="CHECK300">{this.props.cartproducts[cartId].title}</span>
-                                 </div> 
-                            )
+                <div id="cartindexoutterdiv">
+                <div id="cartindexborder">
+                    <h1>Shopping Cart</h1>
+                    <div id="hnavlineupdate"></div>
+                    {obj.map((subarray,idx) => {
+                        return(
+                        
+                            <div id="minicartindexdiv" key={idx}>
+                                 <img id="cartindeximage" src={this.props.cartproducts[subarray[0]].photoUrl}/>
+                                 <span>Quantity: {subarray[1]}</span>
+                                 <div id="innercartindexdiv">
+                                    <span>{this.props.cartproducts[subarray[0]].title}</span>
+                                    <span id="cartindexprice">$78.99</span>
+                                    <span id="cartindexinstock">In Stock</span>
+                                    <span>Department: Flying Lessons</span>
+                                    <div>
+                                        <span>Qty: 10</span>
+                                        <button>Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                        )
                     })}
+                    </div>
+                    <div id="totalpricediv">
+                        <span>Total (3 items): $99.99</span>
+                        <button>Proceed to checkout</button>
+                    </div>
                 </div>
             </div>
         )
