@@ -19,7 +19,6 @@ class ProductIndex extends React.Component {
     addToCart(e) {
         e.preventDefault()
         if (this.props.cart[e.currentTarget.value]) {
-            debugger
             this.props.updateCart({cart_id: this.props.cart[e.currentTarget.value].cartId, 
                 user_id: this.props.user.id, product_id: e.currentTarget.value, quantity: this.props.cart[e.currentTarget.value].quantity+1})
         } else {

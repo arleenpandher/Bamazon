@@ -15,17 +15,19 @@ class ProductShow extends React.Component {
     componentDidMount() {
         this.props.fetchproduct(this.props.match.params.productId)
         this.props.fetchreviews(this.props.match.params.productId)
+        this.props.fetchcartitems(this.props.currentUser.id)
     }
 
-    // update(field) {
-    //     return e => {
-    //         this.setState({ [field]: e.currentTarget.value })
-    //     }
-    // }
+
 
     addToCart(e) {
         e.preventDefault()
-        this.props.addtocart({product_id: this.props.productId, quantity: 1})
+        if (this.props.cart[this.props.productId]) {
+            this.props.updateCart({cart_id: this.props.cart[this.props.productId].cartId, 
+            user_id: this.props.currentUser.id, product_id: this.props.productId, quantity: this.props.cart[this.props.productId].quantity + 1})
+        } else {
+            this.props.addtocart({product_id: this.props.productId, quantity: 1})
+        }
     }
 
     removereview(e) {

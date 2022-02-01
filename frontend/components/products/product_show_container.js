@@ -1,7 +1,7 @@
 import {connect} from "react-redux"
 import ProductShow from "./product_show"
 import { fetchProduct } from "../../actions/product_actions"
-import {addcartitem} from "../../actions/cart_actions"
+import {addcartitem, updateItem, fetchAllCart} from "../../actions/cart_actions"
 import { fetchallReviews } from "../../actions/review_actions"
 import { deletereview } from "../../actions/review_actions"
 
@@ -14,14 +14,17 @@ const mapStateToProps = (state,ownProps) => ({
         quantity: 0
     },
     reviews: Object.values(state.entities.reviews),
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.id],
+    cart: state.entities.carts
 })
 
 const mapDispatchToProps = (dispatch) => ({
     fetchproduct: productId => dispatch(fetchProduct(productId)),
     addtocart: item => (dispatch(addcartitem(item))),
     fetchreviews: productId => dispatch(fetchallReviews(productId)),
-    deletereview: reviewId => dispatch(deletereview(reviewId))
+    deletereview: reviewId => dispatch(deletereview(reviewId)),
+    updateCart: cart => (dispatch(updateItem(cart))),
+    fetchcartitems: userId => dispatch(fetchAllCart(userId))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductShow)
