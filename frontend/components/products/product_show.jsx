@@ -15,7 +15,9 @@ class ProductShow extends React.Component {
     componentDidMount() {
         this.props.fetchproduct(this.props.match.params.productId)
         this.props.fetchreviews(this.props.match.params.productId)
-        this.props.fetchcartitems(this.props.currentUser.id)
+        if (this.props.currentUser) {
+            this.props.fetchcartitems(this.props.currentUser.id)
+        }
     }
 
     update(e) {

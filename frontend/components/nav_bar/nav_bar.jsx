@@ -4,7 +4,7 @@ import Logo from "../../../app/assets/images/logo2.png"
 import Pindrop from "../../../app/assets/images/pindrop.png"
 import Cart from "../../../app/assets/images/amazon-cart.png"
 import MagnifyingGlass from "../../../app/assets/images/magnifying-glass.png"
-import { fetchAllItemsinCart } from "../../utils/cart_api_util"
+import {AiOutlineSearch} from "react-icons/ai"
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -35,14 +35,16 @@ class NavBar extends React.Component {
                         </div>
                     </div>
 
-                        <span id="cartitemcount">{count}</span>
-                        <Link to={`/users/${currentUser.id}/carts`}>
-                            <img id="cartnavbar" src={Cart}></img>
-                        </Link>
-                  
+                        <div id="cartdiv">
+                            <Link id="cartlink" to={`/users/${currentUser.id}/carts`}>
+                                <img id="cartnavbar" src={Cart}></img>
+                            </Link>
+                            <span id="quantitycounttext">{count}</span>
+                        </div>
                 </div>
                 ) : (
-                <div id="three">    
+                <div id="three">
+                        
                     <div id="navdropdown">
                         <button id="navdropdownbtn">Hello, Sign in</button>
                         <div id="navdropdowncontent">
@@ -50,7 +52,13 @@ class NavBar extends React.Component {
                             <Link to={`/signup`}>Sign Up</Link>
                         </div>
                     </div>
-                    <img id="cartnavbar" src={Cart}></img>
+                    {/* <span id="cartitemcount">{count}</span> */}
+                    <div id="cartdiv">
+                        <Link id="cartlink" to={`/login`}>
+                            <img id="cartnavbar" src={Cart}></img>
+                        </Link>
+                        <span id="quantitycounttext">{count}</span>
+                    </div>
                 </div>
                 )
             return (
@@ -71,14 +79,14 @@ class NavBar extends React.Component {
                     </div>
                 </div>
                 <div id="two">
-                    <select defaultValue="All" id="navallbar">
-                        <option >All</option>
+                    <select id="navallbar">
+                        <option disabled selected>All</option>
                         <option >Choice 2</option>
                         <option >Choice 3</option>
                     </select>
                     <input id="navsearchtext"type="text"/>
                     <button id="navsearchbutton" type="submit">
-                        <img id="searchimg" src={MagnifyingGlass}></img>
+                        <AiOutlineSearch id="searchimg"/>
                     </button>    
                 </div>
                 <div id="three">

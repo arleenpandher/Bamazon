@@ -25,7 +25,7 @@ class Splash extends React.Component {
                 <div id="entirelowernavbar">
                     <div id="lowernavbartext">
                         {this.props.services.map(service => (
-                            <Link key={service.id} to={`/services/${service.id}/products`}>{service.title}</Link>
+                            <Link id="lowernavbarentries" key={service.id} to={`/services/${service.id}/products`}>{service.title.toUpperCase()}</Link>
                         ))}
                     </div>
                     <div id="hnavline">

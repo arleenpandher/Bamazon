@@ -13,7 +13,9 @@ class ProductIndex extends React.Component {
     componentDidMount() {
         this.props.fetchproducts(this.props.serviceId)
         this.props.fetchservices()
-        this.props.fetchcartitems(this.props.user.id)
+        if (this.props.user) {
+            this.props.fetchcartitems(this.props.user.id)
+        }
     }
 
     addToCart(e) {
