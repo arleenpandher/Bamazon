@@ -37,12 +37,13 @@ class ProductIndex extends React.Component {
                     <NavBarContainer/>
                 </header>
                 <div id="BasicHeadImg">
+                    {/* <span>{this.props.services[this.props.serviceId].title}</span> */}
                     <img id="BasicHeadImage" src={HerozonBasicImage}></img>
                 </div>
                 <div id="entirelowernavbar">
                     <div id="lowernavbartext">
                         {this.props.services.map(service => (
-                            <Link key={service.id} to={`/services/${service.id}/products`}>{service.title}</Link>
+                            <Link id="lowernavbarentries" key={service.id} to={`/services/${service.id}/products`}>{service.title.toUpperCase()}</Link>
                         ))}
                     </div>
                     <div id="hnavline">
@@ -50,11 +51,13 @@ class ProductIndex extends React.Component {
                 </div>
                 <div id="productindexbox">
                     {this.props.products.map(product => (
-                        <Link key={product.id} to={`/products/${product.id}`}>
+                        <Link id="productindextitle" key={product.id} to={`/products/${product.id}`}>
                             <div id="productindexdiv">
                                 <img id="productindeximage" src={product.photoUrl}/>
-                                <span id="productindextitle">{product.title}</span>
-                                <button value={product.id} onClick={this.addToCart}>Add to Cart!</button>
+                                <span id="productindextitle">{product.title} - Powerful wizard and has been able to successful ride with Buckbeak</span>
+                                <span>Ratings</span>
+                                <span>Cost</span>
+                                <button id="productindexaddtocartbtn" value={product.id} onClick={this.addToCart}>Add to Cart!</button>
                             </div>
                         </Link>)
                     )}
