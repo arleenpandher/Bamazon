@@ -11,9 +11,9 @@ const CartReducer = (state={}, action) => {
                     title: object.title,
                     description: object.description,
                     photoUrl: object.photoUrl,
-                    cart_id: object.cartId,
+                    cartId: object.cartId,
                     user_id: object.userId,
-                    quantity: object.quantity 
+                    quantity: object.quantity, 
                 }
             })
             return mainobject
@@ -25,10 +25,10 @@ const CartReducer = (state={}, action) => {
             let nextState = Object.freeze(state)
             let obj = {}
             for (let ele in nextState) {
-                console.log(nextState[ele].cart_id == action.cartId)
+                console.log(nextState[ele].cartId == action.cartId)
                 // console.log(action.cartId)
                 // console.log(nextState[ele].cart_id === action.cartId)
-                if (nextState[ele].cart_id !== Number(action.cartId)) {
+                if (nextState[ele].cartId !== Number(action.cartId)) {
                     obj[ele] = nextState[ele]
                 }
             }

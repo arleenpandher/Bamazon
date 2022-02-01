@@ -16,6 +16,14 @@ class Api::CartsController < ApplicationController
         render :index
     end
 
+    def update 
+        # debugger
+        @cart_item = Cart.find_by(id: params[:id])
+        @cart_item.update(cart_params)
+        @product = @cart_item.product 
+        render :show
+    end
+
     def destroy
         @cart_item = Cart.find_by(id: params[:id])
         @cart_item.delete  
@@ -24,7 +32,7 @@ class Api::CartsController < ApplicationController
 
     private 
     def cart_params 
-        params.require(:cart).permit(:product_id, :quantity)
+        params.require(:cart).permit(:user_id, :product_id, :quantity)
     end
 
 end

@@ -13,6 +13,15 @@ export const fetchAllItemsinCart = userId => (
     })
 )
 
+export const updateCartItem = cart => {
+    return (
+    $.ajax({
+        url: `/api/carts/${cart.cart_id}`,
+        method: "PATCH",
+        data: {cart}
+    }))
+}
+
 export const deleteCartItem = cartId => (
     $.ajax({
         url:`/api/carts/${cartId}`,

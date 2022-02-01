@@ -20,6 +20,10 @@ class NavBar extends React.Component {
 
     render() {
         // if (!this.props.currentUser.itemsincart) return null
+        let count = 0 
+        this.props.totalitemsincart.forEach(ele => {
+            count += ele.quantity
+        })
         let {currentUser, logout} = this.props
         const display = currentUser ? (
                 <div id="three">
@@ -30,8 +34,7 @@ class NavBar extends React.Component {
                         </div>
                     </div>
 
-                        <span id="cartitemcount">{this.props.totalitemsincart}</span>
-                        {/* <img id="cartnavbar" src={Cart}></img> */}
+                        <span id="cartitemcount">{count}</span>
                         <Link to={`/users/${currentUser.id}/carts`}>
                             <img id="cartnavbar" src={Cart}></img>
                         </Link>

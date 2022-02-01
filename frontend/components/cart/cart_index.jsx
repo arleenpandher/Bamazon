@@ -15,7 +15,6 @@ class CartIndex extends React.Component {
 
     removeitem(e) {
         e.preventDefault()
-        console.log(e.currentTarget.value)
         this.props.deletecartItem(e.currentTarget.value)
     }
 
@@ -53,7 +52,7 @@ class CartIndex extends React.Component {
                                     <span>Department: Flying Lessons</span>
                                     <div>
                                         <span>Quantity: {product.quantity}</span>
-                                        <button value={product.cart_id} onClick={this.removeitem}>Delete</button>
+                                        <button value={product.cartId} onClick={this.removeitem}>Delete</button>
                                     </div>
                                 </div>
                             </div>

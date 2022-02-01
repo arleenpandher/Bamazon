@@ -13,15 +13,18 @@ class ProductIndex extends React.Component {
     componentDidMount() {
         this.props.fetchproducts(this.props.serviceId)
         this.props.fetchservices()
+        this.props.fetchcartitems(this.props.user.id)
     }
 
     addToCart(e) {
         e.preventDefault()
-        // console.log(this.props.productinfo)
-        // console.log(e.currentTarget.value)
-        // this.setState({ ["productId"]: e.currentTarget.value })
-        // console.log(this.state)
-        this.props.addtocart({product_id: e.currentTarget.value, quantity: 1})
+        if (this.props.cart[e.currentTarget.value]) {
+            debugger
+            this.props.updateCart({cart_id: this.props.cart[e.currentTarget.value].cartId, 
+                user_id: this.props.user.id, product_id: e.currentTarget.value, quantity: this.props.cart[e.currentTarget.value].quantity+1})
+        } else {
+            this.props.addtocart({product_id: e.currentTarget.value, quantity: 1})
+        }
     }
 
 
