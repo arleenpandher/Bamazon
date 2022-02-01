@@ -46,3 +46,17 @@ product7.photo.attach(io: open("https://herozon-dev.s3.ca-central-1.amazonaws.co
 product8 = Product.create(title: "Wormtail", description: "150% chance of betrayal is forecasted, good luck!", service_id: 4)
 product8.photo.attach(io: open("https://herozon-dev.s3.ca-central-1.amazonaws.com/wormtail.PNG"), filename:"wormtail.PNG")
 
+service5 = Service.create(title: "demogorgon pest control")
+service5.photo.attach(io: open("https://herozon-dev.s3.ca-central-1.amazonaws.com/demogorgon.png"), filename:"demogorgon.png")
+
+service6 = Service.create(title: "save the galaxy")
+service6.photo.attach(io: open("https://herozon-dev.s3.ca-central-1.amazonaws.com/galaxy.png"), filename:"galaxy.png")
+
+service7 = Service.create(title: "volunteer as tribute")
+service7.photo.attach(io: open("https://herozon-dev.s3.ca-central-1.amazonaws.com/mockingjay.png"), filename:"mockingjay.png")
+
+service8 = Service.create(title: "marble game partner")
+service8.photo.attach(io: open("https://herozon-dev.s3.ca-central-1.amazonaws.com/marbles.png"), filename:"marbles.png")
+
+service9 = Service.create(title: "save the crabby patty formula")
+service9.photo.attach(io: open("https://herozon-dev.s3.ca-central-1.amazonaws.com/formula.png"), filename:"formula.png")

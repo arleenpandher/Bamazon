@@ -24,7 +24,7 @@ class Splash extends React.Component {
                 </div>
                 <div id="entirelowernavbar">
                     <div id="lowernavbartext">
-                        {this.props.services.map(service => (
+                        {this.props.services.map((service) => (
                             <Link id="lowernavbarentries" key={service.id} to={`/services/${service.id}/products`}>{service.title.toUpperCase()}</Link>
                         ))}
                     </div>
@@ -67,6 +67,46 @@ class Splash extends React.Component {
                         </div>
                     </Link>
                     </div>
+                    </div>
+                </div>
+                <div id="borderdiv2">
+                    <div id="minielements">
+                    <div id="toprow">
+                        <Link id="link" to={`/services/5/products`}>
+                            <div id="first">
+                                <span id="text">{this.props.services[4].title}</span>
+                                <img id="bbpicture" src={this.props.services[4].photoUrl}></img>
+                            </div>
+                        </Link>
+                        <Link id="link" to={`/services/6/products`}>
+                            <div id="second">
+                                <span id="text">{this.props.services[5].title}</span>
+                                <img id="picture" src={this.props.services[5].photoUrl}></img>
+                            </div>
+                        </Link>
+                    </div>
+                    <div id="bottomrow">
+                    <Link id="link" to={`/services/7/products`}>
+                        <div id="third">
+                            <span id="text">{this.props.services[6].title}</span>
+                            <img id="picture" src={this.props.services[6].photoUrl}></img>
+                        </div>
+                    </Link>
+                    <Link id="link" to={`/services/8/products`}>
+                        <div id="fourth">
+                            <span id="text">{this.props.services[7].title}</span>
+                            <img id="picture" src={this.props.services[7].photoUrl}></img>
+                        </div>
+                    </Link>
+                    </div>
+                    </div>
+                    <div id="basicideadiv2">
+                        <Link id="link" to={`/services/9/products`}>
+                            <div id="fifth">
+                                <span id="text">{this.props.services[8].title}</span>
+                                <img id="picturefor9" src={this.props.services[8].photoUrl}></img>
+                            </div>
+                        </Link>
                     </div>
                 </div>
             </div>
