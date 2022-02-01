@@ -69,8 +69,8 @@ class SessionForm extends React.Component {
                 </label>
                 </div>
                 <div>
-                <label id="formlabel">Password 
-                    <input id="forminput" type="password" value={this.state.password} onChange={this.update("password")}/>
+                <label id="formlabelpassword">Password 
+                    <input id="forminput" type="password" placeholder="At least 6 characters" value={this.state.password} onChange={this.update("password")}/>
                 </label> 
                 </div>
                
@@ -78,7 +78,10 @@ class SessionForm extends React.Component {
                 </form>
                 <div id="linkform">
                     {this.props.formType === "Sign-In" ? (
-                        <Link to={`/signup`}>Create your Herozon account</Link>
+                        <div id="innerlinkformdiv">
+                            <div id="hloginline"></div>
+                            <Link id="linktobuttonlogin" to={`/signup`}> Create your Herozon account</Link>
+                        </div>
                     ) : (
                         <p>Already have an account? <Link to={`/login`}>Sign-In</Link></p>
                     )}

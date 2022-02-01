@@ -21,9 +21,10 @@ class NavBar extends React.Component {
     render() {
         // if (!this.props.currentUser.itemsincart) return null
         let count = 0 
+        if (this.props.currentUser && this.props.totalitemsincart) {
         this.props.totalitemsincart.forEach(ele => {
             count += ele.quantity
-        })
+        })}
         let {currentUser, logout} = this.props
         const display = currentUser ? (
                 <div id="three">

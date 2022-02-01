@@ -7,7 +7,7 @@ class ProductShow extends React.Component {
     constructor(props) {
         super(props)
         this.state = this.props.cartitem
-        // this.update = this.update.bind(this)
+        this.update = this.update.bind(this)
         this.addToCart = this.addToCart.bind(this)
         this.removereview = this.removereview.bind(this)
     }
@@ -18,15 +18,23 @@ class ProductShow extends React.Component {
         this.props.fetchcartitems(this.props.currentUser.id)
     }
 
+    update(e) {
+        // console.log(this.state)
+        return e => (
+            this.setState({ ["quantity"]: e.currentTarget.value })
+            // console.log(this.state)
+        )
+    }
 
-
+   
     addToCart(e) {
+        console.log(this.state)
         e.preventDefault()
         if (this.props.cart[this.props.productId]) {
             this.props.updateCart({cart_id: this.props.cart[this.props.productId].cartId, 
-            user_id: this.props.currentUser.id, product_id: this.props.productId, quantity: this.props.cart[this.props.productId].quantity + 1})
+            user_id: this.props.currentUser.id, product_id: this.props.productId, quantity: this.props.cart[this.props.productId].quantity + this.state.quantity})
         } else {
-            this.props.addtocart({product_id: this.props.productId, quantity: 1})
+            this.props.addtocart({product_id: this.props.productId, quantity: quantity})
         }
     }
 
@@ -66,7 +74,7 @@ class ProductShow extends React.Component {
                             <span id="servicedate">Service Date: <span>Tuesday, February 8</span></span>
                         </div>
                         <span>In Stock.</span>
-                        <select>
+                        <select onChange={this.update}>
                             <option disabled selected>Quantity</option>
                             <option value={1}>1</option>
                             <option value={2}>2</option>
