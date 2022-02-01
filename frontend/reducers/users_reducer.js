@@ -1,5 +1,5 @@
 import { RECEIVE_CURRENT_USER, RECEIVE_ERRORS } from "../actions/session_actions";
-import  {RECEIVE_CART_ITEM, RECEIVE_ALL_CART_ITEMS} from "../actions/cart_actions"
+import  {RECEIVE_CART_ITEM, RECEIVE_ALL_CART_ITEMS, DELETE_CART_ITEM} from "../actions/cart_actions"
 
 
 const UsersReducer = (state={}, action) => {
@@ -15,7 +15,6 @@ const UsersReducer = (state={}, action) => {
             return nextState 
         case RECEIVE_ALL_CART_ITEMS:
             let newarr = []
-            console.log(action.cartItems)
             let user = action.cartItems[0].userId
             action.cartItems.forEach(ele => {
                 newarr.push(ele.id)

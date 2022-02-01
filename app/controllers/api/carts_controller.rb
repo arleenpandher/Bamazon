@@ -16,7 +16,10 @@ class Api::CartsController < ApplicationController
         render :index
     end
 
-    
+    def destroy
+        @cart_item = Cart.find_by(id: params[:id])
+        @cart_item.delete  
+    end
 
 
     private 

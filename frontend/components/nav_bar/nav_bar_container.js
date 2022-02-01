@@ -7,7 +7,7 @@ const mapStateToProps = state => {
     if (state.entities.users[state.session.id]) {
         return {
             currentUser: state.entities.users[state.session.id],
-            totalitemsincart: state.entities.users[state.session.id].itemsincart.length
+            totalitemsincart: Object.values(state.entities.carts).length 
         }
     } else {
         return {

@@ -13,3 +13,9 @@ export const fetchAllItemsinCart = userId => (
     })
 )
 
+export const deleteCartItem = cartId => (
+    $.ajax({
+        url:`/api/carts/${cartId}`,
+        method: "DELETE"
+    })
+) 
