@@ -1,6 +1,8 @@
 import React from "react"
 import NavBarContainer from "../nav_bar/nav_bar_container"
 import {Link} from "react-router-dom"
+import {FaLock} from "react-icons/fa"
+import {MdPinDrop} from "react-icons/md"
 
 class ProductShow extends React.Component {
 
@@ -34,9 +36,9 @@ class ProductShow extends React.Component {
         e.preventDefault()
         if (this.props.cart[this.props.productId]) {
             this.props.updateCart({cart_id: this.props.cart[this.props.productId].cartId, 
-            user_id: this.props.currentUser.id, product_id: this.props.productId, quantity: this.props.cart[this.props.productId].quantity + this.state.quantity})
+            user_id: this.props.currentUser.id, product_id: this.props.productId, quantity: this.props.cart[this.props.productId].quantity + 1})
         } else {
-            this.props.addtocart({product_id: this.props.productId, quantity: quantity})
+            this.props.addtocart({product_id: this.props.productId, quantity: 1})
         }
     }
 
@@ -72,22 +74,36 @@ class ProductShow extends React.Component {
                     <div id="productshowaddtocart">
                         <div id="productshowaddtocartfirst">
                             <span id="productshowprice">$78.89</span>
-                            <span>$9.53 Transportation Desposit to San Francisco</span>
-                            <span id="servicedate">Service Date: <span>Tuesday, February 8</span></span>
+                            <span>$9.53 Transportation Desposit to Canada</span>
+                            <span id="servicedate">Service Date: <span id="boldservicedate">Tuesday, February 8</span></span>
+                            <span>Order within <span id="orderwith">6 hrs 17 mins</span></span>
                         </div>
-                        <span>In Stock.</span>
-                        <select onChange={this.update}>
-                            <option disabled selected>Quantity</option>
-                            <option value={1}>1</option>
-                            <option value={2}>2</option>
-                            <option value={3}>3</option>
+                        <div id="productshowpindrop">
+                            <MdPinDrop/>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <span>Deliver to Toronto Ontario</span>
+                        </div>
+                        <span id="productshowinstock">In Stock.</span>
+                        <div id="productshowaddtocartsecond">
+                        <select id="quantitydropdown" onChange={this.update}>
+                            <option disabled selected>Qty</option>
+                            <option value={1}>Qty: 1</option>
+                            <option value={2}>Qty: 2</option>
+                            <option value={3}>Qty: 3</option>
                         </select>
-                        <button value={this.props.product.id} onClick={this.addToCart}>Add to Cart</button>
-                        <span>Secure transaction</span>
-                        <span>Ships from <span>Herozon.com</span></span>
-                        <span>Sold by <span>Herozon.com</span></span>
-                        <span>Return policy: <span>Eligible for Return, Refund or Replacement</span></span>
-                        <span>Support: <span>Free Herozon tech support included</span></span>
+                        <button id="productshowaddtocartbtn" value={this.props.product.id} onClick={this.addToCart}>Add to Cart</button>
+                        </div>
+                        <div id="securetransaction">
+                            <FaLock  />&nbsp;&nbsp;       
+                            <span>Secure transaction</span>
+                        </div>
+                        <div id="shippingdiv">
+                            <span>Ships from &nbsp;&nbsp;  <span id="innershippingdiv">Herozon.com</span></span>
+                            <span>Sold by &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span id="innershippingdiv">Herozon.com</span></span>
+                        </div>
+                        <div id="returnpolicy">
+                            <span>Return policy: <span id="innerreturnpolicy">Not Eligible for Return, Refund or Replacement</span></span>
+                            <span>Support: <span id="innerreturnpolicy">Free Herozon tech support included</span></span>
+                        </div>
                     </div>
                 </div>
                 <div>

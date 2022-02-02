@@ -49,6 +49,7 @@ class ProductIndex extends React.Component {
                     <div id="hnavline">
                     </div>
                 </div>
+                <div id="CHECK3000">
                 <div id="productindexbox">
                     {this.props.products.map(product => (
                         <Link id="productindextitle" key={product.id} to={`/products/${product.id}`}>
@@ -61,6 +62,8 @@ class ProductIndex extends React.Component {
                             </div>
                         </Link>)
                     )}
+                </div>
+
                 </div>
             </div>
 
