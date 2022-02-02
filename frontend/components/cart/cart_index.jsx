@@ -3,6 +3,7 @@ import NavBarContainer from "../nav_bar/nav_bar_container"
 import {Link} from "react-router-dom"
 import HerozonBasicImage from "../../../app/assets/images/Herozon_Basic.png"
 import Hero from "../../../app/assets/images/EmptyCart.png"
+import {FaCheckCircle} from "react-icons/fa"
 
 class CartIndex extends React.Component {
     constructor(props) {
@@ -60,6 +61,7 @@ class CartIndex extends React.Component {
                 <div id="cartindexoutterdiv">
                     <div id="cartindexborder">
                     <h1 id="shoppingcartheader">Shopping Cart</h1>
+                    <h3 id="shoppingcartprice">Price</h3>
                     <div id="hnavlineupdate"></div>
                     {this.props.cartproducts.map((product) => {
                         return(
@@ -78,7 +80,9 @@ class CartIndex extends React.Component {
                                         <button id="deletebtncartindex" value={product.cartId} onClick={this.removeitem}>Delete</button>
                                     </div>    
                                 </div>
+                                <div id="innerpricecartindex">
                                 <span id="cartindexprice">${product.cost}</span>
+                                </div>
                             </div>
                             <div id="hnavlineupdate202"></div>
                             </div>
@@ -86,8 +90,14 @@ class CartIndex extends React.Component {
                     })}
                     </div>
                     <div id="totalpricediv">
-                        <span>Total ({quantity} items): ${total.toFixed(2)}</span>
-                        <button onClick={this.handleSubmit}>Proceed to checkout</button>
+                        <div id="shippingfontincheckout">
+                            <FaCheckCircle/>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <span>Your order qualifies from FREE shipping
+                            (excludes remote locations).
+                            </span>
+                        </div>
+                        <span id="checkoutotalprice">Total ({quantity} items): <span id="checkoutotalprice2">${total.toFixed(2)}</span></span>
+                        <button id="proceedtocheckoutbtn" onClick={this.handleSubmit}>Proceed to checkout</button>
                     </div>
                 </div>
             </div>
