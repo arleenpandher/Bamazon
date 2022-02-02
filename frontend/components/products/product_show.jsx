@@ -106,14 +106,16 @@ class ProductShow extends React.Component {
                         </div>
                     </div>
                 </div>
+                <div id="horizontallineinproductshow"></div>
                 <div>
                     <div id="productshowreviewdiv">
                         <div id="productshowreview">
-                            <span>Review this product</span>
-                            <span>Share your thoughts with other customers</span>
-                            <Link to={`/products/${this.props.productId}/reviews`}>Create Review</Link>
+                            <span id="reviewthisproduct">Review this product</span>
+                            <span id="shareyourthoughts">Share your thoughts with other customers</span>
+                            <Link id="linktocreatereview" to={`/products/${this.props.productId}/reviews`}>Write a customer review</Link>
                         </div>
                         <div id="productshowreview3">
+                            <h3 id="allreviewheader">All Reviews</h3>
                             {this.props.reviews.map(review => (
                                 <div id="productshowreview2" key={review.id}>
                                     <span>{review.user}</span>

@@ -826,6 +826,48 @@
 #productshowreview {
     display:flex;
     flex-direction: column;
+    width:375px;
+    justify-content:flex-start;
+    
+}
+
+#reviewthisproduct{
+    font-weight: 600;
+    font-size:20px;
+    margin-bottom:10px;
+}
+
+#shareyourthoughts {
+    font-size:17px;
+    margin-bottom:10px;
+}
+
+#linktocreatereview {
+    text-decoration: none;
+    border: 1px solid #dbdcdc;
+    border-radius: 10px;
+    width:300px;
+    text-align: center;
+    padding:0.5rem;
+    color:rgb(39, 38, 38);
+    box-shadow: 0px 4px 6px 0 hsl(0deg 0% 0% / 20%);
+}
+
+#linktocreatereview:hover {
+    background-color: rgb(238, 234, 234);
+}
+
+#linktocreatereview:active {
+    background-color: rgb(238, 234, 234);
+    box-shadow: inset 0px 0px 10px rgb(12 1 1/ 55%);
+}
+
+#horizontallineinproductshow {
+    height:1px; 
+    background: #dbdcdc;
+    width: 100%;
+    margin-top:10px;
+    align-self: center;
 }
 
 #aboutthishero {
@@ -1034,13 +1076,25 @@
 #productshowreviewdiv {
     display: flex;
     flex-direction: row;
+    margin-left:225px;
+    padding:1rem;
+}
+
+#allreviewheader {
+   font-size:20px;
+   font-weight:500;
+   padding-bottom:1rem; 
 }
 
 #productshowreview2 {
     display:flex;
     flex-direction:column;
-    background-color:purple
+    background-color:purple;
+
+    width:707px;
 }
+
+
 
 #reviewformsubmitbtn {
     align-self:flex-end;
