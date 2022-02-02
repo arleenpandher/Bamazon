@@ -44,11 +44,15 @@ class CreateReview extends React.Component {
                         <input id="reviewtitletext" type="text" placeholder="What's most important to know" value={this.state.title} onChange={this.update("title")}/>
                     </label>
                 </div>
-                <div id="reviewtitle">
-                <label>Body:
-                        <textarea value={this.state.body} onChange={this.update("body")}/>
+                <div id="reviewbody">
+                    <label id="reviewbodylabel">Add a Written Review 
+                        <textarea id="reviewbodytext" value={this.state.body} 
+                        placeholder="What did you like or dislike? What did you use this product for?" onChange={this.update("body")}/>
                     </label>
                 </div>
+                <div id="reviewhline"></div>
+                    <div id="overallratingdiv">
+                    <span>Overall Rating</span>
                     <div id="starratingbox">
                         {[...Array(5)].map((star,i) => {
                             const ratingvalue = i + 1;
@@ -56,13 +60,14 @@ class CreateReview extends React.Component {
                                 <label key={i}>
                                     <input id="ratingsbutton" type="radio" value={ratingvalue} onClick={this.update("ratings")}/>
                                     <FaStar id="star" color={ratingvalue <= (this.state.ratings) ? "#ffc107" : "#e4e5e9"} 
-                                    size={55}
+                                    size={35}
                                     />
                                 </label>
                             )
                         })}
                     </div>
-                    <input type="submit" value="submit"/>
+                    </div>
+                    <input id="reviewformsubmitbtn" type="submit" value="submit"/>
                 </form>
             </div>
         )
