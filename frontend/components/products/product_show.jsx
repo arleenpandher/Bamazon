@@ -3,6 +3,7 @@ import NavBarContainer from "../nav_bar/nav_bar_container"
 import {Link} from "react-router-dom"
 import {FaLock} from "react-icons/fa"
 import {MdPinDrop} from "react-icons/md"
+import {BsPersonCircle} from "react-icons/bs"
 
 class ProductShow extends React.Component {
 
@@ -118,16 +119,18 @@ class ProductShow extends React.Component {
                             <h3 id="allreviewheader">All Reviews</h3>
                             {this.props.reviews.map(review => (
                                 <div id="productshowreview2" key={review.id}>
-                                    <span>{review.user}</span>
-                                    <span>{review.title}</span>
-                                    <span>{review.body}</span>
-                                    <span>{review.ratings}</span>
+                                    <div id="personreviewdiv">
+                                        <BsPersonCircle size={25}/>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <span id="reviewerpersonfont">{review.user}</span>
+                                    </div>
+                                    <span id="ratingsandtitlediv">{review.ratings}  &nbsp;&nbsp;&nbsp; {review.title}</span>
+                                    <span id="reviewedincanada">Reviewed in Canada on January 1, 2021</span>
+                                    <span margin-bottom={"10px;"} font-size={"15px;"}>{review.body}</span>
                                     <div>
                                         {this.props.currentUser.id === review.userId ? (
                                             <div>
-                                                <button>Edit</button>
                                                 {console.log(review.id)}
-                                                <button value={review.id} onClick={this.removereview}>Delete</button>
+                                                <button id="reviewdeletebtn" value={review.id} onClick={this.removereview}>Delete</button>
                                             </div>
                                         ) : (
                                         <div></div>

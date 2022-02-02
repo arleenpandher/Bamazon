@@ -603,6 +603,7 @@
 
 #productshowpagediv {
     display:flex;
+    min-width: 1300px;
 }
 
 #entirelowernavbar {
@@ -823,6 +824,9 @@
     font-size:20px;
 }
 
+#productshowreview3 {
+    margin-left:45px;
+}
 #productshowreview {
     display:flex;
     flex-direction: column;
@@ -853,11 +857,23 @@
     box-shadow: 0px 4px 6px 0 hsl(0deg 0% 0% / 20%);
 }
 
-#linktocreatereview:hover {
+#reviewdeletebtn {
+    border: 1px solid #dbdcdc;
+    border-radius: 10px;
+    align-self: flex-start;
+    width:200px;
+    text-align: center;
+    padding:0.5rem;
+    background-color: white;
+    color:rgb(39, 38, 38);
+    box-shadow: 0px 4px 6px 0 hsl(0deg 0% 0% / 20%);
+}
+
+#linktocreatereview:hover, #reviewdeletebtn:hover {
     background-color: rgb(238, 234, 234);
 }
 
-#linktocreatereview:active {
+#linktocreatereview:active, #reviewdeletebtn:active {
     background-color: rgb(238, 234, 234);
     box-shadow: inset 0px 0px 10px rgb(12 1 1/ 55%);
 }
@@ -1082,19 +1098,30 @@
 
 #allreviewheader {
    font-size:20px;
-   font-weight:500;
-   padding-bottom:1rem; 
+   font-weight:700;
+   padding-bottom:1rem;
+   margin-bottom:15px; 
 }
 
 #productshowreview2 {
     display:flex;
     flex-direction:column;
-    background-color:purple;
-
     width:707px;
+    margin-bottom:25px;
 }
 
+#personreviewdiv {
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    color:rgb(66, 66, 66);
+    margin-bottom:8px;
+}
 
+#ratingsandtitlediv {
+    font-weight:700;
+    margin-bottom:4px;
+}
 
 #reviewformsubmitbtn {
     align-self:flex-end;
@@ -1103,6 +1130,11 @@
     background-color: #ffd814;
     line-height: 15px;
     border-radius:30px; 
+}
+
+#reviewedincanada {
+    color:rgb(117, 115, 115);
+    margin-bottom:8px;
 }
 
 #reviewformsubmitbtn:hover {
