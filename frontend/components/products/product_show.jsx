@@ -24,11 +24,11 @@ class ProductShow extends React.Component {
     }
 
     update(e) {
-        // console.log(this.state)
-        return e => (
-            this.setState({ ["quantity"]: e.currentTarget.value })
-            // console.log(this.state)
-        )
+        console.log(e.currentTarget.value)
+    
+        this.setState({ quantity: e.currentTarget.value }, () => {return null})
+        
+        
     }
 
    
@@ -37,10 +37,11 @@ class ProductShow extends React.Component {
         e.preventDefault()
         if (this.props.cart[this.props.productId]) {
             this.props.updateCart({cart_id: this.props.cart[this.props.productId].cartId, 
-            user_id: this.props.currentUser.id, product_id: this.props.productId, quantity: this.props.cart[this.props.productId].quantity + 1})
+            user_id: this.props.currentUser.id, product_id: this.props.productId, quantity: parseInt(this.props.cart[this.props.productId].quantity) + parseInt(this.state.quantity)})
         } else {
-            this.props.addtocart({product_id: this.props.productId, quantity: 1})
+            this.props.addtocart({product_id: this.props.productId, quantity: this.state.quantity})
         }
+        console.log(this.state)
     }
 
     removereview(e) {

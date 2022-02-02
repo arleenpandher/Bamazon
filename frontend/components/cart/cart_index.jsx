@@ -9,7 +9,10 @@ class CartIndex extends React.Component {
         super(props)
         this.removeitem = this.removeitem.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+  
     }
+
+
 
     componentDidMount() {
         this.props.fetchallcart(this.props.userId)
@@ -50,29 +53,34 @@ class CartIndex extends React.Component {
         })
         return(
             // <div>{console.log(this.props.cartproducts)}</div>
-            <div id="outtermostcartindexdiv">
+            <div id="outermostcartindexdiv">
                 <header>
                     <NavBarContainer/>
                 </header>
                 <div id="cartindexoutterdiv">
-                <div id="cartindexborder">
-                    <h1>Shopping Cart</h1>
+                    <div id="cartindexborder">
+                    <h1 id="shoppingcartheader">Shopping Cart</h1>
                     <div id="hnavlineupdate"></div>
                     {this.props.cartproducts.map((product) => {
                         return(
-                        
+                            <div id="minicartindexdiv2">
                             <div id="minicartindexdiv" key={product.cart_id}>
                                  <img id="cartindeximage" src={product.photoUrl}/>
                                  <div id="innercartindexdiv">
-                                    <span>{product.title}</span>
-                                    <span id="cartindexprice">{product.cost}</span>
+                                    <span id="producttitleinreview">{product.title} - {product.description}</span>
                                     <span id="cartindexinstock">In Stock</span>
-                                    <span>Department: Flying Lessons</span>
-                                    <div>
-                                        <span>Quantity: {product.quantity}</span>
-                                        <button value={product.cartId} onClick={this.removeitem}>Delete</button>
-                                    </div>
+                                    <span id="randominfocartindex">Sold and Fulfilled by Herozon</span>
+                                    <span id="randominfocartindex">Not Eligible for FREE Shipping </span>
+                                    
+                                    <div id="bottomcartindexrow">
+                                        <span id="quantitycartindex">Quantity: {product.quantity}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <div id="vlineincart"></div>
+                                        <button id="deletebtncartindex" value={product.cartId} onClick={this.removeitem}>Delete</button>
+                                    </div>    
                                 </div>
+                                <span id="cartindexprice">${product.cost}</span>
+                            </div>
+                            <div id="hnavlineupdate202"></div>
                             </div>
                         )
                     })}

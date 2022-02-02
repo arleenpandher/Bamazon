@@ -9,7 +9,8 @@ const mapStateToProps = (state, ownProps) => {
             currentUser: state.entities.users[state.session.id],
             cartIds: state.entities.users[state.session.id].itemsincart,
             userId: ownProps.match.params.userId,
-            cartproducts: Object.values(state.entities.carts) 
+            cartproducts: Object.values(state.entities.carts),
+            cart: state.entities.carts 
         }
     } else {
         return {
