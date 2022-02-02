@@ -1,6 +1,6 @@
 import React from "react"
 import { FaStar } from "react-icons/fa"
-import NavBar from "../nav_bar/nav_bar"
+import NavBar from "../nav_bar/nav_bar_container"
 
 class CreateReview extends React.Component {
 
@@ -28,7 +28,7 @@ class CreateReview extends React.Component {
     }
 
     render() {
-        if (!this.props.product) return null 
+        if (!this.props.product || !this.props.currentUser) return null 
         return (
             <div id="reviewdiv">
                 <NavBar />

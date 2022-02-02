@@ -55,7 +55,7 @@ class ProductIndex extends React.Component {
                         <Link id="productindextitle" key={product.id} to={`/products/${product.id}`}>
                             <div id="productindexdiv">
                                 <img id="productindeximage" src={product.photoUrl}/>
-                                <span id="productindextitle">{product.title} - Powerful wizard and has been able to successful ride with Buckbeak</span>
+                                <span id="productindextitle">{product.title} - {product.description}</span>
                                 <span>Ratings</span>
                                 <span>Cost</span>
                                 <button id="productindexaddtocartbtn" value={product.id} onClick={this.addToCart}>Add to Cart!</button>

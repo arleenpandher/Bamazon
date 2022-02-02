@@ -10,7 +10,8 @@ const mapStateToProps = (state, ownProps) => ({
         body: "",
         ratings: 0,
         product_id: ownProps.match.params.productId
-    } 
+    },
+    currentUser: state.entities.users[state.session.id]
 })
 
 const mapDispatchToProps = dispatch => ({
