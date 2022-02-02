@@ -1266,3 +1266,162 @@
 #checkoutotalprice2 {
     font-weight: 800;
 }
+
+#profile{
+    display:flex;
+    flex-direction:column;
+    border:1px solid rgb(168, 168, 168);
+    border-radius:5px;
+    width:max-content;
+    height:350px;
+    margin-left:50px;
+    margin-top:100px;
+    align-items:center;
+    justify-content:center;
+}
+
+#profileorders {
+    display:flex;
+    flex-direction:column;
+    border:1px solid rgb(168, 168, 168);
+    border-radius:5px;
+    width:65%;
+    height:max-content;
+    margin-left:50px;
+    margin-top:100px;
+    align-items:center;
+    justify-content:center;
+}
+
+#profileandorderdiv {
+    display:flex;
+    flex-direction:row;
+}
+
+#profilename {
+    font-size:22px;
+    margin-top:10px;
+    padding:0.5rem;
+}
+
+#inneruserinfoprofile {
+    padding:1rem;
+}
+
+#toprowofprofile {
+    display:flex;
+    flex-direction:row;
+    background-color:#f0f2f2;
+    justify-content: flex-start;
+}
+
+#toprowprofilestart {
+    display: flex;
+    flex-direction: column;
+    padding:1rem;
+}
+
+#toprowprofileend {
+    display: flex;
+    flex-direction: column;
+    padding:1rem;
+    justify-content: flex-end;
+}
+
+#topprofilestarttext {
+    font-size:12px;
+}
+
+#topprofileusernametext {
+    color: #007185;
+}
+
+#innertopprofilediv {
+    display:flex;
+    flex-direction:row;
+    background-color:#f0f2f2;
+    justify-content:space-between;
+    width:100%
+}
+
+#transactionprofilecol {
+    display:flex;
+    flex-direction:column;
+}
+
+#transactionprofileprodinfo {
+    display:flex;
+    flex-direction:row;
+    width:80%;
+}
+
+#individualtransactionbox {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* border-bottom:1px solid rgb(168, 168, 168); */
+    width:100%;
+    padding-left:1rem;
+    padding-bottom:1rem;
+    padding-top:1rem;
+}
+
+#alltransactionsdiv {
+    display:flex;
+    flex-direction:column;
+    width:100%;
+}
+
+#transactionimage {
+    height: 250px;
+    width:200px;
+}
+
+#deliveredtransactiontext {
+    font-size:18px;
+    font-weight:700;
+}
+
+#packagetransactiontxt {
+    font-size:15px;
+    margin-bottom:10px;
+}
+
+#moretransactiondetails {
+    font-size:15px;
+    color: #007185;
+    margin-left:10px;
+}
+
+#transactionbuttons {
+    display: flex;
+    flex-direction:column;
+    justify-content: space-evenly;
+    width:20%;
+    line-height:30px;
+    padding-right:2rem;
+    padding-bottom:2rem;
+    padding-top:2rem;
+}
+
+#buyagainbtn {
+    text-decoration: none;
+    background: #FFD814;
+    border-color: #FCD200;
+    box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
+    font-size:14px;
+    font-weight:500;
+    width:100%;
+    line-height:30px;
+    text-align:center;
+    color:rgb(71, 70, 70);
+}
+
+#buyagainbtn:hover {
+    background: #f3b926;
+}
+
+#buyagainbtn:active {
+    background-color:#f1bc35;
+    box-shadow: inset 0px 0px 10px rgb(12 1 1/ 55%)
+}
