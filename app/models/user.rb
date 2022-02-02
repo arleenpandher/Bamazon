@@ -20,6 +20,10 @@ class User < ApplicationRecord
         foreign_key: :user_id,
         class_name: :Review 
 
+    has_many :transactions,
+        foreign_key: :user_id,
+        class_name: :Transaction
+
 
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)

@@ -9,7 +9,7 @@ import ProductContainer from "../components/products/products_container"
 import ProductShowContainer from "../components/products/product_show_container"
 import CartIndexContainer from "../components/cart/cart_index_container"
 import CreateReviewContainer from "../components/review/create_review_container"
-
+import ProfileContainer from "../components/profile/profile_container"
 
 const App = () => (
   <div>
@@ -18,6 +18,7 @@ const App = () => (
         <Route exact path="/services/:serviceId/products" component={ProductContainer}/>
         <Route exact path="/products/:productId" component={ProductShowContainer}/>
         <Route exact path="/users/:userId/carts" component={CartIndexContainer}/>
+        <Route exact path="/users/:userId/profile" component={ProfileContainer}/>
         <Route exact path="/products/:productId/reviews" component={CreateReviewContainer}/>
         <Route exact path="//:productId" component={ProductShowContainer}/>
         <AuthRoute path="/login" component={LoginContainer}/>

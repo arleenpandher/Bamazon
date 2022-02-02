@@ -61,7 +61,7 @@ class ProductShow extends React.Component {
                     <div id="productshowdescription">
                         <span id="productshowtitle">{this.props.product.title} - {this.props.product.description}</span>
                         <span id="productshowratings">Ratings: 4 stars</span>
-                        <span id="productshowprice">Price: $78.89</span>
+                        <span id="productshowprice">Price: ${this.props.product.cost}</span>
                         <div id="hnavlineupdate">
                         </div>
                         <span id="aboutthishero">About this Hero:</span>
@@ -73,7 +73,7 @@ class ProductShow extends React.Component {
                     </div>
                     <div id="productshowaddtocart">
                         <div id="productshowaddtocartfirst">
-                            <span id="productshowprice">$78.89</span>
+                            <span id="productshowprice">${this.props.product.cost}</span>
                             <span>$9.53 Transportation Desposit to Canada</span>
                             <span id="servicedate">Service Date: <span id="boldservicedate">Tuesday, February 8</span></span>
                             <span>Order within <span id="orderwith">6 hrs 17 mins</span></span>

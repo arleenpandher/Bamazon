@@ -57,7 +57,7 @@ class ProductIndex extends React.Component {
                                 <img id="productindeximage" src={product.photoUrl}/>
                                 <span id="productindextitle">{product.title} - {product.description}</span>
                                 <span>Ratings</span>
-                                <span>Cost</span>
+                                <span>${product.cost}</span>
                                 <button id="productindexaddtocartbtn" value={product.id} onClick={this.addToCart}>Add to Cart!</button>
                             </div>
                         </Link>)

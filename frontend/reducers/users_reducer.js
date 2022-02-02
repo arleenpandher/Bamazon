@@ -13,14 +13,6 @@ const UsersReducer = (state={}, action) => {
                 nextState[action.cartItem.userId].itemsincart.push(action.cartItem.id)
             }
             return nextState 
-        case RECEIVE_ALL_CART_ITEMS:
-            let newarr = []
-            let user = action.cartItems[0].userId
-            action.cartItems.forEach(ele => {
-                newarr.push(ele.id)
-            })
-            nextState[user].itemsincart = newarr 
-            return nextState
         default: 
             return state
     }

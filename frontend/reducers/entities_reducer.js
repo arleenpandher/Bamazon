@@ -5,6 +5,7 @@ import ServicesReducer from "./services_reducer";
 import ProductsReducer from "./products_reducer";
 import CartReducer from "./cart_reducer"
 import ReviewReducer from "./review_reducer";
+import TransactionReducer from "./transaction_reducer";
 
 
 const entitiesReducer = combineReducers({
@@ -12,7 +13,8 @@ const entitiesReducer = combineReducers({
     services: ServicesReducer,
     products: ProductsReducer,
     carts: CartReducer,
-    reviews: ReviewReducer
+    reviews: ReviewReducer,
+    transactions: TransactionReducer
   });
 
 export default entitiesReducer;

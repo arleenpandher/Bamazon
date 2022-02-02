@@ -32,6 +32,7 @@ class NavBar extends React.Component {
                         <button id="navdropdownbtn">Welcome {currentUser.name}</button>
                         <div id="navdropdowncontent">
                             <Link onClick={logout} to={`/login`}>Sign Out</Link>
+                            <Link to={`/users/${currentUser.id}/profile`}>Profile</Link>
                         </div>
                     </div>
 
@@ -44,7 +45,7 @@ class NavBar extends React.Component {
                 </div>
                 ) : (
                 <div id="three">
-                        
+
                     <div id="navdropdown">
                         <button id="navdropdownbtn">Hello, Sign in</button>
                         <div id="navdropdowncontent">

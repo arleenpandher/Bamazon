@@ -32,18 +32,23 @@ class CreateReview extends React.Component {
         return (
             <div id="reviewdiv">
                 <NavBar />
-                <h2>Create Review</h2>
-                <div>
-                    <img id="cartindeximage" src={this.props.product.photoUrl}/>
-                    <span>{this.props.product.title} - {this.props.product.description}</span>
-                </div>
                 <form id="reviewformdiv" onSubmit={this.handleSubmit}>
-                    <label>Title:
-                        <input type="text" value={this.state.title} onChange={this.update("title")}/>
+                <h2 id="createreviewheader">Create Review</h2>
+                <div id="reviewinfodiv">
+                    <img id="reviewimage" src={this.props.product.photoUrl}/>
+                    <span id="reviewtext">{this.props.product.title} - {this.props.product.description}</span>
+                </div>
+                <div id="reviewhline"></div>
+                <div id="reviewtitle">
+                    <label id="reviewtitlelabel">Add a Headline:
+                        <input id="reviewtitletext" type="text" placeholder="What's most important to know" value={this.state.title} onChange={this.update("title")}/>
                     </label>
-                    <label>Body:
+                </div>
+                <div id="reviewtitle">
+                <label>Body:
                         <textarea value={this.state.body} onChange={this.update("body")}/>
                     </label>
+                </div>
                     <div id="starratingbox">
                         {[...Array(5)].map((star,i) => {
                             const ratingvalue = i + 1;

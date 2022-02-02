@@ -13,7 +13,8 @@ const CartReducer = (state={}, action) => {
                     photoUrl: object.photoUrl,
                     cartId: object.cartId,
                     user_id: object.userId,
-                    quantity: object.quantity, 
+                    quantity: object.quantity,
+                    cost: object.cost 
                 }
             })
             return mainobject
