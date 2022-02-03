@@ -3,7 +3,7 @@ import { signUp, clearErrors } from "../../actions/session_actions"
 import SessionForm from "./session_form"
 
 const mapStateToProps = state => ({
-    errors: state.errors.session,
+    errors: (state.errors.session).flat(),
     formType: "Create account",
     information: {
         name: "",

@@ -29,13 +29,12 @@ class SessionForm extends React.Component {
 
     renderErrors() {
         return(
-          <ul>
+          <div id="errorsinlogindiv">
+            {console.log(this.props.errors)}
             {this.props.errors.map((error, i) => (
-              <li key={`error-${i}`}>
-                {error}
-              </li>
+              <span id="errorlistitem" key={i}>{error}</span>
             ))}
-          </ul>
+        </div>
         );
       }
 
@@ -53,15 +52,22 @@ class SessionForm extends React.Component {
                 <input id="forminput" type="text" value={this.state.name} onChange={this.update("name")}/>
             </label>
         }
+        const display = (this.props.errors.length) ? (
+            <div id="rendererrordiv300">
+                {this.renderErrors()}
+            </div>
+            ) : (
+            null 
+        )
         return(
-        <div>
+        <div id="mainsessionformdiv">
             <div id="formlogo">
                 <Link to="/">
                     <img src={Logo}></img>
                 </Link>
             </div>
             <div>
-                {this.renderErrors()}
+                {display}
             </div>
             <div id={this.props.formType === "Create account" ? "formdivsignup" : "formdivlogin"}>
                 <h3 id="formheader">{this.props.formType}</h3>

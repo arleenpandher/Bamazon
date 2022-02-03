@@ -3,7 +3,7 @@ class Api::SessionsController < ApplicationController
     def create 
         @user = User.find_by_credentials(params[:user][:username], params[:user][:password])
         if @user.nil?
-            render json: ['Nope. Wrong credentials!'], status: 401
+            render json: ['Your credentials are incorrect'], status: 401
             
         else 
             login!(@user)
