@@ -4,6 +4,7 @@ import {Link} from "react-router-dom"
 import HerozonBasicImage from "../../../app/assets/images/Herozon_Basic.png"
 import Hero from "../../../app/assets/images/EmptyCart.png"
 import {FaCheckCircle} from "react-icons/fa"
+import Footer from "../Footer"
 
 class CartIndex extends React.Component {
     constructor(props) {
@@ -100,6 +101,7 @@ class CartIndex extends React.Component {
                         <button id="proceedtocheckoutbtn" onClick={this.handleSubmit}>Proceed to checkout</button>
                     </div>
                 </div>
+                <Footer />
             </div>
         )
     }

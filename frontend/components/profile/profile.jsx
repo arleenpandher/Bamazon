@@ -3,6 +3,7 @@ import NavBar from "../nav_bar/nav_bar_container"
 import {BsPersonCircle} from "react-icons/bs"
 import {Link} from "react-router-dom"
 import {BiShoppingBag} from "react-icons/bi"
+import Footer from "../Footer"
 
 class Profile extends React.Component {
     constructor(props) {
@@ -100,6 +101,7 @@ class Profile extends React.Component {
                     </div>
                 ))} */}
             </div>
+            <Footer />
             </div>
         )
     }

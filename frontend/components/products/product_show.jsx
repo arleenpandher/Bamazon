@@ -5,6 +5,7 @@ import {FaLock} from "react-icons/fa"
 import {MdPinDrop} from "react-icons/md"
 import {BsPersonCircle} from "react-icons/bs"
 import { FaStar } from "react-icons/fa"
+import Footer from "../Footer"
 
 class ProductShow extends React.Component {
 
@@ -151,6 +152,7 @@ class ProductShow extends React.Component {
                         </div>
                     </div>
                 </div>
+                <Footer />
             </div>
         )
     }

@@ -1,6 +1,7 @@
 import React from "react"
 import { FaStar } from "react-icons/fa"
 import NavBar from "../nav_bar/nav_bar_container"
+import Footer from "../Footer"
 
 class CreateReview extends React.Component {
 
@@ -78,6 +79,7 @@ class CreateReview extends React.Component {
                     </div>
                     <input id="reviewformsubmitbtn" type="submit" value="submit"/>
                 </form>
+                <Footer />
             </div>
         )
     }

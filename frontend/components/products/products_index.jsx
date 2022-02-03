@@ -3,12 +3,15 @@ import NavBarContainer from "../nav_bar/nav_bar_container"
 import {Link} from "react-router-dom"
 import HerozonBasicImage from "../../../app/assets/images/Herozon_Basic.png"
 import { FaStar } from "react-icons/fa"
+import Footer from "../Footer"
 
 class ProductIndex extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {id: this.props.serviceId}
         // this.state = this.props.productinfo
         this.addToCart = this.addToCart.bind(this)
+        this.rerender = this.rerender.bind(this)
     }
 
     componentDidMount() {
@@ -29,6 +32,10 @@ class ProductIndex extends React.Component {
             this.props.addtocart({product_id: e.currentTarget.value, quantity: 1})
         }
     }
+    rerender(e) {
+        console.log(e.currentTarget.value)
+        this.setState({ id: e.currentTarget.value }, () => console.log(this.state))
+    }
 
 
     render() {
@@ -44,8 +51,8 @@ class ProductIndex extends React.Component {
                 </div>
                 <div id="entirelowernavbar">
                     <div id="lowernavbartext">
-                        {this.props.services.map(service => (
-                            <Link id="lowernavbarentries" key={service.id} to={`/services/${service.id}/products`}>{service.title.toUpperCase()}</Link>
+                        {this.props.services.map((service) => (
+                            <button id="lowernavbarentries" value={service.id} onClick={this.rerender} key={service.id} >{service.title.toUpperCase()}</button>
                         ))}
                     </div>
                     <div id="hnavline">
@@ -62,7 +69,7 @@ class ProductIndex extends React.Component {
                                     {[...Array(5)].map((star,i) => {
                                         const ratingvalue = i + 1
                                             return (
-                                                <FaStar size={20} color={ratingvalue <= product.ratings ? "#ffc107" : "#e4e5e9"}/>
+                                                <FaStar key={i} size={20} color={ratingvalue <= product.ratings ? "#ffc107" : "#e4e5e9"}/>
                                             )
                                     })}</span>
                                 <span>${product.cost}</span>
@@ -73,6 +80,7 @@ class ProductIndex extends React.Component {
                 </div>
 
                 </div>
+                <Footer />
             </div>
 
 
