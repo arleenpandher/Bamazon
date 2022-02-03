@@ -4,6 +4,7 @@ import { fetchProduct } from "../../actions/product_actions"
 import {addcartitem, updateItem, fetchAllCart} from "../../actions/cart_actions"
 import { fetchallReviews } from "../../actions/review_actions"
 import { deletereview } from "../../actions/review_actions"
+import {updateratings} from "../../actions/product_actions"
 
 
 const mapStateToProps = (state,ownProps) => ({
@@ -14,6 +15,7 @@ const mapStateToProps = (state,ownProps) => ({
         quantity: 0
     },
     reviews: Object.values(state.entities.reviews),
+    review: state.entities.reviews,
     currentUser: state.entities.users[state.session.id],
     cart: state.entities.carts
 })
@@ -24,7 +26,8 @@ const mapDispatchToProps = (dispatch) => ({
     fetchreviews: productId => dispatch(fetchallReviews(productId)),
     deletereview: reviewId => dispatch(deletereview(reviewId)),
     updateCart: cart => (dispatch(updateItem(cart))),
-    fetchcartitems: userId => dispatch(fetchAllCart(userId))
+    fetchcartitems: userId => dispatch(fetchAllCart(userId)),
+    updateproductratings: product => dispatch(updateratings(product))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductShow)

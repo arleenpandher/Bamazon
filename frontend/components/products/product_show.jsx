@@ -4,6 +4,7 @@ import {Link} from "react-router-dom"
 import {FaLock} from "react-icons/fa"
 import {MdPinDrop} from "react-icons/md"
 import {BsPersonCircle} from "react-icons/bs"
+import { FaStar } from "react-icons/fa"
 
 class ProductShow extends React.Component {
 
@@ -13,6 +14,7 @@ class ProductShow extends React.Component {
         this.update = this.update.bind(this)
         this.addToCart = this.addToCart.bind(this)
         this.removereview = this.removereview.bind(this)
+        
     }
 
     componentDidMount() {
@@ -24,16 +26,11 @@ class ProductShow extends React.Component {
     }
 
     update(e) {
-        console.log(e.currentTarget.value)
-    
         this.setState({ quantity: e.currentTarget.value }, () => {return null})
-        
-        
     }
 
    
     addToCart(e) {
-        console.log(this.state)
         e.preventDefault()
         if (this.props.cart[this.props.productId]) {
             this.props.updateCart({cart_id: this.props.cart[this.props.productId].cartId, 
@@ -41,18 +38,24 @@ class ProductShow extends React.Component {
         } else {
             this.props.addtocart({product_id: this.props.productId, quantity: this.state.quantity})
         }
-        console.log(this.state)
     }
 
     removereview(e) {
         e.preventDefault()
-        {console.log(e.currentTarget.value)}
+        let totalratings = 0
+        this.props.reviews.map(review => {
+            totalratings += review.ratings
+        })
+        let newrating = (totalratings - this.props.review[e.currentTarget.value].ratings)/(this.props.reviews.length - 1)
         this.props.deletereview(e.currentTarget.value)
+        this.props.updateproductratings({id: this.props.product.id, ratings: newrating})
     }
 
     render() {
-        if (!this.props.product) return null 
-        
+        if (!this.props.product) return null
+        console.log(this.props.product.ratings)
+        let array = new Array(this.props.product.ratings)
+        let narray = new Array(5 - this.props.product.ratings)
         return (
             <div>
                 <header>
@@ -62,7 +65,15 @@ class ProductShow extends React.Component {
                     <img id="productshowpageimg" src={this.props.product.photoUrl}/>
                     <div id="productshowdescription">
                         <span id="productshowtitle">{this.props.product.title} - {this.props.product.description}</span>
-                        <span id="productshowratings">Ratings: 4 stars</span>
+                        <span id="productshowratings">
+                            {[...Array(5)].map((star,i) => {
+                                const ratingvalue = i + 1
+                                return (
+                                    <FaStar size={20} color={ratingvalue <= this.props.product.ratings ? "#ffc107" : "#e4e5e9"}/>
+                                )
+                            })}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <span id="productshowratingtext">{this.props.reviews.length} ratings</span>
+                        </span>
                         <span id="productshowprice">Price: ${this.props.product.cost}</span>
                         <div id="hnavlineupdate">
                         </div>

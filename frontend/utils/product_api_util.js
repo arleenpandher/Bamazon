@@ -11,3 +11,11 @@ export const fetchproduct = productId => (
         method: "GET"
     })
 )
+
+export const updateRatings = product => (
+    $.ajax({
+        url:`/api/products/${product.id}`,
+        method: "PATCH",
+        data: {product}
+    })
+)

@@ -15,4 +15,15 @@ class Api::ProductsController < ApplicationController
         @product = Product.find(params[:id])
         render :show 
     end
+
+    def update 
+        @product = Product.find(params[:id])
+        @product.update(product_params)
+        render :show
+    end
+
+    private
+    def product_params 
+        params.require(:product).permit(:ratings)
+    end
 end

@@ -11,7 +11,8 @@ class CreateReview extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchproduct(this.props.match.params.productId)
+        this.props.fetchproduct(this.props.match.params.productId),
+        this.props.fetchreviews(this.props.match.params.productId)
     }
     
 
@@ -24,6 +25,14 @@ class CreateReview extends React.Component {
     handleSubmit(e) {
         e.preventDefault()
         this.props.createreview(this.state)
+        let totalratings = 0
+        if (this.props.reviews.length) {
+            this.props.reviews.map(review => {
+                totalratings += review.ratings
+            })
+        }
+        let newrating = (totalratings+parseInt(this.state.ratings))/(this.props.reviews.length + 1)
+        this.props.updateproductratings({id: this.props.product.id, ratings: newrating})
         .then(() => this.props.history.push('/'))
     }
 

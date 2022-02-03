@@ -1,4 +1,4 @@
-import { fetchproducts, fetchproduct } from "../utils/product_api_util";
+import { fetchproducts, fetchproduct, updateRatings } from "../utils/product_api_util";
 
 export const RECEIVE_PRODUCTS = "RECEIVE_PRODUCTS"
 export const RECEIVE_PRODUCT = "RECEIVE_PRODUCT"
@@ -22,3 +22,9 @@ export const fetchProduct = productId => dispatch => (
     fetchproduct(productId)
     .then(product => dispatch(receiveProduct(product)))
 )
+
+export const updateratings = product => dispatch => (
+    updateRatings(product)
+    .then(product => dispatch(receiveProduct(product)))
+)
+

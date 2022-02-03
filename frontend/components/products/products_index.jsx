@@ -2,6 +2,7 @@ import React from "react"
 import NavBarContainer from "../nav_bar/nav_bar_container"
 import {Link} from "react-router-dom"
 import HerozonBasicImage from "../../../app/assets/images/Herozon_Basic.png"
+import { FaStar } from "react-icons/fa"
 
 class ProductIndex extends React.Component {
     constructor(props) {
@@ -12,6 +13,7 @@ class ProductIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchproducts(this.props.serviceId)
+        this.props.fetchreviews(this.props.match.params.productId)
         this.props.fetchservices()
         if (this.props.user) {
             this.props.fetchcartitems(this.props.user.id)
@@ -56,7 +58,13 @@ class ProductIndex extends React.Component {
                             <div id="productindexdiv">
                                 <img id="productindeximage" src={product.photoUrl}/>
                                 <span id="productindextitle">{product.title} - {product.description}</span>
-                                <span>Ratings</span>
+                                <span>
+                                    {[...Array(5)].map((star,i) => {
+                                        const ratingvalue = i + 1
+                                            return (
+                                                <FaStar size={20} color={ratingvalue <= product.ratings ? "#ffc107" : "#e4e5e9"}/>
+                                            )
+                                    })}</span>
                                 <span>${product.cost}</span>
                                 <button id="productindexaddtocartbtn" value={product.id} onClick={this.addToCart}>Add to Cart!</button>
                             </div>

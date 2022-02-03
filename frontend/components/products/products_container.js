@@ -3,6 +3,7 @@ import { fetchProducts} from "../../actions/product_actions"
 import {fetchServices} from "../../actions/service_actions"
 import {addcartitem, updateItem, fetchAllCart} from "../../actions/cart_actions"
 import ProductIndex from "./products_index"
+import { fetchallReviews } from "../../actions/review_actions"
 
 const mapStateToProps = (state, ownProps) => ({
     products: Object.values(state.entities.products),
@@ -17,7 +18,8 @@ const mapDispatchToProps = (dispatch) => ({
     fetchservices: () => (dispatch(fetchServices())),
     addtocart: item => (dispatch(addcartitem(item))),
     updateCart: cart => (dispatch(updateItem(cart))),
-    fetchcartitems: userId => dispatch(fetchAllCart(userId))
+    fetchcartitems: userId => dispatch(fetchAllCart(userId)),
+    fetchreviews: productId => dispatch(fetchallReviews(productId))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductIndex)
