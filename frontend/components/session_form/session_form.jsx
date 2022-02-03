@@ -7,6 +7,7 @@ class SessionForm extends React.Component {
         super(props)
         this.state = this.props.information
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.demouser = this.demouser.bind(this)
     }
 
     componentWillUnmount() {
@@ -25,6 +26,7 @@ class SessionForm extends React.Component {
         .then(() => this.props.history.push('/'))
     }
 
+
     renderErrors() {
         return(
           <ul>
@@ -37,7 +39,11 @@ class SessionForm extends React.Component {
         );
       }
 
-
+    demouser(e) {
+        e.preventDefault()
+        this.props.processForm({username: "The OG Hero", password:"hello123"})
+        .then(() => this.props.history.push('/'))
+    }
 
     render() {
         let additionalinformation 
@@ -73,13 +79,14 @@ class SessionForm extends React.Component {
                     <input id="forminput" type="password" placeholder="At least 6 characters" value={this.state.password} onChange={this.update("password")}/>
                 </label> 
                 </div>
-               
+                
                 <input id="submitform" type="submit" value={this.props.submitType}/>
                 </form>
                 <div id="linkform">
                     {this.props.formType === "Sign-In" ? (
                         <div id="innerlinkformdiv">
                             <div id="hloginline"></div>
+                            <input id="submitform" onClick={this.demouser} type="submit" value="Login in as Demo User"/>
                             <Link id="linktobuttonlogin" to={`/signup`}> Create your Herozon account</Link>
                         </div>
                     ) : (
