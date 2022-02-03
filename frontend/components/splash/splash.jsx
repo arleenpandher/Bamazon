@@ -2,6 +2,7 @@ import React from "react"
 import HerozonBasicImage from "../../../app/assets/images/Herozon_Basic.png"
 import NavBarContainer from "../nav_bar/nav_bar_container"
 import {Link} from "react-router-dom"
+import Footer from "../Footer"
 
 class Splash extends React.Component {
     constructor(props) {
@@ -109,6 +110,7 @@ class Splash extends React.Component {
                         </Link>
                     </div>
                 </div>
+                <Footer />
             </div>
         )
     }

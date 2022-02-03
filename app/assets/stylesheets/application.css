@@ -1466,3 +1466,25 @@
     background-color:#f1bc35;
     box-shadow: inset 0px 0px 10px rgb(12 1 1/ 55%)
 }
+
+#outerfooterdiv {
+    background-color: #232F3E;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#footerlogodiv {
+    margin-bottom: 25px;
+}
+
+#footerimg {
+    width: 125px;
+    height: 75px;
+}
+
+#linkedintag {
+    margin-right: 50px;
+}
