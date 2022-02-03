@@ -1255,11 +1255,11 @@
 }
 
 #proceedtocheckoutbtn:hover {
-    background: #ffd504;
+    background: #f0ae22;
 }
 
 #proceedtocheckoutbtn:active {
-    background: #ffd504;
+    background: #f0ae22;
     box-shadow: inset 0px 0px 10px rgb(12 1 1/ 55%);
 }
 

@@ -7,10 +7,24 @@ import {BiShoppingBag} from "react-icons/bi"
 class Profile extends React.Component {
     constructor(props) {
         super(props)
+        this.addToCart = this.addToCart.bind(this)
     }
 
     componentDidMount() {
         this.props.fetchtransactions()
+        if (this.props.user) {
+            this.props.fetchcartitems(this.props.user.id)
+        }
+    }
+
+    addToCart(e) {
+        e.preventDefault()
+        if (this.props.cart[e.currentTarget.value]) {
+            this.props.updateCart({cart_id: this.props.cart[e.currentTarget.value].cartId, 
+                user_id: this.props.currentUser.id, product_id: e.currentTarget.value, quantity: this.props.cart[e.currentTarget.value].quantity+1})
+        } else {
+            this.props.addtocart({product_id: e.currentTarget.value, quantity: 1})
+        }
     }
 
     render() {
@@ -68,10 +82,10 @@ class Profile extends React.Component {
                                             </div>
                                         </div>
                                         <div id="transactionbuttons">
-                                            <button id="buyagainbtn"><BiShoppingBag/>&nbsp;&nbsp;&nbsp;&nbsp; Buy it again</button>
-                                            <Link id="buyagainbtn">Write a product review</Link>
-                                            <Link id="buyagainbtn">View your hero</Link>
-                                            <Link id="buyagainbtn">View similar heros</Link>
+                                            <button value={parseInt(transaction.productId)} onClick={this.addToCart} id="buyagainbtn"><BiShoppingBag/>&nbsp;&nbsp;&nbsp;&nbsp; Buy it again</button>
+                                            <Link to={`/products/${transaction.productId}/reviews`}id="buyagainbtn">Write a product review</Link>
+                                            <Link to={`/products/${transaction.productId}`} id="buyagainbtn">View your hero</Link>
+                                            <Link to={`/services/${transaction.serviceId}/products`} id="buyagainbtn">View similar heros</Link>
                                         </div>
                                     </div>
                                 ))}
