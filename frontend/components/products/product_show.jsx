@@ -78,10 +78,8 @@ class ProductShow extends React.Component {
                         <div id="hnavlineupdate">
                         </div>
                         <span id="aboutthishero">About this Hero:</span>
-                        <span>Draco Malfoy has been a known enemy of BuckBeak since 1998.
-                        In fact, during his Magical creatures class Buckbeak had attacked Draco, due 
-                        his terrible treatment of Buckbeak.  In fact, Draco's Father almost had BuckBeak killed
-                        Therefore, be cautious before purchasing Draco's services.
+                        <span>
+                            {this.props.product.about}
                         </span>
                     </div>
                     <div id="productshowaddtocart">
