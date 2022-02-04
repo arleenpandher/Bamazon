@@ -32,6 +32,7 @@ class CartIndex extends React.Component {
             this.props.newTransactions({quantity: cartitem.quantity, product_id: cartitem.id})
             this.props.deletecartItem(cartitem.cartId)
         })
+        this.props.history.push('/checkout')
     }
 
     render() {

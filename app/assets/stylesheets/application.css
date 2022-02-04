@@ -393,6 +393,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Ubuntu', sans-serif;
+    color: rgb(54, 53, 53);
 }
 
 #BasicHeadImg {
@@ -1521,4 +1522,34 @@
     margin-top: 50px;
     margin-bottom: 25px;
     font-size: 34px;
+}
+
+#checkoutbox {
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    margin: 20px;
+    align-self: center;
+    justify-content: center;
+    /* align-items: center; */
+    margin: auto;
+    border: 2px solid green;
+    margin-top: 35px;
+    border-radius: 5px;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+#checkouttext {
+    margin: 20px;
+    margin-bottom: 8px;
+}
+
+#checkouttext2 {
+    margin: 20px;
+    margin-top: 5px;
+}
+
+#footerincheckout {
+    margin-top: 285px;
 }
