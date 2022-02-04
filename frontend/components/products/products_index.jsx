@@ -70,14 +70,14 @@ class ProductIndex extends React.Component {
                             <div id="productindexdiv">
                                 <img id="productindeximage" src={product.photoUrl}/>
                                 <span id="productindextitle">{product.title} - {product.description}</span>
-                                <span>
+                                <span id="productindexpagestars">
                                     {[...Array(5)].map((star,i) => {
                                         const ratingvalue = i + 1
                                             return (
                                                 <FaStar key={i} size={20} color={ratingvalue <= product.ratings ? "#ffc107" : "#e4e5e9"}/>
                                             )
                                     })}</span>
-                                <span>${product.cost}</span>
+                                <span id="productindextotcost">${product.cost}</span>
                                 {this.props.user ? (
                                     <button id="productindexaddtocartbtn" value={product.id} onClick={this.addToCart}>Add to Cart!</button>
                                 ) : (

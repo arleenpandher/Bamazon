@@ -144,12 +144,6 @@
     font-weight: 500;
  }
 
- #CHECK3000 {
-     display: flex;
-     /* align-items: center; */
-     justify-content: center;
-     width:100%;
- }
 
  #submitform:hover, #linktobuttonlogin:hover, #navsearchbutton:hover {
      background-color: #f3b926;
@@ -393,7 +387,6 @@
     margin: 0;
     padding: 0;
     font-family: 'Ubuntu', sans-serif;
-    color: rgb(54, 53, 53);
 }
 
 #BasicHeadImg {
@@ -576,21 +569,19 @@
 
 #productindexbox {
     display: grid;
-    grid-template-columns: repeat(4, 300px);
-    width:fit-content;
-    gap: 2px;
+    grid-template-columns: repeat(4, 325px);
+    width: fit-content;
+    gap: 30px;
     justify-content: center;
-    align-items:center;
-    margin:0 auto;
+    align-items: center;
+    margin: 0 auto;
     margin-top: 10px;
-    /* background-color: green; */
-    /* background-color: cadetblue; */
+    padding-top:1rem;
 }
 
 
 #productindexdiv {
     /* border: 2px solid black; */
-    padding:1rem;
     width:325px;
     display:flex;
     flex-direction: column;
@@ -609,20 +600,23 @@
     width: 300px;
     line-height: 32px;
     padding-left:0.5rem;
-    border-radius: 4px; 
-    border: 1px solid rgb(124,123,123);
-    background-color: #f0c14b;
     font-size:15px;
     font-weight:300;
+    background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #a88734 #9c7e31 #846a29;
+    cursor: pointer;
 }
 
 #productindexaddtocartbtn:hover {
-    background-color:#f3b926;
+    background-color:#f89514;
 }
 
 #productindexaddtocartbtn:active {
-    background-color:#f1bc35;
-    /* box-shadow: inset 0px 0px 10px rgb(12 1 1/ 55%) */
+    background-color:#f89514;
+    box-shadow: inset 0px 0px 10px rgb(12 1 1/ 55%)
 }
 
 #productindeximage{
@@ -632,9 +626,24 @@
 }
 
 #productindextitle {
-    padding: 1rem;
     text-decoration: none;
     color: rgb(41, 41, 41);
+    width: 90%;
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#productindexpagestars {
+    align-self: flex-start;
+    margin-left: 15px;
+}
+
+#productindextotcost {
+    align-self: flex-start;
+    font-weight: 600;
+    margin: 5px;
+    margin-left: 15px;
 }
 
 #productshowpageimg {
