@@ -15,6 +15,7 @@ class ProductShow extends React.Component {
         this.update = this.update.bind(this)
         this.addToCart = this.addToCart.bind(this)
         this.removereview = this.removereview.bind(this)
+        this.forcesignin = this.forcesignin.bind(this)
         
     }
 
@@ -30,6 +31,10 @@ class ProductShow extends React.Component {
         this.setState({ quantity: e.currentTarget.value }, () => {return null})
     }
 
+    forcesignin(e) {
+        e.preventDefault()
+        this.props.history.push('/login')
+    }
    
     addToCart(e) {
         e.preventDefault()
@@ -132,7 +137,11 @@ class ProductShow extends React.Component {
                             <option value={2}>Qty: 2</option>
                             <option value={3}>Qty: 3</option>
                         </select>
-                        <button id="productshowaddtocartbtn" value={this.props.product.id} onClick={this.addToCart}>Add to Cart</button>
+                        {this.props.currentUser ? (
+                            <button id="productshowaddtocartbtn" value={this.props.product.id} onClick={this.addToCart}>Add to Cart</button>
+                        ) : (
+                            <button id="productshowaddtocartbtn" value={this.props.product.id} onClick={this.forcesignin}>Add to Cart</button>
+                        )}
                         </div>
                         <div id="securetransaction">
                             <FaLock  />&nbsp;&nbsp;       
