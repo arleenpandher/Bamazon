@@ -79,7 +79,7 @@ class Profile extends React.Component {
                                 </div>
                                 <div id="toprowprofilestart">
                                     <span id="topprofilestarttext">TOTAL</span>
-                                    <span>${total}</span>
+                                    <span>${total.toFixed(2)}</span>
                                 </div>
                                 <div id="toprowprofilestart">
                                     <span id="topprofilestarttext">QUANTITY</span>
