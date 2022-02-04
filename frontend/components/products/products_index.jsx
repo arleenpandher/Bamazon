@@ -8,7 +8,6 @@ import Footer from "../Footer"
 class ProductIndex extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {id: this.props.serviceId}
         // this.state = this.props.productinfo
         this.addToCart = this.addToCart.bind(this)
     }
