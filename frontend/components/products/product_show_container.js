@@ -5,7 +5,7 @@ import {addcartitem, updateItem, fetchAllCart} from "../../actions/cart_actions"
 import { fetchallReviews } from "../../actions/review_actions"
 import { deletereview } from "../../actions/review_actions"
 import {updateratings} from "../../actions/product_actions"
-
+import { createNewTransaction } from "../../actions/transaction_actions"
 
 const mapStateToProps = (state,ownProps) => ({
     product: state.entities.products[ownProps.match.params.productId],
@@ -27,7 +27,8 @@ const mapDispatchToProps = (dispatch) => ({
     deletereview: reviewId => dispatch(deletereview(reviewId)),
     updateCart: cart => (dispatch(updateItem(cart))),
     fetchcartitems: userId => dispatch(fetchAllCart(userId)),
-    updateproductratings: product => dispatch(updateratings(product))
+    updateproductratings: product => dispatch(updateratings(product)),
+    newTransactions: transaction => dispatch(createNewTransaction(transaction))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductShow)

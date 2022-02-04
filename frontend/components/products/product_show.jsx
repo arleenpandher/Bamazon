@@ -35,6 +35,8 @@ class ProductShow extends React.Component {
         e.preventDefault()
         this.props.history.push('/login')
     }
+
+   
    
     addToCart(e) {
         e.preventDefault()
@@ -85,9 +87,8 @@ class ProductShow extends React.Component {
                     <span id="reviewedincanada">Reviewed in Canada on January 1, 2021</span>
                     <span margin-bottom={"10px;"} font-size={"15px;"}>{review.body}</span>
                     <div>
-                        {this.props.currentUser.id === review.userId ? (
+                        {this.props.currentUser && this.props.currentUser.id === review.userId ? (
                             <div>
-                                {console.log(review.id)}
                                 <button id="reviewdeletebtn" value={review.id} onClick={this.removereview}>Delete</button>
                             </div>
                         ) : (
@@ -145,7 +146,10 @@ class ProductShow extends React.Component {
                             <option value={3}>Qty: 3</option>
                         </select>
                         {this.props.currentUser ? (
-                            <button id="productshowaddtocartbtn" value={this.props.product.id} onClick={this.addToCart}>Add to Cart</button>
+                            <div>
+                                <button id="productshowaddtocartbtn" value={this.props.product.id} onClick={this.addToCart}>Add to Cart</button>
+                                <button id="productshowaddtocartbtn" value={this.props.product.id} onClick={this.newtrans}>Buy Now</button>
+                            </div>
                         ) : (
                             <button id="productshowaddtocartbtn" value={this.props.product.id} onClick={this.forcesignin}>Add to Cart</button>
                         )}
