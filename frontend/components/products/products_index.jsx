@@ -8,13 +8,12 @@ import Footer from "../Footer"
 class ProductIndex extends React.Component {
     constructor(props) {
         super(props)
-        // this.state = this.props.productinfo
         this.addToCart = this.addToCart.bind(this)
+        this.forcesignin = this.forcesignin.bind(this)
     }
 
     componentDidMount() {
         this.props.fetchproducts(this.props.serviceId)
-        // this.props.fetchreviews(this.props.match.params.productId)
         this.props.fetchservices()
         if (this.props.user) {
             this.props.fetchcartitems(this.props.user.id)
@@ -25,6 +24,11 @@ class ProductIndex extends React.Component {
         if (preprops.serviceId !== this.props.serviceId) {
             this.props.fetchproducts(this.props.serviceId)
         }
+    }
+
+    forcesignin(e) {
+        e.preventDefault()
+        this.props.history.push('/login')
     }
 
     addToCart(e) {
@@ -74,7 +78,11 @@ class ProductIndex extends React.Component {
                                             )
                                     })}</span>
                                 <span>${product.cost}</span>
-                                <button id="productindexaddtocartbtn" value={product.id} onClick={this.addToCart}>Add to Cart!</button>
+                                {this.props.user ? (
+                                    <button id="productindexaddtocartbtn" value={product.id} onClick={this.addToCart}>Add to Cart!</button>
+                                ) : (
+                                    <button id="productindexaddtocartbtn" value={product.id} onClick={this.forcesignin}>Add to Cart!</button>
+                                )}
                             </div>
                         </Link>)
                     )}

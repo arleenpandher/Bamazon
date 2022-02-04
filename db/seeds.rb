@@ -319,7 +319,7 @@ product72 = Product.create(title: "Karen", description: "She has the most knowle
 about: "A computer who will protect as programmed. She will listen to you if it makes sense logically.  ")
 product72.photo.attach(io: open("https://herozon-dev.s3.ca-central-1.amazonaws.com/karen.png"), filename:"karen.png")
 
-product73 = Product.create(title: "Pearl", description: "Don’t be cheap she needs to shop ", service_id: 9, cost: 99.99, ratings: 0,
+product73 = Product.create(title: "Pearl", description: "Make sure you tip well, she has a long wishlist", service_id: 9, cost: 99.99, ratings: 0,
 about: "She wants to live her normal teenage life. She will protect the formula if she gets mall money. Like father like daughter.")
 product73.photo.attach(io: open("https://herozon-dev.s3.ca-central-1.amazonaws.com/pearl.png"), filename:"pearl.png")
 
