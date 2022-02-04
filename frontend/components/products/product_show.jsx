@@ -73,7 +73,15 @@ class ProductShow extends React.Component {
                         <BsPersonCircle size={25}/>&nbsp;&nbsp;&nbsp;&nbsp;
                         <span id="reviewerpersonfont">{review.user}</span>
                     </div>
-                    <span id="ratingsandtitlediv">{review.ratings}  &nbsp;&nbsp;&nbsp; {review.title}</span>
+                    <span id="ratingsandtitlediv">
+                    {[...Array(5)].map((star,i) => {
+                            const ratingvalue = i + 1
+                            return (
+                                <FaStar key={i} size={20} color={ratingvalue <= review.ratings ? "#ffc107" : "#e4e5e9"}/>
+                            )
+                        })}
+                    
+                     &nbsp;&nbsp;&nbsp; {review.title}</span>
                     <span id="reviewedincanada">Reviewed in Canada on January 1, 2021</span>
                     <span margin-bottom={"10px;"} font-size={"15px;"}>{review.body}</span>
                     <div>
