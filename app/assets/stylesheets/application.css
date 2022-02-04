@@ -31,7 +31,7 @@
      text-align: left;
      box-sizing: border-box;
      font-family: 'Ubuntu', sans-serif;
-     box-shadow: 0px 4px 6px 0 hsl(0deg 0% 0% / 20%);
+     /* box-shadow: 0px 4px 6px 0 hsl(0deg 0% 0% / 20%); */
      margin-top:30px;
  }
 
@@ -49,7 +49,7 @@
        text-align: left;
        box-sizing: border-box;
        font-family: 'Ubuntu', sans-serif;
-       box-shadow: 0px 4px 6px 0 hsl(0deg 0% 0% / 20%);
+       /* box-shadow: 0px 4px 6px 0 hsl(0deg 0% 0% / 20%); */
  }
  
  #formlabel, #formlabelpassword {
@@ -157,7 +157,7 @@
 
  #submitform:active, #linktobuttonlogin:active, #navsearchbutton:active {
     background-color: #f1bc35;
-    box-shadow: inset 0px 0px 10px rgb(12 1 1/ 55%);
+    /* box-shadow: inset 0px 0px 10px rgb(12 1 1/ 55%); */
 }
 
  #innerlinkformdiv {
@@ -343,7 +343,6 @@
     position: absolute;
     background-color: #fff;
     min-width: 95px;
-    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
     z-index: 1;
     color: black;
     padding: 12px 16px;
@@ -617,7 +616,7 @@
 
 #productindexaddtocartbtn:active {
     background-color:#f1bc35;
-    box-shadow: inset 0px 0px 10px rgb(12 1 1/ 55%)
+    /* box-shadow: inset 0px 0px 10px rgb(12 1 1/ 55%) */
 }
 
 #productindeximage{
@@ -795,7 +794,7 @@
 #productshowaddtocartbtn {
     background-color: #FFD814;
     border-color:#FCD200;
-    box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
+    /* box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%); */
     border-width: 1px;
     line-height: 28px;
     border-radius:50px; 
@@ -808,7 +807,7 @@
 
 #productshowaddtocartbtn:active {
     background-color: #fcba04;
-    box-shadow: inset 0px 0px 10px rgb(12 1 1/ 55%);
+    /* box-shadow: inset 0px 0px 10px rgb(12 1 1/ 55%); */
 
 }
 
@@ -893,7 +892,7 @@
     text-align: center;
     padding:0.5rem;
     color:rgb(39, 38, 38);
-    box-shadow: 0px 4px 6px 0 hsl(0deg 0% 0% / 20%);
+    /* box-shadow: 0px 4px 6px 0 hsl(0deg 0% 0% / 20%); */
 }
 
 #reviewdeletebtn {
@@ -905,7 +904,7 @@
     padding:0.5rem;
     background-color: white;
     color:rgb(39, 38, 38);
-    box-shadow: 0px 4px 6px 0 hsl(0deg 0% 0% / 20%);
+    /* box-shadow: 0px 4px 6px 0 hsl(0deg 0% 0% / 20%); */
 }
 
 #linktocreatereview:hover, #reviewdeletebtn:hover {
@@ -914,7 +913,7 @@
 
 #linktocreatereview:active, #reviewdeletebtn:active {
     background-color: rgb(238, 234, 234);
-    box-shadow: inset 0px 0px 10px rgb(12 1 1/ 55%);
+    /* box-shadow: inset 0px 0px 10px rgb(12 1 1/ 55%); */
 }
 
 #horizontallineinproductshow {
@@ -1253,7 +1252,7 @@
 
 #reviewformsubmitbtn:active {
     background-color: #fcba04;
-    box-shadow: inset 0px 0px 10px rgb(12 1 1/ 55%);
+    /* box-shadow: inset 0px 0px 10px rgb(12 1 1/ 55%); */
 }
 
 #deletebtncartindex {
@@ -1304,7 +1303,7 @@
 #proceedtocheckoutbtn {
     background: #FFD814;
     border-color: #FCD200;
-    box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
+    /* box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%); */
     border-radius:10px;
     line-height:30px;
 }
@@ -1315,7 +1314,7 @@
 
 #proceedtocheckoutbtn:active {
     background: #f0ae22;
-    box-shadow: inset 0px 0px 10px rgb(12 1 1/ 55%);
+    /* box-shadow: inset 0px 0px 10px rgb(12 1 1/ 55%); */
 }
 
 #checkoutotalprice2 {
@@ -1461,7 +1460,7 @@
     text-decoration: none;
     background: #FFD814;
     border-color: #FCD200;
-    box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
+    /* box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%); */
     font-size:14px;
     font-weight:500;
     width:100%;
@@ -1476,7 +1475,7 @@
 
 #buyagainbtn:active {
     background-color:#f1bc35;
-    box-shadow: inset 0px 0px 10px rgb(12 1 1/ 55%)
+    /* box-shadow: inset 0px 0px 10px rgb(12 1 1/ 55%) */
 }
 
 #outerfooterdiv {
