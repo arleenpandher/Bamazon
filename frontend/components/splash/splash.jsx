@@ -1,5 +1,5 @@
 import React from "react"
-import HerozonBasicImage from "../../../app/assets/images/Herozon_Basic.png"
+// import HerozonBasicImage from "../../../app/assets/images/Herozon_Basic.png"
 import NavBarContainer from "../nav_bar/nav_bar_container"
 import {Link} from "react-router-dom"
 import Footer from "../Footer"
@@ -21,7 +21,7 @@ class Splash extends React.Component {
                     <NavBarContainer/>
                 </header>
                 <div id="BasicHeadImg">
-                    <img id="BasicHeadImage" src={HerozonBasicImage}></img>
+                    <img id="BasicHeadImage" src={window.logo1}></img>
                 </div>
                 <div id="entirelowernavbar">
                     <div id="lowernavbartext">

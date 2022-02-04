@@ -2,7 +2,7 @@ import React from "react"
 import NavBarContainer from "../nav_bar/nav_bar_container"
 import {Link} from "react-router-dom"
 import HerozonBasicImage from "../../../app/assets/images/Herozon_Basic.png"
-import Hero from "../../../app/assets/images/EmptyCart.png"
+// import Hero from "../../../app/assets/images/EmptyCart.png"
 import {FaCheckCircle} from "react-icons/fa"
 import Footer from "../Footer"
 
@@ -47,7 +47,7 @@ class CartIndex extends React.Component {
                             <span id="emptycartindextext2">Herozon has given the heros an opportunity to provide services to everyone, don't miss your chance.</span>
                         </div>
                         <div id="hemptycartindexline"></div>
-                        <img id="emptycartindeximg" src={Hero}/>
+                        <img id="emptycartindeximg" src={window.emptycart}/>
                     </div>
                     <Footer />
                 </div>

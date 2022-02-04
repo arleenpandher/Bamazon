@@ -1,7 +1,7 @@
 import React from "react"
 import NavBarContainer from "../nav_bar/nav_bar_container"
 import {Link, Redirect} from "react-router-dom"
-import HerozonBasicImage from "../../../app/assets/images/Herozon_Basic.png"
+// import HerozonBasicImage from "../../../app/assets/images/Herozon_Basic.png"
 import { FaStar } from "react-icons/fa"
 import Footer from "../Footer"
 
@@ -52,7 +52,7 @@ class ProductIndex extends React.Component {
                 </header>
                 <div id="BasicHeadImg">
                     {/* <span>{this.props.services[this.props.serviceId].title}</span> */}
-                    <img id="BasicHeadImage" src={HerozonBasicImage}></img>
+                    <img id="BasicHeadImage" src={window.logo1}></img>
                 </div>
                 <div id="entirelowernavbar">
                 <div id="lowernavbartext">

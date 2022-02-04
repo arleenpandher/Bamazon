@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import Logo from "../../../app/assets/images/logo.png"
+// import Logo from "../../../app/assets/images/logo.png"
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -63,7 +63,7 @@ class SessionForm extends React.Component {
         <div id="mainsessionformdiv">
             <div id="formlogo">
                 <Link to="/">
-                    <img src={Logo}></img>
+                    <img src={window.logo2}></img>
                 </Link>
             </div>
             <div>

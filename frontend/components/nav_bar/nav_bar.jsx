@@ -1,9 +1,8 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import Logo from "../../../app/assets/images/logo2.png"
-import Pindrop from "../../../app/assets/images/pindrop.png"
-import Cart from "../../../app/assets/images/amazon-cart.png"
-import MagnifyingGlass from "../../../app/assets/images/magnifying-glass.png"
+// import Logo from "../../../app/assets/images/logo2.png"
+// import Pindrop from "../../../app/assets/images/pindrop.png"
+
 import {AiOutlineSearch} from "react-icons/ai"
 
 class NavBar extends React.Component {
@@ -38,7 +37,7 @@ class NavBar extends React.Component {
 
                         <div id="cartdiv">
                             <Link id="cartlink" to={`/users/${currentUser.id}/carts`}>
-                                <img id="cartnavbar" src={Cart}></img>
+                                <img id="cartnavbar" src={window.cart}></img>
                                 <span id="quantitycounttext">{count}</span>
                             </Link>
                             {/* <span id="quantitycounttext">{count}</span> */}
@@ -57,7 +56,7 @@ class NavBar extends React.Component {
                     {/* <span id="cartitemcount">{count}</span> */}
                     <div id="cartdiv">
                         <Link id="cartlink" to={`/login`}>
-                            <img id="cartnavbar" src={Cart}></img>
+                            <img id="cartnavbar" src={window.cart}></img>
                         </Link>
                         <span id="quantitycounttext">{count}</span>
                     </div>
@@ -69,11 +68,11 @@ class NavBar extends React.Component {
                 <div id="one">
                     <div>
                     <Link to="/">
-                        <img id="navimage" src={Logo}></img>
+                        <img id="navimage" src={window.logo3}></img>
                     </Link>
                     </div>
                     <div id="deliverybar">
-                        <img id="pindropimage" src={Pindrop}></img>
+                        <img id="pindropimage" src={window.pindrop}></img>
                         <div id="deliverytext">
                             <span id="toptext">Deliver to</span>
                             <span id="bottomtext">Canada</span> 

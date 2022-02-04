@@ -1,5 +1,5 @@
 import React from "react"
-import Logo from "../../app/assets/images/logo2.png"
+// import Logo from "../../app/assets/images/logo2.png"
 import {BsLinkedin} from "react-icons/bs"
 import {BsGithub} from "react-icons/bs"
 
@@ -9,7 +9,7 @@ const Footer = () => {
         <div id="outerfooterdiv">
            
             <div id="footerlogodiv">
-                <img id="footerimg" src={Logo}/>
+                <img id="footerimg" src={window.logo3}/>
             </div>
             <div>
                 <div>
