@@ -1055,35 +1055,50 @@
     font-weight:550;
 }
 
+#outteremptycartindexdiv {
+    background-color: #eaeded;
+}
+
 #emptycartindex {
     display: flex;
     flex-direction:column; 
+    background-color: white;
+    width: 55%;
+    margin: 20px;
 }
 
+#inneremptycart {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    margin-left: 25px;
+    width: 85%;
+}
 #emptycartindextext {
     font-size: 28px;
     font-weight: 700;
-    padding: 1rem;
+    margin-bottom: 8px;
 }
 
 #hemptycartindexline {
     height:3px; 
     background: #dbdcdc;
-    width: 85%;
-    margin-left:1rem;
+    width: 95%;
+    align-self: center;
 }
 
 #emptycartindeximg {
     width: 85%;
-    height:65%;
-    margin-top: 40px;
-    padding: 1rem;
+    height:45%;
+    margin-top: 20px;
+    align-self: center;
+    margin-bottom: 20px;
 }
 
 #emptycartindextext2 {
     font-size: 20px;
-    padding: 1rem;
     font-weight:200;
+    margin-bottom: 4px;
 }
 
 #outermostcartindexdiv {

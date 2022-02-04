@@ -37,15 +37,18 @@ class CartIndex extends React.Component {
     render() {
         if (!Object.values(this.props.cartproducts).length) {
             return (
-                <div>
+                <div id="outteremptycartindexdiv">
                     <NavBarContainer/>
                     <div id="emptycartindex">
-                        <span id="emptycartindextext">Your Herozon Cart is Empty.</span>
-                        <span id="emptycartindextext2">Your shopping cart lives to serve. Give it purpose - fill it with different wizards, sponges, tributes, and more.</span>
-                        <span id="emptycartindextext2">Herozon has given the heros an opportunity to provide services to everyone, don't miss your chance.</span>
+                        <div id="inneremptycart">
+                            <span id="emptycartindextext">Your Herozon Cart is Empty.</span>
+                            <span id="emptycartindextext2">Your shopping cart lives to serve. Give it purpose - fill it with different wizards, sponges, tributes, and more.</span>
+                            <span id="emptycartindextext2">Herozon has given the heros an opportunity to provide services to everyone, don't miss your chance.</span>
+                        </div>
                         <div id="hemptycartindexline"></div>
                         <img id="emptycartindeximg" src={Hero}/>
                     </div>
+                    <Footer />
                 </div>
             )
         }
