@@ -1,6 +1,6 @@
 import React from "react"
 import NavBarContainer from "../nav_bar/nav_bar_container"
-import {Link} from "react-router-dom"
+import {Link, Redirect} from "react-router-dom"
 import HerozonBasicImage from "../../../app/assets/images/Herozon_Basic.png"
 import { FaStar } from "react-icons/fa"
 import Footer from "../Footer"
@@ -33,8 +33,8 @@ class ProductIndex extends React.Component {
         }
     }
     rerender(e) {
-        console.log(e.currentTarget.value)
-        this.setState({ id: e.currentTarget.value }, () => console.log(this.state))
+        this.props.history.push(`/services/${e.currentTarget.value}/products`)
+        this.forceUpdate()
     }
 
 
@@ -51,8 +51,9 @@ class ProductIndex extends React.Component {
                 </div>
                 <div id="entirelowernavbar">
                     <div id="lowernavbartext">
+                        {console.log(this.props.services)}
                         {this.props.services.map((service) => (
-                            <button id="lowernavbarentries" value={service.id} onClick={this.rerender} key={service.id} >{service.title.toUpperCase()}</button>
+                            <button id="lowernavbarentries" value={service.id} key={service.id} onClick={this.rerender}>{service.title.toUpperCase()}</button> 
                         ))}
                     </div>
                     <div id="hnavline">

@@ -19,3 +19,10 @@ export const deleteReview = reviewId => (
         method: "DELETE"
     })
 )
+
+export const fetchuserReviews = userId => (
+    $.ajax({
+        url: `/api/users/${userId}`,
+        method: "GET"
+    })
+) 

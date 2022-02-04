@@ -15,7 +15,7 @@ const App = () => (
   <div>
     <Switch>
         <Route exact path="/" component={SplashContainer}/>
-        <Route exact path="/services/:serviceId/products" component={ProductContainer}/>
+        <Route exact path="/services/:serviceId/products" key={Math.random()} component={ProductContainer}/>
         <Route exact path="/products/:productId" component={ProductShowContainer}/>
         <Route exact path="/users/:userId/carts" component={CartIndexContainer}/>
         <Route exact path="/users/:userId/profile" component={ProfileContainer}/>

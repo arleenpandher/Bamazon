@@ -67,7 +67,8 @@ class CartIndex extends React.Component {
                     {this.props.cartproducts.map((product) => {
                         return(
                             <div id="minicartindexdiv2">
-                            <div id="minicartindexdiv" key={product.cart_id}>
+                            <div id="minicartindexdiv100" key={product.cart_id}>
+                                <div id="minicartindexdiv200">
                                  <img id="cartindeximage" src={product.photoUrl}/>
                                  <div id="innercartindexdiv">
                                     <span id="producttitleinreview">{product.title} - {product.description}</span>
@@ -81,14 +82,16 @@ class CartIndex extends React.Component {
                                         <button id="deletebtncartindex" value={product.cartId} onClick={this.removeitem}>Delete</button>
                                     </div>    
                                 </div>
+                                </div>
                                 <div id="innerpricecartindex">
-                                <span id="cartindexprice">${product.cost}</span>
+                                    <span id="cartindexprice">${product.cost}</span>
                                 </div>
                             </div>
                             <div id="hnavlineupdate202"></div>
                             </div>
                         )
                     })}
+                    <span id="bottomtsubtotalprice">Subtotal ({quantity} items): ${total.toFixed(2)}</span>
                     </div>
                     <div id="totalpricediv">
                         <div id="shippingfontincheckout">

@@ -1,4 +1,4 @@
-import { createreview, fetchallreviews, deleteReview } from "../utils/review_api_util";
+import { createreview, fetchallreviews, deleteReview, fetchuserReviews } from "../utils/review_api_util";
 
 export const RECEIVE_REVIEW = "REVIEW_REVIEW"
 export const RECEIVE_ALL_REVIEWS = "RECEIVE_ALL_REVIEWS"
@@ -34,5 +34,10 @@ export const fetchallReviews = productId => dispatch => (
 export const deletereview = reviewId => dispatch => (
     deleteReview(reviewId)
     .then(review => dispatch(removeReview(review.id)))
+)
+
+export const fetchUserReviews = userId => dispatch => (
+    fetchuserReviews(userId)
+    .then(reviews => dispatch(receiveReviews(reviews)))
 )
 

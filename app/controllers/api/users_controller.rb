@@ -11,10 +11,10 @@ class Api::UsersController < ApplicationController
         end
     end
 
-    
-
-
-
+    def show 
+        @reviews = current_user.reviews 
+        render :index
+    end
 
     private 
     def user_params 

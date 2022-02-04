@@ -15,6 +15,7 @@ class Profile extends React.Component {
         this.props.fetchtransactions()
         if (this.props.user) {
             this.props.fetchcartitems(this.props.user.id)
+            this.props.fetchreviews(this.props.user.id)
         }
     }
 
@@ -38,6 +39,11 @@ class Profile extends React.Component {
         })
         return(
             <div>
+                    <div>
+                        {this.props.reviews.map(review => (
+                            <span>{review.title}</span>
+                        ))}
+                    </div>
                 <NavBar />
                 <div>
                     <div id="profileandorderdiv">
