@@ -17,7 +17,9 @@ class CartIndex extends React.Component {
 
 
     componentDidMount() {
-        this.props.fetchallcart(this.props.userId)
+        if (this.props.currentUser) {
+            this.props.fetchallcart(this.props.userId)
+        }
     }
 
     removeitem(e) {

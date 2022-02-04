@@ -12,11 +12,10 @@ class Profile extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchtransactions()
-        // if (this.props.user) {
+        if (this.props.currentUser) {
+            this.props.fetchtransactions()
             this.props.fetchcartitems(this.props.currentUser.id)
-            // this.props.fetchreviews(this.props.currentUser.id)
-        // }
+        }
     }
 
     addToCart(e) {
