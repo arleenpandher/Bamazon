@@ -10,6 +10,7 @@ require 'open-uri'
 
 demouser = User.create(name: "Batman", username: "The OG Hero", password:"hello123")
 
+
 Service.destroy_all
 
 service1 = Service.create(title: "save the earth")

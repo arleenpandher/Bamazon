@@ -361,26 +361,28 @@
 
 #cartnavbar {
     height: 50px;
-    
+    margin-top: 5px;
 }
 
 #quantitycounttext {
-    background-color: tomato;
-    color: white;
+    color: rgb(242 104 4);
     margin-right:40px;
     margin-top: 8px;
-    position: absolute;
-
     font-size:25px;
+    position: absolute;
+    right: 0.5px;
 }
 
 #cartdiv {
-    position: relative; 
+    position: relative;
+    top: 0;
+    right: 0; 
 }
 
 #cartlink {
-    /* position: absolute; */
-
+    position: relative;
+    top: 0;
+    right: 0;
 }
 
 * {    

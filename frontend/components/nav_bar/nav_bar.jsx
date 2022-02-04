@@ -39,8 +39,9 @@ class NavBar extends React.Component {
                         <div id="cartdiv">
                             <Link id="cartlink" to={`/users/${currentUser.id}/carts`}>
                                 <img id="cartnavbar" src={Cart}></img>
+                                <span id="quantitycounttext">{count}</span>
                             </Link>
-                            <span id="quantitycounttext">{count}</span>
+                            {/* <span id="quantitycounttext">{count}</span> */}
                         </div>
                 </div>
                 ) : (
