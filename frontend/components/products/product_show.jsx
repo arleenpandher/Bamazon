@@ -132,7 +132,6 @@ class ProductShow extends React.Component {
                         <span id="productshowinstock">In Stock.</span>
                         <div id="productshowaddtocartsecond">
                         <select id="quantitydropdown" onChange={this.update}>
-                            <option disabled selected>Qty</option>
                             <option value={1}>Qty: 1</option>
                             <option value={2}>Qty: 2</option>
                             <option value={3}>Qty: 3</option>
@@ -163,7 +162,11 @@ class ProductShow extends React.Component {
                         <div id="productshowreview">
                             <span id="reviewthisproduct">Review this product</span>
                             <span id="shareyourthoughts">Share your thoughts with other customers</span>
-                            <Link id="linktocreatereview" to={`/products/${this.props.productId}/reviews`}>Write a customer review</Link>
+                            {this.props.currentUser ? (
+                                <Link id="linktocreatereview" to={`/products/${this.props.productId}/reviews`}>Write a customer review</Link>
+                            ) : (
+                                <Link id="linktocreatereview" to={`/login`}>Write a customer review</Link>
+                            )}
                         </div>
                         <div>
                             {display}
