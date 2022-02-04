@@ -11,12 +11,11 @@ class ProductIndex extends React.Component {
         this.state = {id: this.props.serviceId}
         // this.state = this.props.productinfo
         this.addToCart = this.addToCart.bind(this)
-        this.rerender = this.rerender.bind(this)
     }
 
     componentDidMount() {
         this.props.fetchproducts(this.props.serviceId)
-        this.props.fetchreviews(this.props.match.params.productId)
+        // this.props.fetchreviews(this.props.match.params.productId)
         this.props.fetchservices()
         if (this.props.user) {
             this.props.fetchcartitems(this.props.user.id)
@@ -38,10 +37,7 @@ class ProductIndex extends React.Component {
             this.props.addtocart({product_id: e.currentTarget.value, quantity: 1})
         }
     }
-    rerender(e) {
-        this.props.history.push(`/services/${e.currentTarget.value}/products`)
-        this.forceUpdate()
-    }
+
 
 
     render() {

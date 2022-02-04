@@ -57,6 +57,36 @@ class ProductShow extends React.Component {
         console.log(this.props.product.ratings)
         let array = new Array(this.props.product.ratings)
         let narray = new Array(5 - this.props.product.ratings)
+
+        const display = this.props.reviews.length ? (
+            <div id="productshowreview3">
+            <h3 id="allreviewheader">All Reviews</h3>
+
+            {this.props.reviews.map(review => (
+                <div id="productshowreview2" key={review.id}>
+                    <div id="personreviewdiv">
+                        <BsPersonCircle size={25}/>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span id="reviewerpersonfont">{review.user}</span>
+                    </div>
+                    <span id="ratingsandtitlediv">{review.ratings}  &nbsp;&nbsp;&nbsp; {review.title}</span>
+                    <span id="reviewedincanada">Reviewed in Canada on January 1, 2021</span>
+                    <span margin-bottom={"10px;"} font-size={"15px;"}>{review.body}</span>
+                    <div>
+                        {this.props.currentUser.id === review.userId ? (
+                            <div>
+                                {console.log(review.id)}
+                                <button id="reviewdeletebtn" value={review.id} onClick={this.removereview}>Delete</button>
+                            </div>
+                        ) : (
+                        <div></div>
+                        )}
+                    </div>
+                </div>
+            ))}
+        </div>
+        ) : (
+            null
+        )
         return (
             <div>
                 <header>
@@ -70,7 +100,7 @@ class ProductShow extends React.Component {
                             {[...Array(5)].map((star,i) => {
                                 const ratingvalue = i + 1
                                 return (
-                                    <FaStar size={20} color={ratingvalue <= this.props.product.ratings ? "#ffc107" : "#e4e5e9"}/>
+                                    <FaStar key={i} size={20} color={ratingvalue <= this.props.product.ratings ? "#ffc107" : "#e4e5e9"}/>
                                 )
                             })}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <span id="productshowratingtext">{this.props.reviews.length} ratings</span>
@@ -126,29 +156,8 @@ class ProductShow extends React.Component {
                             <span id="shareyourthoughts">Share your thoughts with other customers</span>
                             <Link id="linktocreatereview" to={`/products/${this.props.productId}/reviews`}>Write a customer review</Link>
                         </div>
-                        <div id="productshowreview3">
-                            <h3 id="allreviewheader">All Reviews</h3>
-                            {this.props.reviews.map(review => (
-                                <div id="productshowreview2" key={review.id}>
-                                    <div id="personreviewdiv">
-                                        <BsPersonCircle size={25}/>&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <span id="reviewerpersonfont">{review.user}</span>
-                                    </div>
-                                    <span id="ratingsandtitlediv">{review.ratings}  &nbsp;&nbsp;&nbsp; {review.title}</span>
-                                    <span id="reviewedincanada">Reviewed in Canada on January 1, 2021</span>
-                                    <span margin-bottom={"10px;"} font-size={"15px;"}>{review.body}</span>
-                                    <div>
-                                        {this.props.currentUser.id === review.userId ? (
-                                            <div>
-                                                {console.log(review.id)}
-                                                <button id="reviewdeletebtn" value={review.id} onClick={this.removereview}>Delete</button>
-                                            </div>
-                                        ) : (
-                                        <div></div>
-                                        )}
-                                    </div>
-                                </div>
-                            ))}
+                        <div>
+                            {display}
                         </div>
                     </div>
                 </div>

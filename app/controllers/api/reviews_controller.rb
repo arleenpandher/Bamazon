@@ -10,7 +10,9 @@ class Api::ReviewsController < ApplicationController
 
     def index 
         @product_reviews = Product.find_by(id: params[:product_id]).reviews
-        render :index  
+        if @product_reviews 
+            render :index
+        end  
     end
 
     def destroy 

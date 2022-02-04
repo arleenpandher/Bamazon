@@ -16,7 +16,7 @@ class Profile extends React.Component {
         this.props.fetchtransactions()
         // if (this.props.user) {
             this.props.fetchcartitems(this.props.currentUser.id)
-            this.props.fetchreviews(this.props.currentUser.id)
+            // this.props.fetchreviews(this.props.currentUser.id)
         // }
     }
 
@@ -76,7 +76,7 @@ class Profile extends React.Component {
                             </div>
                             <div id="alltransactionsdiv">
                                 {this.props.transactions.map(transaction => (
-                                    <div id="individualtransactionbox">
+                                    <div key={transaction.id} id="individualtransactionbox">
                                         <div id="transactionprofilecol">
                                             <span id="deliveredtransactiontext">Delivered Jan. 22, 2022</span>
                                             <span id="packagetransactiontxt">Package was handed to {this.props.currentUser.name}</span>
