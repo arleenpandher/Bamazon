@@ -146,9 +146,7 @@ class ProductShow extends React.Component {
                             <option value={3}>Qty: 3</option>
                         </select>
                         {this.props.currentUser ? (
-                            <div>
                                 <button id="productshowaddtocartbtn" value={this.props.product.id} onClick={this.addToCart}>Add to Cart</button>
-                            </div>
                         ) : (
                             <button id="productshowaddtocartbtn" value={this.props.product.id} onClick={this.forcesignin}>Add to Cart</button>
                         )}
