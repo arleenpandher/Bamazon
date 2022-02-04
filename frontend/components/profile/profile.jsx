@@ -35,8 +35,8 @@ class Profile extends React.Component {
                                 {this.props.transactions.map(transaction => (
                                     <div key={transaction.id} id="individualtransactionbox">
                                         <div id="transactionprofilecol">
-                                            <span id="deliveredtransactiontext">Delivered Jan. 22, 2022</span>
-                                            <span id="packagetransactiontxt">Package was handed to {this.props.currentUser.name}</span>
+                                            <span id="deliveredtransactiontext">Service Date: Jan. 22, 2022</span>
+                                            <span id="packagetransactiontxt">Service was provided to {this.props.currentUser.name}</span>
                                             <div id="transactionprofileprodinfo">
                                                 <img id="transactionimage"src={transaction.photoUrl}/>
                                                 <span id="moretransactiondetails">{transaction.title} - {transaction.description}</span>
