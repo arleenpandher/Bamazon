@@ -12,7 +12,6 @@ class Profile extends React.Component {
     }
 
     componentDidMount() {
-        console.log(this.props)
         this.props.fetchtransactions()
         // if (this.props.user) {
             this.props.fetchcartitems(this.props.currentUser.id)
@@ -31,7 +30,30 @@ class Profile extends React.Component {
     }
 
     render() {
-        if (!this.props.transactions.length) return null
+        const display = this.props.transactions.length ? (
+                            <div id="alltransactionsdiv">
+                                {this.props.transactions.map(transaction => (
+                                    <div key={transaction.id} id="individualtransactionbox">
+                                        <div id="transactionprofilecol">
+                                            <span id="deliveredtransactiontext">Delivered Jan. 22, 2022</span>
+                                            <span id="packagetransactiontxt">Package was handed to {this.props.currentUser.name}</span>
+                                            <div id="transactionprofileprodinfo">
+                                                <img id="transactionimage"src={transaction.photoUrl}/>
+                                                <span id="moretransactiondetails">{transaction.title} - {transaction.description}</span>
+                                            </div>
+                                        </div>
+                                        <div id="transactionbuttons">
+                                            <button value={parseInt(transaction.productId)} onClick={this.addToCart} id="buyagainbtn"><BiShoppingBag/>&nbsp;&nbsp;&nbsp;&nbsp; Buy it again</button>
+                                            <Link to={`/products/${transaction.productId}/reviews`}id="buyagainbtn">Write a product review</Link>
+                                            <Link to={`/products/${transaction.productId}`} id="buyagainbtn">View your hero</Link>
+                                            <Link to={`/services/${transaction.serviceId}/products`} id="buyagainbtn">View similar heros</Link>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                            ) : (
+                                null
+                            )
         let total = 0
         let quantity = 0 
         this.props.transactions.forEach(transaction => {
@@ -74,26 +96,7 @@ class Profile extends React.Component {
                                 <span id="topprofileusernametext">View order details</span>
                             </div>
                             </div>
-                            <div id="alltransactionsdiv">
-                                {this.props.transactions.map(transaction => (
-                                    <div key={transaction.id} id="individualtransactionbox">
-                                        <div id="transactionprofilecol">
-                                            <span id="deliveredtransactiontext">Delivered Jan. 22, 2022</span>
-                                            <span id="packagetransactiontxt">Package was handed to {this.props.currentUser.name}</span>
-                                            <div id="transactionprofileprodinfo">
-                                                <img id="transactionimage"src={transaction.photoUrl}/>
-                                                <span id="moretransactiondetails">{transaction.title} - {transaction.description}</span>
-                                            </div>
-                                        </div>
-                                        <div id="transactionbuttons">
-                                            <button value={parseInt(transaction.productId)} onClick={this.addToCart} id="buyagainbtn"><BiShoppingBag/>&nbsp;&nbsp;&nbsp;&nbsp; Buy it again</button>
-                                            <Link to={`/products/${transaction.productId}/reviews`}id="buyagainbtn">Write a product review</Link>
-                                            <Link to={`/products/${transaction.productId}`} id="buyagainbtn">View your hero</Link>
-                                            <Link to={`/services/${transaction.serviceId}/products`} id="buyagainbtn">View similar heros</Link>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
+                            {display}
                     </div>
                 </div>
                 {/* {this.props.transactions.map(transaction => (
