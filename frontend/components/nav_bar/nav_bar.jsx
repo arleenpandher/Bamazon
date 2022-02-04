@@ -81,7 +81,7 @@ class NavBar extends React.Component {
                 </div>
                 <div id="two">
                     <select id="navallbar">
-                        <option disabled selected>All</option>
+                        <option >All</option>
                         <option >Choice 2</option>
                         <option >Choice 3</option>
                     </select>

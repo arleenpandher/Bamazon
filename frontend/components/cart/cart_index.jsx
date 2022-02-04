@@ -70,9 +70,9 @@ class CartIndex extends React.Component {
                     <h1 id="shoppingcartheader">Shopping Cart</h1>
                     <h3 id="shoppingcartprice">Price</h3>
                     <div id="hnavlineupdate"></div>
-                    {this.props.cartproducts.map((product) => {
+                    {this.props.cartproducts.map((product,i) => {
                         return(
-                            <div id="minicartindexdiv2">
+                            <div key={i} id="minicartindexdiv2">
                             <div id="minicartindexdiv100" key={product.cart_id}>
                                 <div id="minicartindexdiv200">
                                  <img id="cartindeximage" src={product.photoUrl}/>
