@@ -12,11 +12,12 @@ class Profile extends React.Component {
     }
 
     componentDidMount() {
+        console.log(this.props)
         this.props.fetchtransactions()
-        if (this.props.user) {
-            this.props.fetchcartitems(this.props.user.id)
-            this.props.fetchreviews(this.props.user.id)
-        }
+        // if (this.props.user) {
+            this.props.fetchcartitems(this.props.currentUser.id)
+            this.props.fetchreviews(this.props.currentUser.id)
+        // }
     }
 
     addToCart(e) {
@@ -39,12 +40,8 @@ class Profile extends React.Component {
         })
         return(
             <div>
-                    <div>
-                        {this.props.reviews.map(review => (
-                            <span>{review.title}</span>
-                        ))}
-                    </div>
                 <NavBar />
+                <h3 id="youroders">Your Orders</h3>
                 <div>
                     <div id="profileandorderdiv">
                         <div id="profile">

@@ -36,8 +36,9 @@ export const deletereview = reviewId => dispatch => (
     .then(review => dispatch(removeReview(review.id)))
 )
 
-export const fetchUserReviews = userId => dispatch => (
-    fetchuserReviews(userId)
+export const fetchUserReviews = userId => dispatch => {
+    // debugger
+    return fetchuserReviews(userId)
     .then(reviews => dispatch(receiveReviews(reviews)))
-)
+}
 

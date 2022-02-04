@@ -12,7 +12,9 @@ class Api::UsersController < ApplicationController
     end
 
     def show 
+       
         @reviews = current_user.reviews 
+        # debugger
         render :index
     end
 

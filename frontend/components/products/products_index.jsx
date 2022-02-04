@@ -23,6 +23,12 @@ class ProductIndex extends React.Component {
         }
     }
 
+    componentDidUpdate(preprops) {
+        if (preprops.serviceId !== this.props.serviceId) {
+            this.props.fetchproducts(this.props.serviceId)
+        }
+    }
+
     addToCart(e) {
         e.preventDefault()
         if (this.props.cart[e.currentTarget.value]) {
@@ -50,10 +56,9 @@ class ProductIndex extends React.Component {
                     <img id="BasicHeadImage" src={HerozonBasicImage}></img>
                 </div>
                 <div id="entirelowernavbar">
-                    <div id="lowernavbartext">
-                        {console.log(this.props.services)}
+                <div id="lowernavbartext">
                         {this.props.services.map((service) => (
-                            <button id="lowernavbarentries" value={service.id} key={service.id} onClick={this.rerender}>{service.title.toUpperCase()}</button> 
+                            <Link id="lowernavbarentries" key={service.id} to={`/services/${service.id}/products`}>{service.title.toUpperCase()}</Link>
                         ))}
                     </div>
                     <div id="hnavline">

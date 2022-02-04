@@ -1330,7 +1330,6 @@
     width:max-content;
     height:350px;
     margin-left:50px;
-    margin-top:100px;
     align-items:center;
     justify-content:center;
 }
@@ -1343,7 +1342,6 @@
     width:65%;
     height:max-content;
     margin-left:50px;
-    margin-top:100px;
     align-items:center;
     justify-content:center;
 }
@@ -1502,4 +1500,11 @@
 
 #linkedintag {
     margin-right: 50px;
+}
+
+#youroders {
+    margin-left: 484px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    font-size: 34px;
 }
