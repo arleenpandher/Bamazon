@@ -7,6 +7,7 @@ const Footer = () => {
 
     return(
         <div id="outerfooterdiv">
+           
             <div id="footerlogodiv">
                 <img id="footerimg" src={Logo}/>
             </div>
@@ -20,6 +21,8 @@ const Footer = () => {
                     </a>
                 </div>
             </div>
+       
+      
         </div>
     )
 }

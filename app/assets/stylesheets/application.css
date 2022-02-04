@@ -506,6 +506,11 @@
     align-items:center;
     height: 225px;
     width: 46.7035%;
+    text-decoration:none;
+}
+
+#link:hover {
+    font-weight:600;
 }
 
 #first, #second, #third, #fourth, #fifth {
