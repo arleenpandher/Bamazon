@@ -77,7 +77,7 @@ class ProductShow extends React.Component {
                     {[...Array(5)].map((star,i) => {
                             const ratingvalue = i + 1
                             return (
-                                <FaStar key={i} size={20} color={ratingvalue <= review.ratings ? "#ffc107" : "#e4e5e9"}/>
+                                <FaStar key={i} size={15} color={ratingvalue <= review.ratings ? "#ffc107" : "#e4e5e9"}/>
                             )
                         })}
                     
