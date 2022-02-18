@@ -30,7 +30,6 @@ class SessionForm extends React.Component {
     renderErrors() {
         return(
           <div id="errorsinlogindiv">
-            {console.log(this.props.errors)}
             {this.props.errors.map((error, i) => (
               <span id="errorlistitem" key={i}>{error}</span>
             ))}
