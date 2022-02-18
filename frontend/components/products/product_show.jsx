@@ -36,8 +36,8 @@ class ProductShow extends React.Component {
         this.props.history.push('/login')
     }
 
-    servicedate() {
-        let newdate = new Date(Date.now())
+    servicedate(date) {
+        let newdate = new Date(date)
         let months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
         let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
         let year = newdate.getFullYear()
@@ -97,7 +97,7 @@ class ProductShow extends React.Component {
                         })}
                     
                      &nbsp;&nbsp;&nbsp; {review.title}</span>
-                    <span id="reviewedincanada">Reviewed in Canada on January 1, 2021</span>
+                    <span id="reviewedincanada">Reviewed in Canada on {this.servicedate(review.createdAt)}</span>
                     <span margin-bottom={"10px;"} font-size={"15px;"}>{review.body}</span>
                     <div>
                         {this.props.currentUser && this.props.currentUser.id === review.userId ? (
@@ -144,7 +144,7 @@ class ProductShow extends React.Component {
                         <div id="productshowaddtocartfirst">
                             <span id="productshowprice">${this.props.product.cost}</span>
                             <span>$9.53 Transportation Desposit to Canada</span>
-                            <span id="servicedate">Service Date: <span id="boldservicedate">{this.servicedate()}</span></span>
+                            <span id="servicedate">Service Date: <span id="boldservicedate">{this.servicedate(Date.now())}</span></span>
                             <span>Order within <span id="orderwith">6 hrs 17 mins</span></span>
                         </div>
                         <div id="productshowpindrop">
