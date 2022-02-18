@@ -42,30 +42,22 @@ class Splash extends React.Component {
                     <div id="minielements">
                     <div id="toprow">
                         <Link id="link" to={`/services/4/products`}>
-                            <div id="first">
-                                <span id="text">{this.props.services[3].title}</span>
-                                <img id="bbpicture" src={this.props.services[3].photoUrl}></img>
-                            </div>
+                            <img id="bbpicture" src={this.props.services[3].photoUrl}></img>
+                            <span id="harrypotterservice">Flying Lessons</span>
                         </Link>
                         <Link id="link" to={`/services/3/products`}>
-                            <div id="second">
-                                <span id="text">{this.props.services[2].title}</span>
-                                <img id="picture" src={this.props.services[2].photoUrl}></img>
-                            </div>
+                            <img id="picture" src={this.props.services[2].photoUrl}></img>
+                            <span id="harrypotterservice">Balance your Diet</span>
                         </Link>
                     </div>
                     <div id="bottomrow">
                     <Link id="link" to={`/services/2/products`}>
-                        <div id="third">
-                            <span id="text">{this.props.services[1].title}</span>
-                            <img id="picture" src={this.props.services[1].photoUrl}></img>
-                        </div>
+                        <img id="picture" src={this.props.services[1].photoUrl}></img>
+                        <span id="harrypotterservice">Save the Universe</span>
                     </Link>
                     <Link id="link" to={`/services/1/products`}>
-                        <div id="fourth">
-                            <span id="text">{this.props.services[0].title}</span>
-                            <img id="picture" src={this.props.services[0].photoUrl}></img>
-                        </div>
+                        <img id="picture" src={this.props.services[0].photoUrl}></img>
+                        <span id="harrypotterservice">Save the Earth</span>
                     </Link>
                     </div>
                     </div>
@@ -74,10 +66,10 @@ class Splash extends React.Component {
                     <div id="minielements">
                     <div id="toprow">
                         <Link id="link" to={`/services/5/products`}>
-                            <div id="first">
-                                <span id="text">{this.props.services[4].title}</span>
-                                <img id="bbpicture" src={this.props.services[4].photoUrl}></img>
-                            </div>
+                        <div id="first">
+                            <span id="text">{this.props.services[4].title}</span>
+                            <img id="bbpicture" src={this.props.services[4].photoUrl}></img>
+                        </div>
                         </Link>
                         <Link id="link" to={`/services/6/products`}>
                             <div id="second">

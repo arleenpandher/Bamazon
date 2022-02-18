@@ -528,9 +528,19 @@
     display: flex;
     justify-content: center;
     align-items:center;
+    position:relative;
     height: 225px;
     width: 46.7035%;
     text-decoration:none;
+}
+
+#harrypotterservice {
+    position: absolute;
+    margin-right: 165px;
+    margin-bottom: 160px;
+    border: 1px solid white;
+    color: white;
+    padding: 0.5rem;
 }
 
 #link:hover {
@@ -559,6 +569,7 @@
 
 #first, #fifth {
     background-color: rgb(255,244,224);
+    object-fit: cover;
 }
 
 #second {
@@ -575,15 +586,16 @@
 
 
 #bbpicture {
-    height: 75%;
-    width:65%;
-    margin-bottom: 30px;
+    height: 100%;
+    width: 100%;
+    /* position:absolute; */
+    /* margin-bottom: 30px;
+    object-fit: cover; */
 }
 
 #picture {
-    height: 150px;
-    width: 150px;
-    margin-bottom: 20px;
+    height: 100%;
+    width: 100%;
 }
 
 #picturefor9 {
