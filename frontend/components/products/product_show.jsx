@@ -36,6 +36,19 @@ class ProductShow extends React.Component {
         this.props.history.push('/login')
     }
 
+    servicedate() {
+        let newdate = new Date(Date.now())
+        let months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+        let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        let year = newdate.getFullYear()
+        let month = newdate.getMonth()
+        let day = newdate.getDate()
+        let nday = newdate.getDay()
+        let currentmonth = months[month]
+        let currentday = days[nday] 
+        let fulldate = `${currentday} ${currentmonth} ${day}, ${year}`
+        return fulldate
+    }
    
    
     addToCart(e) {
@@ -131,7 +144,7 @@ class ProductShow extends React.Component {
                         <div id="productshowaddtocartfirst">
                             <span id="productshowprice">${this.props.product.cost}</span>
                             <span>$9.53 Transportation Desposit to Canada</span>
-                            <span id="servicedate">Service Date: <span id="boldservicedate">Tuesday, February 8</span></span>
+                            <span id="servicedate">Service Date: <span id="boldservicedate">{this.servicedate()}</span></span>
                             <span>Order within <span id="orderwith">6 hrs 17 mins</span></span>
                         </div>
                         <div id="productshowpindrop">
