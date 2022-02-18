@@ -12,7 +12,6 @@ const ProductsReducer = (state={}, action) => {
             nextState[action.product.id] = action.product 
             return nextState 
         case RECEIVE_REVIEW:
-            console.log(action.review)
             nextState[action.review.productId].reviews.push(action.review.id)
             return nextState 
         default: 

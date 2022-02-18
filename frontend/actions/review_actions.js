@@ -3,6 +3,8 @@ import { createreview, fetchallreviews, deleteReview, fetchuserReviews } from ".
 export const RECEIVE_REVIEW = "REVIEW_REVIEW"
 export const RECEIVE_ALL_REVIEWS = "RECEIVE_ALL_REVIEWS"
 export const REMOVE_REVIEW = "REMOVE_REVIEW"
+export const REVIEW_ERRORS = "REVIEW_ERRORS"
+export const CLEAR_REVIEW_ERRORS = "CLEAR_REVIEW_ERRORS"
 
 
 const receiveReview = (review) => ({
@@ -20,10 +22,22 @@ const removeReview = reviewId => ({
     reviewId
 })
 
+const reviewErrors = errors => ({
+    type: REVIEW_ERRORS,
+    errors
+})
+
+export const clearReviewErrors = () => ({
+    type: CLEAR_REVIEW_ERRORS
+})
+
 
 export const fetchReview = review => dispatch => (
     createreview(review)
-    .then(review => dispatch(receiveReview(review)))
+    .then(review => dispatch(receiveReview(review)),
+    err => (
+        dispatch(reviewErrors(err.responseJSON))
+    ))
 )
 
 export const fetchallReviews = productId => dispatch => (

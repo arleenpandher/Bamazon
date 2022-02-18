@@ -1227,20 +1227,30 @@
     font-weight:600;
 }
 
+#reviewerrors {
+    font-size: 14px;
+    color: darkred;
+    margin-bottom: 4px;
+}
+
+#errorreviewinput {
+    border: 2px solid darkred;
+}
+
 #reviewtitlelabel, #reviewbodylabel {
     width:100%;
     display:flex;
     flex-direction:column;
 }
 
-#reviewtitletext, #reviewbodytext {
+#reviewtitletext, #reviewbodytext, #errorreviewinput {
     line-height: 28px;
     width:800px;
     margin-top: 15px;
     padding-left:0.5rem;
 }
 
-#reviewbodytext {
+#reviewbodytext, #errorreviewinput {
     line-height:40px;
 }
 

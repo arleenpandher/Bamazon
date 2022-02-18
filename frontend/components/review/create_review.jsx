@@ -15,6 +15,10 @@ class CreateReview extends React.Component {
         this.props.fetchproduct(this.props.match.params.productId),
         this.props.fetchreviews(this.props.match.params.productId)
     }
+
+    componentWillUnmount() {
+        this.props.clearErrors()
+    }
     
 
     update(field) {
@@ -26,15 +30,20 @@ class CreateReview extends React.Component {
     handleSubmit(e) {
         e.preventDefault()
         this.props.createreview(this.state)
-        let totalratings = 0
-        if (this.props.reviews.length) {
-            this.props.reviews.map(review => {
-                totalratings += review.ratings
-            })
-        }
-        let newrating = (totalratings+parseInt(this.state.ratings))/(this.props.reviews.length + 1)
-        this.props.updateproductratings({id: this.props.product.id, ratings: newrating})
-        .then(() => this.props.history.push('/'))
+        // .then(() => console.log(Object.values(this.props.errors).length))
+        .then(() => {
+            if (!Object.values(this.props.errors).length) {
+                let totalratings = 0
+                if (this.props.reviews.length) {
+                this.props.reviews.map(review => {
+                    totalratings += review.ratings
+                })
+            }
+            let newrating = (totalratings+parseInt(this.state.ratings))/(this.props.reviews.length + 1)
+            this.props.updateproductratings({id: this.props.product.id, ratings: newrating})
+            .then(() => this.props.history.push('/'))
+            }
+        })
     }
 
     render() {
@@ -50,18 +59,33 @@ class CreateReview extends React.Component {
                 </div>
                 <div id="reviewhline"></div>
                 <div id="reviewtitle">
+                {this.props.errors.title ? (
+                    <span id="reviewerrors">{this.props.errors.title}</span>
+                ): (
+                    null
+                )}
                     <label id="reviewtitlelabel">Add a Headline:
-                        <input id="reviewtitletext" type="text" placeholder="What's most important to know" value={this.state.title} onChange={this.update("title")}/>
+                        <input id={this.props.errors.title ? "errorreviewinput" :"reviewtitletext"} type="text" placeholder="What's most important to know" value={this.state.title} onChange={this.update("title")}/>
                     </label>
                 </div>
                 <div id="reviewbody">
+                {this.props.errors.body ? (
+                    <span id="reviewerrors">{this.props.errors.body}</span>
+                ): (
+                    null
+                )}
                     <label id="reviewbodylabel">Add a Written Review 
-                        <textarea id="reviewbodytext" value={this.state.body} 
+                        <textarea id={this.props.errors.body ? "errorreviewinput" :"reviewbodytext"} value={this.state.body} 
                         placeholder="What did you like or dislike? What did you use this product for?" onChange={this.update("body")}/>
                     </label>
                 </div>
                 <div id="reviewhline"></div>
                     <div id="overallratingdiv">
+                    {this.props.errors.ratings ? (
+                    <span id="reviewerrors">{this.props.errors.ratings}</span>
+                ): (
+                    null
+                )}
                     <span>Overall Rating</span>
                     <div id="starratingbox">
                         {[...Array(5)].map((star,i) => {
