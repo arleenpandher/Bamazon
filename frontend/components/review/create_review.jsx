@@ -41,7 +41,7 @@ class CreateReview extends React.Component {
             }
             let newrating = (totalratings+parseInt(this.state.ratings))/(this.props.reviews.length + 1)
             this.props.updateproductratings({id: this.props.product.id, ratings: newrating})
-            .then(() => this.props.history.push('/'))
+            .then(() => this.props.history.push(`/products/${this.props.match.params.productId}`))
             }
         })
     }
