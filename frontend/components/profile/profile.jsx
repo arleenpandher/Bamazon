@@ -4,6 +4,7 @@ import {BsPersonCircle} from "react-icons/bs"
 import {Link} from "react-router-dom"
 import {BiShoppingBag} from "react-icons/bi"
 import Footer from "../Footer"
+import { FaStar } from "react-icons/fa"
 
 class Profile extends React.Component {
     constructor(props) {
@@ -54,6 +55,32 @@ class Profile extends React.Component {
                             ) : (
                                 null
                             )
+
+        
+        const reviewinfo = this.props.reviews.length ? (
+            <div id="reviewinfodiv1">
+                {this.props.reviews.map((review, idx) => (
+                    <div key={idx} id="reviewonprofile">
+                        <h5 id="h5reviewtitle">Review #{idx+1}</h5>
+                        <span id="herotitleprofile">Hero: {review.name}</span>
+                        <span id="servicetitleprofile">Service: {review.service}</span>
+                        <span id="starsinprofile">
+                        {[...Array(5)].map((star,i) => {
+                            const ratingvalue = i + 1
+                            return (
+                                <FaStar key={i} size={15} color={ratingvalue <= review.ratings ? "#ffc107" : "#e4e5e9"}/>
+                            )
+                        })}
+                        </span>
+                        <span>{review.title}</span>
+                        <span>{review.body}</span>
+                    </div>
+                ))}
+            </div>
+        ) : (
+            null
+        )
+
         let total = 0
         let quantity = 0 
         this.props.transactions.forEach(transaction => {
@@ -66,10 +93,13 @@ class Profile extends React.Component {
                 <h3 id="youroders">Your Orders</h3>
                 <div>
                     <div id="profileandorderdiv">
-                        <div id="profile">
+                        <div>
+                            <div id="profile">
                                 <BsPersonCircle id="inneruserinfoprofile" size={350}/>
                                 <span id="profilename">Name: {this.props.currentUser.name}</span>
                                 <span id="profilename">Username: {this.props.currentUser.username}</span>
+                            </div>
+                            {reviewinfo}
                         </div>
                         <div id="profileorders">
                             <div id="innertopprofilediv">

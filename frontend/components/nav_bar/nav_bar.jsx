@@ -30,8 +30,8 @@ class NavBar extends React.Component {
                     <div id="navdropdown">
                         <button id="navdropdownbtn">Welcome {currentUser.name}</button>
                         <div id="navdropdowncontent">
-                            <Link onClick={logout} to={`/login`}>Sign Out</Link>
-                            <Link to={`/users/${currentUser.id}/profile`}>Profile</Link>
+                            <Link id="navbarlogintext" onClick={logout} to={`/login`}>Sign Out</Link>
+                            <Link id="navbarlogintext" to={`/users/${currentUser.id}/profile`}>View Profile</Link>
                         </div>
                     </div>
 
@@ -48,9 +48,9 @@ class NavBar extends React.Component {
 
                     <div id="navdropdown">
                         <button id="navdropdownbtn">Hello, Sign in</button>
-                        <div id="navdropdowncontent">
-                            <Link to={`/login`}>Login</Link>
-                            <Link to={`/signup`}>Sign Up</Link>
+                        <div id="navdropdowncontentinit">
+                            <Link id="navbarlogintext" to={`/login`}>Login</Link>
+                            <Link id="navbarlogintext" to={`/signup`}>Sign Up</Link>
                         </div>
                     </div>
                     {/* <span id="cartitemcount">{count}</span> */}
