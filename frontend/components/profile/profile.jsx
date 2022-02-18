@@ -20,6 +20,60 @@ class Profile extends React.Component {
         }
     }
 
+    transactiondate(date) {
+        let newdate = new Date(date)
+        let months = ["Jan","Feb","Mar","Apr","May","Jun","July","Aug","Sept","Oct","Nov","Dec"];
+        let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        let year = newdate.getFullYear()
+        let month = newdate.getMonth()
+        let day = newdate.getDate()
+        let nday = newdate.getDay()
+        let currentmonth = months[month]
+        let currentday = days[nday] 
+        let fulldate = `${currentday} ${currentmonth} ${day}, ${year}`
+        return fulldate
+    }
+
+    transactiontime(date) {
+        let newdate = new Date(date)
+        let hour = newdate.getHours()
+        let minutes = newdate.getMinutes()
+        let period = ""
+        if (hour <= 11) period = "AM"
+        if (hour > 11) {
+            period = "PM"
+            if (hour === 12) hour = 12 
+            if (hour > 12) hour = hour - 12
+        }
+        let fulltime = `${hour}:${minutes} ${period}`
+        return fulltime
+    }
+
+    servicetitle(title) {
+        let newTitle = title.split()
+        newTitle.forEach((word,idx) => {
+            let update = word[0].toUpperCase() + word.slice(1).toLowerCase()
+            newTitle[idx] = update
+        })
+        return newTitle.join(" ")
+    }
+
+    lastorder() {
+        if (Object.values(this.props.transactions).length) {
+            let t = Object.values(this.props.transactions)
+            let last = t.pop()
+            let newdate = new Date(last.createdAt)
+            let months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+            let year = newdate.getFullYear()
+            let month = newdate.getMonth()
+            let day = newdate.getDate()
+            let nday = newdate.getDay()
+            let currentmonth = months[month]
+            let fulldate = `${currentmonth} ${day}, ${year}`
+            return fulldate
+        }
+    }
+
     addToCart(e) {
         e.preventDefault()
         if (this.props.cart[e.currentTarget.value]) {
@@ -36,8 +90,8 @@ class Profile extends React.Component {
                                 {this.props.transactions.map(transaction => (
                                     <div key={transaction.id} id="individualtransactionbox">
                                         <div id="transactionprofilecol">
-                                            <span id="deliveredtransactiontext">Service Date: Jan. 22, 2022</span>
-                                            <span id="packagetransactiontxt">Service was provided to {this.props.currentUser.name}</span>
+                                            <span id="deliveredtransactiontext">Service Date: {this.transactiondate(transaction.createdAt)}</span>
+                                            <span id="packagetransactiontxt">{this.servicetitle(transaction.service)} provided to {this.props.currentUser.name} @ {this.transactiontime(transaction.createdAt)}</span>
                                             <div id="transactionprofileprodinfo">
                                                 <img id="transactionimage"src={transaction.photoUrl}/>
                                                 <span id="moretransactiondetails">{transaction.title} - {transaction.description}</span>
@@ -105,8 +159,8 @@ class Profile extends React.Component {
                             <div id="innertopprofilediv">
                             <div id="toprowofprofile">
                                 <div id="toprowprofilestart">
-                                    <span id="topprofilestarttext">ORDER PLACED</span>
-                                    <span>January 18, 2022</span>
+                                    <span id="topprofilestarttext"> LATEST ORDER PLACED</span>
+                                    <span>{this.lastorder()}</span>
                                 </div>
                                 <div id="toprowprofilestart">
                                     <span id="topprofilestarttext">TOTAL</span>
