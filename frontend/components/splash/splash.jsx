@@ -66,30 +66,24 @@ class Splash extends React.Component {
                     <div id="minielements">
                     <div id="toprow">
                         <Link id="link" to={`/services/5/products`}>
-                        <div id="first">
-                            <span id="text">{this.props.services[4].title}</span>
+                        
                             <img id="bbpicture" src={this.props.services[4].photoUrl}></img>
-                        </div>
+                            <span id="harrypotterservice">Demogorgon Pest Control</span>
+
                         </Link>
                         <Link id="link" to={`/services/6/products`}>
-                            <div id="second">
-                                <span id="text">{this.props.services[5].title}</span>
-                                <img id="picture" src={this.props.services[5].photoUrl}></img>
-                            </div>
+                            <img id="picture" src={this.props.services[5].photoUrl}></img>
+                            <span id="harrypotterservice">Save the Galaxy</span>
                         </Link>
                     </div>
                     <div id="bottomrow">
                     <Link id="link" to={`/services/7/products`}>
-                        <div id="third">
-                            <span id="text">{this.props.services[6].title}</span>
-                            <img id="picture" src={this.props.services[6].photoUrl}></img>
-                        </div>
+                        <img id="picture" src={this.props.services[6].photoUrl}></img>
+                        <span id="harrypotterservice">Volunteer as Tribute</span>
                     </Link>
                     <Link id="link" to={`/services/8/products`}>
-                        <div id="fourth">
-                            <span id="text">{this.props.services[7].title}</span>
-                            <img id="picture" src={this.props.services[7].photoUrl}></img>
-                        </div>
+                        <img id="picture" src={this.props.services[7].photoUrl}></img>
+                        <span id="harrypotterservice">Marble Game Partner</span>
                     </Link>
                     </div>
                     </div>
