@@ -120,6 +120,7 @@ class Profile extends React.Component {
         
         const reviewinfo = this.props.reviews.length ? (
             <div id="reviewinfodiv1">
+                
                 {this.props.reviews.map((review, idx) => (
                     <div key={idx} id="reviewonprofile">
                         <h5 id="h5reviewtitle">Review #{idx+1}</h5>
@@ -160,6 +161,7 @@ class Profile extends React.Component {
                                 <span id="profilename">Name: {this.props.currentUser.name}</span>
                                 <span id="profilename">Username: {this.props.currentUser.username}</span>
                             </div>
+                            <h3 id="reviewsinprofileheader">Your Reviews</h3>
                             {reviewinfo}
                         </div>
                         <div id="profileorders">

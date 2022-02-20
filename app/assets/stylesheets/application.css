@@ -838,6 +838,8 @@
     margin-top: 10px;
     display:flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
     /* background-color: cadetblue; */
     height: 600px;
     /* justify-content: space-around; */
@@ -858,7 +860,7 @@
     /* width:90%; */
     object-fit: cover;
     align-self: center;
-    margin-left: 200px;
+
 }
 
 #productshowdescription {
@@ -1014,6 +1016,7 @@
     flex-direction: column;
     width:375px;
     justify-content:flex-start;
+    margin-left: -100px;
     
 }
 
@@ -1372,6 +1375,7 @@
     flex-direction: row;
     margin-left:225px;
     padding:1rem;
+    justify-content: center;
 }
 
 #allreviewheader {
@@ -1507,7 +1511,7 @@
     flex-direction:column;
     margin-left: 50px;
     width: 385px;
-    margin-top: 25px;
+    margin-top: 10px;
     border: 1px solid grey;
     border-radius: 5px;
 }
@@ -1651,6 +1655,12 @@
 #quantitytransationtxt{
     font-size:15px;
     margin-bottom:10px;
+}
+
+#reviewsinprofileheader {
+    margin-left: 50px;
+    margin-top: 35px;
+    font-size: 24px;
 }
 
 #moretransactiondetails {
