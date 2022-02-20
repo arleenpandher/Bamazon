@@ -91,7 +91,14 @@ class Profile extends React.Component {
                                     <div key={transaction.id} id="individualtransactionbox">
                                         <div id="transactionprofilecol">
                                             <span id="deliveredtransactiontext">Service Date: {this.transactiondate(transaction.createdAt)}</span>
-                                            <span id="packagetransactiontxt">{this.servicetitle(transaction.service)} provided to {this.props.currentUser.name} @ {this.transactiontime(transaction.createdAt)}</span>
+                                            <span id="packagetransactiontxt">
+                                                {transaction.service ? (
+                                                    <span id="packagetransactiontxt">{this.servicetitle(transaction.service)} provided to {this.props.currentUser.name} @ {this.transactiontime(transaction.createdAt)}</span>
+                                                ) : (
+                                                    null
+                                                )}
+                                            </span>
+                                            <span id="quantitytransactiontxt">Quantity: {transaction.quantity}</span>
                                             <div id="transactionprofileprodinfo">
                                                 <img id="transactionimage"src={transaction.photoUrl}/>
                                                 <span id="moretransactiondetails">{transaction.title} - {transaction.description}</span>
