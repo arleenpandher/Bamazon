@@ -453,12 +453,16 @@
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+    min-width: 1000px;
+    max-width: 1600px;
 }
 
 #borderdiv2 {
     /* border: 1px solid black; */
     height: 600px;
     width:100%;
+    min-width: 1000px;
+    max-width: 1600px;
     margin:auto;
     /* margin-top: 10px; */
     display: flex;
@@ -534,6 +538,13 @@
     text-decoration:none;
 }
 
+#linkfor9 {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    position:relative;
+}
+
 #harrypotterservice {
     position: absolute;
     margin-right: 165px;
@@ -543,7 +554,83 @@
     padding: 0.5rem;
 }
 
-#link:hover {
+#starwarsservice {
+    position: absolute;
+    padding: 0.5rem;
+    border: 1px solid #293F8A;
+    color: #293F8A;
+    margin-top: 165px;
+    margin-right: 150px;
+}
+
+#saveservice1 {
+    position: absolute;
+    padding: 0.5rem;
+    color: white;
+    border: 1px solid white;
+    margin-top: 150px;
+    margin-left: 150px;
+}
+
+#saveservice2 {
+    position: absolute;
+    padding: 0.5rem;
+    color: white;
+    border: 1px solid white;
+    margin-bottom: 165px;
+    margin-left: 160px;
+}
+
+#strangerthingservice {
+    position: absolute;
+    padding: 0.5rem;
+    color: white;
+    border: 1px solid white;
+    width: max-content;
+    margin-bottom: 165px;
+    margin-left: 100px;
+}
+
+#saveservice3 {
+    position: absolute;
+    padding: 0.5rem;
+    color: white;
+    border: 1px solid white;
+    margin-top: 165px;
+    margin-right: 150px;
+}
+
+#hungergamesservice {
+    position: absolute;
+    padding: 0.5rem;
+    width: max-content;
+    color: #5d1212;
+    margin-right: 130px;
+    margin-bottom: 160px;
+    border: 1px solid #5d1212;
+}
+
+#squidgameservice {
+    position: absolute;
+    padding: 0.5rem; 
+    color: #f6ede0;
+    border: 1px solid #f6ede0;
+    margin-left: 125px;
+    margin-bottom: 110px;
+    width: max-content;
+}
+
+#spongebobservice {
+    position: absolute;
+    padding: 0.5rem; 
+    color: #234a4a;
+    margin-bottom: 400px;
+    border: 1px solid #234a4a;
+    font-size: 24px;
+    width: max-content;
+}
+
+#link:hover, #linkfor9:hover {
     font-weight:600;
 }
 
@@ -599,10 +686,9 @@
 }
 
 #picturefor9 {
-    height: 350px;
-    width: 275px;
-    margin-top:30px;
-    margin-bottom: 20px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 

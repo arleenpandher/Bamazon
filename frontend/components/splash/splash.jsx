@@ -47,17 +47,17 @@ class Splash extends React.Component {
                         </Link>
                         <Link id="link" to={`/services/3/products`}>
                             <img id="picture" src={this.props.services[2].photoUrl}></img>
-                            <span id="harrypotterservice">Balance your Diet</span>
+                            <span id="starwarsservice">Balance your Diet</span>
                         </Link>
                     </div>
                     <div id="bottomrow">
                     <Link id="link" to={`/services/2/products`}>
                         <img id="picture" src={this.props.services[1].photoUrl}></img>
-                        <span id="harrypotterservice">Save the Universe</span>
+                        <span id="saveservice1">Save the Universe</span>
                     </Link>
                     <Link id="link" to={`/services/1/products`}>
                         <img id="picture" src={this.props.services[0].photoUrl}></img>
-                        <span id="harrypotterservice">Save the Earth</span>
+                        <span id="saveservice2">Save the Earth</span>
                     </Link>
                     </div>
                     </div>
@@ -68,31 +68,29 @@ class Splash extends React.Component {
                         <Link id="link" to={`/services/5/products`}>
                         
                             <img id="bbpicture" src={this.props.services[4].photoUrl}></img>
-                            <span id="harrypotterservice">Demogorgon Pest Control</span>
+                            <span id="strangerthingservice">Demogorgon Pest Control</span>
 
                         </Link>
                         <Link id="link" to={`/services/6/products`}>
                             <img id="picture" src={this.props.services[5].photoUrl}></img>
-                            <span id="harrypotterservice">Save the Galaxy</span>
+                            <span id="saveservice3">Save the Galaxy</span>
                         </Link>
                     </div>
                     <div id="bottomrow">
                     <Link id="link" to={`/services/7/products`}>
                         <img id="picture" src={this.props.services[6].photoUrl}></img>
-                        <span id="harrypotterservice">Volunteer as Tribute</span>
+                        <span id="hungergamesservice">Volunteer as Tribute</span>
                     </Link>
                     <Link id="link" to={`/services/8/products`}>
                         <img id="picture" src={this.props.services[7].photoUrl}></img>
-                        <span id="harrypotterservice">Marble Game Partner</span>
+                        <span id="squidgameservice">Marble Game Partner</span>
                     </Link>
                     </div>
                     </div>
                     <div id="basicideadiv2">
-                        <Link id="link" to={`/services/9/products`}>
-                            <div id="fifth">
-                                <span id="text">{this.props.services[8].title}</span>
-                                <img id="picturefor9" src={this.props.services[8].photoUrl}></img>
-                            </div>
+                        <Link id="linkfor9" to={`/services/9/products`}>
+                            <span id="spongebobservice">Save the Crabby Patty Formula</span>
+                            <img id="picturefor9" src={this.props.services[8].photoUrl}></img>
                         </Link>
                     </div>
                 </div>
