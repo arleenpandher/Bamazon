@@ -16,7 +16,7 @@ const mapDispatchToProps = dispatch => ({
     addtocart: item => (dispatch(addcartitem(item))),
     updateCart: cart => (dispatch(updateItem(cart))),
     fetchcartitems: userId => dispatch(fetchAllCart(userId)),
-    fetchreviews: userId => dispatch(fetchUserReviews(userId))
+    fetchreviews: () => dispatch(fetchUserReviews())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile)

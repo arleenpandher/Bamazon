@@ -50,9 +50,17 @@ export const deletereview = reviewId => dispatch => (
     .then(review => dispatch(removeReview(review.id)))
 )
 
-export const fetchUserReviews = userId => dispatch => {
+// export const fetchUserReviews = userId => dispatch => {
+//     // debugger
+//     return fetchuserReviews(userId)
+//     .then(reviews => dispatch(receiveReviews(reviews)))
+// }
+
+
+// CUSTOM ROUTE TEST
+export const fetchUserReviews = () => dispatch => {
     // debugger
-    return fetchuserReviews(userId)
+    return fetchuserReviews()
     .then(reviews => dispatch(receiveReviews(reviews)))
 }
 

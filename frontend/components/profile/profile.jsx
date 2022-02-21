@@ -16,7 +16,7 @@ class Profile extends React.Component {
         if (this.props.currentUser) {
             this.props.fetchtransactions()
             this.props.fetchcartitems(this.props.currentUser.id)
-            this.props.fetchreviews(this.props.currentUser.id)
+            this.props.fetchreviews()
         }
     }
 

@@ -20,9 +20,17 @@ export const deleteReview = reviewId => (
     })
 )
 
-export const fetchuserReviews = userId => (
+// export const fetchuserReviews = userId => (
+//     $.ajax({
+//         url: `/api/users/${userId}`,
+//         method: "GET"
+//     })
+// ) 
+
+// CUSTOM ROUTE TEST
+export const fetchuserReviews = () => (
     $.ajax({
-        url: `/api/users/${userId}`,
+        url: `/api/reviews/userreviews`,
         method: "GET"
     })
 ) 

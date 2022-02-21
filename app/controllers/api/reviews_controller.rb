@@ -23,6 +23,11 @@ class Api::ReviewsController < ApplicationController
         render :show
     end
 
+    def userreviews 
+        @reviews = current_user.reviews
+        render :userreviews 
+    end
+
 
     private 
     def review_params 

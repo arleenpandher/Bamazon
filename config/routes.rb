@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :users, only:[:create] do 
       resources :carts, only: [:index]
     end
+    get 'reviews/userreviews' => 'reviews#userreviews'
     resources :users, only:[:show]
     resources :carts, only: [:create, :destroy, :update]
     resource :session, only:[:create, :destroy]
