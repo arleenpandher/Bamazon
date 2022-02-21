@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { Link, Redirect } from "react-router-dom"
 // import Logo from "../../../app/assets/images/logo2.png"
 // import Pindrop from "../../../app/assets/images/pindrop.png"
 
@@ -8,17 +8,39 @@ import {AiOutlineSearch} from "react-icons/ai"
 class NavBar extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            serviceId: "",
+            productId: ""
+        }
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     componentDidMount() {
         if (this.props.currentUser) {
             this.props.fetchallcart(this.props.currentUser)
         } 
+        this.props.fetchallservices()
     }
 
+    updatesearch(field) {
+        return e => {
+            // console.log(e.currentTarget.value)
+            this.setState({ [field]: e.currentTarget.value })
+        }
+    }
+
+    handleSubmit() {
+        console.log(this.state.productId.length)
+        console.log(this.state.serviceId.length)
+        console.log(this.props.history)
+        if (!this.state.productId.length && this.state.serviceId.length) {
+            this.props.history.push(`/services/${this.state.serviceId}/products`)
+        }
+    }
 
     render() {
         // if (!this.props.currentUser.itemsincart) return null
+        // console.log(this.state)
         let count = 0 
         if (this.props.currentUser && this.props.totalitemsincart) {
         this.props.totalitemsincart.forEach(ele => {
@@ -80,13 +102,14 @@ class NavBar extends React.Component {
                     </div>
                 </div>
                 <div id="two">
-                    <select id="navallbar">
-                        <option >All</option>
-                        <option >Choice 2</option>
-                        <option >Choice 3</option>
+                    <select onChange={this.updatesearch("serviceId")} id="navallbar">
+                        <option value={"all"}>All</option>
+                        {this.props.services.map(ser => (
+                            <option value={ser.id}>{ser.title}</option>
+                        ))}
                     </select>
                     <input id="navsearchtext"type="text"/>
-                    <button id="navsearchbutton" type="submit">
+                    <button onClick={this.handleSubmit} id="navsearchbutton" type="submit">
                         <AiOutlineSearch id="searchimg"/>
                     </button>    
                 </div>
