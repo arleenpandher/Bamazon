@@ -6,6 +6,7 @@ import { fetchallReviews } from "../../actions/review_actions"
 import { deletereview } from "../../actions/review_actions"
 import {updateratings} from "../../actions/product_actions"
 import { createNewTransaction } from "../../actions/transaction_actions"
+import { openModal, closeModal } from "../../actions/modal_actions"
 
 const mapStateToProps = (state,ownProps) => ({
     product: state.entities.products[ownProps.match.params.productId],
