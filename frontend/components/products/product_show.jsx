@@ -81,7 +81,6 @@ class ProductShow extends React.Component {
         const display = this.props.reviews.length ? (
             <div id="productshowreview3">
             <h3 id="allreviewheader">All Reviews</h3>
-
             {this.props.reviews.map(review => (
                 <div id="productshowreview2" key={review.id}>
                     <div id="personreviewdiv">
