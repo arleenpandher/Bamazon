@@ -13,7 +13,7 @@ const mapStateToProps = (state,ownProps) => ({
     productId: ownProps.match.params.productId,
     cartitem: {
         productId: ownProps.match.params.productId,
-        quantity: 0
+        quantity: 1
     },
     reviews: Object.values(state.entities.reviews),
     review: state.entities.reviews,
