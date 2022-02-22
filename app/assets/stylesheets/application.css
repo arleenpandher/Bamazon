@@ -336,7 +336,7 @@
 }
 
 #searchresults {
-    display: none;
+    /* display: none; */
     position: absolute;
     flex-direction: column;
     z-index: 1;
@@ -356,13 +356,13 @@
     padding: 12px 
 }
 
-#navsearchtext:focus-within + #searchresults{
+/* #navsearchtext:focus-within + #searchresults{
     display: flex;
     flex-direction: column;
     /* display:block;
     height:fit-content; */
     /* margin-top: 1425px; */
-}
+ */
 
 li:focus-within ul {
     display: block;

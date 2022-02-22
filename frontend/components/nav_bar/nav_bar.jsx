@@ -29,7 +29,6 @@ class NavBar extends React.Component {
 
     render() {
         // if (!this.props.currentUser.itemsincart) return null
-        console.log(this.state)
         let count = 0 
         if (this.props.currentUser && this.props.totalitemsincart) {
         this.props.totalitemsincart.forEach(ele => {
@@ -102,7 +101,7 @@ class NavBar extends React.Component {
                         <div id="searchresults">
                             {this.props.products.map((product,idx) => (
                             <span id="innersearchresults" key={idx}>
-                                {product.title}
+                                <Link to={`/products/${product.id}`}>{product.title}</Link>
                             </span>
                             ))}
                         </div> 

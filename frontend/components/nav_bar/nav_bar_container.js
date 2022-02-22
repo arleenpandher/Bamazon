@@ -4,7 +4,7 @@ import {fetchAllCart} from "../../actions/cart_actions"
 import { fetchServices } from "../../actions/service_actions"
 import { fetchProducts, fetchallProducts } from "../../actions/product_actions"
 import NavBar from "./nav_bar"
-import { withRouter } from "react-router-dom/cjs/react-router-dom.min"
+// import { withRouter } from "react-router-dom"
 
 const mapStateToProps = state => {
     if (state.entities.users[state.session.id]) {
@@ -31,4 +31,4 @@ const mapDispatchToProps = dispatch => ({
     fetchserviceproducts: serviceId => dispatch(fetchProducts(serviceId))
 })
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NavBar))
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar)
