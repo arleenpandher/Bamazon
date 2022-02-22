@@ -146,16 +146,16 @@ class NavBar extends React.Component {
                     </select>
                     
                     <input id="navsearchtext"type="text" 
-                    onChange={this.productsearch()
-                        .then(() =>(
-                        <div id="searchdropdownctx">
-                            {console.log(this.state.searchedParams)}
-                            {this.state.searchedParams.map(prod => (
-                            <span>{prod.title}</span>
-                            ))}
-                        </div>
-                    ))
-                    }/> 
+                    // onChange={this.productsearch()
+                    //     .then(() =>(
+                    //     <div id="searchdropdownctx">
+                    //         {console.log(this.state.searchedParams)}
+                    //         {this.state.searchedParams.map(prod => (
+                    //         <span>{prod.title}</span>
+                    //         ))}
+                    //     </div>
+                    // ))
+                    /> 
                     <button onClick={this.handleSubmit} id="navsearchbutton" type="submit">
                         <AiOutlineSearch id="searchimg"/>
                     </button>    
