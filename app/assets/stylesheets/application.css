@@ -325,7 +325,7 @@
  }
 
  #searchdropdownctx {
-     
+
     position: absolute;
     z-index: 1;
     color: black;
@@ -1430,10 +1430,13 @@
 #reviewformsubmitbtn {
     align-self:flex-end;
     margin-top:10px;
-    width:10%;
+    width:20%;
     background-color: #ffd814;
-    line-height: 15px;
     border-radius:30px; 
+    border: 1px solid #ffd814;
+    line-height: 25px;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 #reviewedincanada {

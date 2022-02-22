@@ -102,7 +102,7 @@ class CreateReview extends React.Component {
                         })}
                     </div>
                     </div>
-                    <input id="reviewformsubmitbtn" type="submit" value="submit"/>
+                    <input id="reviewformsubmitbtn" type="submit" value="Submit"/>
                 </form>
                 <Footer />
             </div>
