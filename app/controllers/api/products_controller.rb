@@ -22,6 +22,11 @@ class Api::ProductsController < ApplicationController
         render :show
     end
 
+    def allproducts
+        @products = Product.all()
+        render :index
+    end
+
     private
     def product_params 
         params.require(:product).permit(:ratings)

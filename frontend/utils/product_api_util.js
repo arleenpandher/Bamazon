@@ -5,6 +5,13 @@ export const fetchproducts = serviceId => (
     })
 )
 
+export const allProducts = () => (
+    $.ajax({
+        url:`/api/products/allproducts`,
+        method: "GET"
+    })
+)
+
 export const fetchproduct = productId => (
     $.ajax({
         url:`/api/products/${productId}`,
