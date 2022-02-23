@@ -10,19 +10,31 @@ class ProductIndex extends React.Component {
         super(props)
         this.addToCart = this.addToCart.bind(this)
         this.forcesignin = this.forcesignin.bind(this)
+        this.filterproducts = this.filterproducts.bind(this)
+        this.state = {
+            showpageproducts: []
+        }
     }
 
     componentDidMount() {
+        window.scroll(0,0)
         this.props.fetchproducts(this.props.serviceId)
+        .then(this.filterproducts)
         this.props.fetchservices()
         if (this.props.user) {
             this.props.fetchcartitems(this.props.user.id)
         }
     }
 
+    filterproducts() {
+        const filter = this.props.products.filter(prod => prod.serviceId == this.props.match.params.serviceId)
+        this.setState({ showpageproducts: filter })
+    }
+
     componentDidUpdate(preprops) {
         if (preprops.serviceId !== this.props.serviceId) {
             this.props.fetchproducts(this.props.serviceId)
+            .then(this.filterproducts)
         }
     }
 
@@ -65,7 +77,7 @@ class ProductIndex extends React.Component {
                 </div>
                 <div id="CHECK3000">
                 <div id="productindexbox">
-                    {this.props.products.map(product => (
+                    {this.state.showpageproducts.map(product => (
                         <Link id="productindextitle" key={product.id} to={`/products/${product.id}`}>
                             <div id="productindexdiv">
                                 <img id="productindeximage" src={product.photoUrl}/>

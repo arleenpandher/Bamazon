@@ -358,7 +358,7 @@
     padding: 12px 
 }
 
-#navsearchtext:focus-within + #searchresults{
+#navsearchtext:hover + #searchresults{
     display: flex;
     flex-direction: column;
     /* display:block;
@@ -366,9 +366,11 @@
     /* margin-top: 1425px; */
 }
 
-li:focus-within ul {
-    display: block;
+#searchresults:hover {
+    display: flex;
+    flex-direction: column;
 }
+
 
 
 #newsearchdiv #searchresults {
