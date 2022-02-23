@@ -10,10 +10,11 @@ class NavBar extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            searcharray: [],
+            searcharray: this.props.products,
             userinput: ""
         }
         this.search = this.search.bind(this)
+        this.servicesearch = this.servicesearch.bind(this)
     }
     
 
@@ -28,15 +29,31 @@ class NavBar extends React.Component {
     search(e) {
         this.setState({ userinput: e.currentTarget.value})
         const searchWord = e.currentTarget.value 
-        const newFilter = this.props.products.filter((product) => {
+        const newFilter = this.state.searcharray.filter((product) => {
             return product.title.toLowerCase().includes(searchWord.toLowerCase())
         })
         this.setState({searcharray: newFilter })
     }
 
+    servicesearch(e) {
+        console.log(e.currentTarget.value)
+        if (e.currentTarget.value === "all") {
+            this.setState({searcharray: this.props.products}, () => {return null})
+        } else {
+            let newFilter = []
+            this.props.products.forEach(product => {
+                if (product.serviceId == e.currentTarget.value) {
+                    newFilter.push(product)
+            }})
+            console.log(newFilter)
+            this.setState({searcharray: newFilter }, () => {return null})
+        }
+    }
+
 
     render() {
         // if (!this.props.currentUser.itemsincart) return null
+        console.log(this.state)
         let count = 0 
         if (this.props.currentUser && this.props.totalitemsincart) {
         this.props.totalitemsincart.forEach(ele => {
@@ -98,8 +115,8 @@ class NavBar extends React.Component {
                     </div>
                 </div>
                 <div id="two">
-                    <select id="navallbar">
-                        <option>All</option>
+                    <select onChange={this.servicesearch} id="navallbar">
+                        <option value="all">All</option>
                         {this.props.services.map((ser,idx) => (
                             <option key={idx} value={ser.id}>{ser.title}</option>
                         ))}
