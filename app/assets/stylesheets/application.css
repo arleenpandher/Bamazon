@@ -355,7 +355,8 @@
 } 
 
 #innersearchresults {
-    padding: 12px 
+    padding: 8px;
+    text-decoration: none;
 }
 
 #navsearchtext:hover + #searchresults{
@@ -371,7 +372,16 @@
     flex-direction: column;
 }
 
+#searchsuggestiontext {
+    text-decoration: none;
+    color:#1b1b1b;
+}
 
+#searchsuggestiontext:hover {
+    text-decoration: underline;
+    font-weight:400;
+    color:#1b1b1b;
+}
 
 #newsearchdiv #searchresults {
     flex-grow: inherit;

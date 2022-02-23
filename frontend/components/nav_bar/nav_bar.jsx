@@ -133,7 +133,7 @@ class NavBar extends React.Component {
                             {this.state.searcharray.map((product,idx) => (
                             <span id="innersearchresults" key={idx}>
                                 {/* <span onClick={this.searchclick}>{product.title}</span> */}
-                                <Link to={`/products/${product.id}`}>{product.title}</Link>
+                                <Link id="searchsuggestiontext" to={`/products/${product.id}`}>{product.title}</Link>
                             </span>
                             ))}
                         </div> 
