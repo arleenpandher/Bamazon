@@ -9,6 +9,11 @@ import ProductShow from "../products/product_show"
 class NavBar extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            searcharray: [],
+            userinput: ""
+        }
+        this.search = this.search.bind(this)
     }
     
 
@@ -20,12 +25,15 @@ class NavBar extends React.Component {
         } 
     }
 
+    search(e) {
+        this.setState({ userinput: e.currentTarget.value})
+        const searchWord = e.currentTarget.value 
+        const newFilter = this.props.products.filter((product) => {
+            return product.title.toLowerCase().includes(searchWord.toLowerCase())
+        })
+        this.setState({searcharray: newFilter })
+    }
 
-
- 
-
-
-  
 
     render() {
         // if (!this.props.currentUser.itemsincart) return null
@@ -97,9 +105,9 @@ class NavBar extends React.Component {
                         ))}
                     </select>
                     <div id="newsearchdiv">
-                        <input id="navsearchtext" type="text" />
+                        <input onChange={this.search} id="navsearchtext" type="text" />
                         <div id="searchresults">
-                            {this.props.products.map((product,idx) => (
+                            {this.state.searcharray.map((product,idx) => (
                             <span id="innersearchresults" key={idx}>
                                 <Link to={`/products/${product.id}`}>{product.title}</Link>
                             </span>

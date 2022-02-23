@@ -307,7 +307,8 @@
  #navsearchtext {
      height: 34px;
      flex-grow:3.5;
-     border:1px solid white
+     border:1px solid white;
+     padding-left: 5px;
      /* padding:1rem; */
  }
 
@@ -336,7 +337,7 @@
 }
 
 #searchresults {
-    /* display: none; */
+    display: none;
     position: absolute;
     flex-direction: column;
     z-index: 1;
@@ -346,8 +347,9 @@
     background-color:white;
     width:100%;
     margin-top:35px;
-    height: 300px;
-    overflow: scroll;
+    height: fit-content;
+    max-height: 300px;
+    overflow-y: auto;
     /* margin-top:35px; */
     /* margin-top: 1425px; */
 } 
@@ -356,13 +358,13 @@
     padding: 12px 
 }
 
-/* #navsearchtext:focus-within + #searchresults{
+#navsearchtext:focus-within + #searchresults{
     display: flex;
     flex-direction: column;
     /* display:block;
     height:fit-content; */
     /* margin-top: 1425px; */
- */
+}
 
 li:focus-within ul {
     display: block;
