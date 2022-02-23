@@ -10,20 +10,26 @@ class NavBar extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            searcharray: this.props.products,
+            searcharray: [],
             userinput: ""
         }
         this.search = this.search.bind(this)
         this.servicesearch = this.servicesearch.bind(this)
+        this.all = this.all.bind(this)
     }
     
 
     componentDidMount() {
         this.props.fetchallservices()
         this.props.allProducts()
+        .then(this.all)
         if (this.props.currentUser) {
             this.props.fetchallcart(this.props.currentUser)
         } 
+    }
+
+    all(e) {
+        this.setState({ searcharray: this.props.products }, () => {return null})
     }
 
     search(e) {
@@ -126,6 +132,7 @@ class NavBar extends React.Component {
                         <div id="searchresults">
                             {this.state.searcharray.map((product,idx) => (
                             <span id="innersearchresults" key={idx}>
+                                {/* <span onClick={this.searchclick}>{product.title}</span> */}
                                 <Link to={`/products/${product.id}`}>{product.title}</Link>
                             </span>
                             ))}
