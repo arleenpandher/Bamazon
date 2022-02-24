@@ -13,10 +13,10 @@ const Footer = () => {
             </div>
             <div>
                 <div>
-                    <a id="linkedintag" href="https://www.linkedin.com/in/arleenpandher/">
+                    <a target="_blank" id="linkedintag" href="https://www.linkedin.com/in/arleenpandher/">
                         <BsLinkedin color={"#dad3d3"} size={65}/>
                     </a>
-                    <a href="https://github.com/arleenpandher">
+                    <a target="_blank" href="https://github.com/arleenpandher">
                         <BsGithub color={"#dad3d3"} size={65}/>
                     </a>
                 </div>
