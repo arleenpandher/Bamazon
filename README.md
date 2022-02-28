@@ -24,6 +24,10 @@ https://user-images.githubusercontent.com/93013360/154987188-9a4427e3-e1f2-499d-
 https://user-images.githubusercontent.com/93013360/154987210-de2ae385-935a-4444-af1c-d4258ecb28c0.mp4
 
 
+3) Dynamic Search - Users can dynamically search for heros through the search bar.
+*To improve the user experience, user's can search for heros dynamically, they can filter for a specific category, and then they can search for a hero within that category or they can search through all the available heros.  The ability to search for heros was implemented through a filtering process, as user's type they filter search through the database for heros with those letters and narrows down the search for users. 
+
+![screen-recording (5)](https://user-images.githubusercontent.com/93013360/156066543-8694387c-041d-4fb7-9211-c00d96fa5c85.gif)
 
 
 ## Technologies, Libraries, APIs
